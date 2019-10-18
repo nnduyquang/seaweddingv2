@@ -1,0 +1,109 @@
+#menu_desktop {
+  .header-wrapper {
+    background: linear-gradient(90deg, rgba(9, 9, 121, 1) 0%, rgba(0, 212, 255, 1) 50%, rgba(9, 9, 121, 1) 100%);
+    &.stuck {
+      top: 0;
+      position: fixed;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      animation: stuckMoveDown .6s;
+      z-index: 999;
+    }
+    .header-inner {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      align-items: center;
+      .logo {
+        width: 200px;
+        text-align: center;
+        order: 2;
+        margin: 0 30px;
+        padding: 8px 0;
+        img {
+          width: 70%;
+        }
+      }
+      .items-left {
+        order: 1;
+        flex: 1 1 0;
+        margin-right: auto;
+        ul {
+          display: flex;
+          justify-content: flex-start;
+          li {
+            display: inline-block;
+            padding: 0 25px;
+            a {
+              color: white;
+              letter-spacing: .02em;
+              text-transform: uppercase;
+              padding: 10px 0;
+              font-size: 13px;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+      .items-right {
+        order: 3;
+        flex: 1 1 0;
+        margin-left: auto;
+        ul {
+          display: flex;
+          justify-content: flex-end;
+          li {
+            display: inline-block;
+            padding: 0 25px;
+            a {
+              color: white;
+              letter-spacing: .02em;
+              text-transform: uppercase;
+              padding: 10px 0;
+              font-size: 15px;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    }
+  }
+  @keyframes stuckMoveDown {
+    0% {
+      transform: translateY(-100%)
+    }
+    100% {
+      transform: translateY(0)
+    }
+  }
+}
+
+#call_now_button {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #018BC8;
+  color: white;
+  padding: 5px;
+  z-index: 100000;
+  font-size: 1.1em;
+  ul {
+    margin: 0;
+  }
+  li {
+    list-style: none;
+    display: inline-block;
+    margin: 0;
+    margin-right: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    a{
+      color: white;
+    }
+  }
+  li:last-child {
+    margin-right: 0;
+  }
+}

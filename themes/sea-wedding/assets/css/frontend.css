@@ -1,0 +1,67 @@
+#h_2 .info {
+  padding: 100px 0;
+}
+#h_2 .info h1.title {
+  line-height: 50px;
+  font-size: 22px;
+  color: #08327E;
+  letter-spacing: 0.25px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+#h_2 .info p.sub-intro {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-align: center;
+  color: #FF6600;
+  text-transform: uppercase;
+  line-height: 48px;
+  font-weight: bold;
+  padding: 10px 50px;
+}
+#h_2 .info p.sub-intro:before, #h_2 .info p.sub-intro:after {
+  display: inline-block;
+  position: relative;
+  top: -7px;
+  content: "";
+  width: 50px;
+  height: 0px;
+  border: 1px solid #e8dcdb;
+  transform: scaleY(0.5);
+}
+#h_2 .info p.sub-intro:before {
+  right: 20px;
+}
+#h_2 .info p.sub-intro:after {
+  left: 20px;
+}
+#h_2 .info p.content {
+  font-size: 18px;
+  letter-spacing: 0.1px;
+  text-align: center;
+  color: #252019;
+  line-height: 30px;
+  padding: 20px 20px;
+}
+#h_2 .info .bottom {
+  text-align: center;
+}
+#h_2 .info .bottom img {
+  width: auto;
+}
+#h_2 img.img-h_2 {
+  height: auto;
+}
+
+@media (max-width: 767px) {
+  #h_2 .info {
+    padding: 50px 0;
+  }
+  #h_2 .info p.sub-intro {
+    padding: 0;
+  }
+  #h_2 .info p.sub-intro:before, #h_2 .info p.sub-intro:after {
+    width: 0;
+  }
+}

@@ -1,0 +1,28 @@
+tabs:
+    fields:
+        config_name_company:
+            label: 'Tên Công Ty'
+            span: full
+            type: text
+            tab: 'Thông Tin Công Ty'
+        config_address_company:
+            label: 'Địa Chỉ Công Ty'
+            span: full
+            type: text
+            tab: 'Thông Tin Công Ty'
+        config_descrtiption_company:
+            label: 'Mô Tả Công Ty'
+            size: ''
+            span: full
+            type: richeditor
+            tab: 'Thông Tin Công Ty'
+        config_slider:
+            label: 'Slider Upload'
+            span: full
+            mode: image
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            type: fileupload
+            tab: Slider

@@ -1,6 +1,29 @@
-title = "home"
+title = "Trang Chủ"
 url = "/"
 layout = "master"
 is_hidden = 0
+
+[sliders]
 ==
-<h1>This is trang chủ</h1>
+{% component 'sliders' %}
+<div id="h_2">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="info">
+                    <h1 class="title">
+                        Chào mừng đến Sea Wedding
+                    </h1>
+                    <p class="sub-intro">WEDDING PHOTOGRAPHY STUDIO</p>
+                    <p class="content">Hãy lưu giữ lại những khoảnh khắc hạnh phúc nhất về tình yêu đôi lứa thông qua những bức hình cưới tuyệt đẹp cùng với đội ngũ chuyên nghiệp tại Sea Wedding </p>
+                    <div class="bottom">
+                        <img src="{{ 'assets/images/temp/home/h2/welcome_icon.png'|theme }}" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6"
+                 style="background:url({{ 'assets/images/temp/home/h2/new_gg.png'|theme }});background-position: center center;background-repeat: no-repeat;background-size: cover;">
+            </div>
+        </div>
+    </div>
+</div>
