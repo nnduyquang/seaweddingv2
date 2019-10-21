@@ -2,6 +2,7 @@
 
 use Cms\Classes\ComponentBase;
 use Quang\Post\Models\Category;
+use Cms\Classes\Theme;
 use Quang\Post\Models\Posts;
 use Cms\Classes\Page;
 
@@ -79,6 +80,34 @@ class Quang_Post extends ComponentBase
         $this->postPage = $this->page['postPage'] = $this->property('postPage');
         $this->categoryPage = $this->page['categoryPage'] = $this->property('categoryPage');
     }
+    protected function getComponent(string $componentName, string $page)
+    {
+        $component = null;
+
+        $page = Page::load(Theme::getActiveTheme(), $page);
+
+        if (!is_null($page)) {
+            $component = $page->getComponent($componentName);
+        }
+
+        return $component;
+    }
+    protected function urlProperty(ComponentBase $component = null, string $name = '')
+    {
+        $property = null;
+
+        if ($component !== null && ($property = $component->property($name))) {
+            preg_match('/{{ :([^ ]+) }}/', $property, $matches);
+
+            if (isset($matches[1])) {
+                $property = $matches[1];
+            }
+        } else {
+            $property = $name;
+        }
+
+        return $property;
+    }
 
     public function loadPost()
     {
@@ -86,9 +115,32 @@ class Quang_Post extends ComponentBase
         if ($this->property('results') > 0) {
             $query = $query->take($this->property('results'));
         }
+        $blogPostComponent = $this->getComponent('blogPost', $this->postPage);
+        $blogPostsComponent = $this->getComponent('blogPosts', $this->categoryPage);
+        $query->each(function ($post) use ($blogPostComponent, $blogPostsComponent) {
+            $post->setUrl(
+                $this->postPage,
+                $this->controller,
+                [
+                    'slug' => $this->urlProperty($blogPostComponent, 'slug')
+                ]
+            );
+
+            $post->category->each(function ($category) use ($blogPostsComponent) {
+                $category->setUrl(
+                    $this->categoryPage,
+                    $this->controller,
+                    [
+                        'slug' => $this->urlProperty($blogPostsComponent, 'categoryFilter')
+                    ]
+                );
+            });
+        });
         return $query;
 
     }
 
     public $posts;
+    public $postPage;
+    public $categoryPage;
 }
