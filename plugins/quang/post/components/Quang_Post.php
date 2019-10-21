@@ -1,13 +1,11 @@
 <?php namespace Quang\Post\Components;
 
-use Cms\Classes\ComponentBase;
+use Quang\Post\Classes\ComponentAbstract;
 use Quang\Post\Models\Category;
-use Cms\Classes\Theme;
-use Quang\Post\Models\Posts;
 use Cms\Classes\Page;
 
 
-class Quang_Post extends ComponentBase
+class Quang_Post extends ComponentAbstract
 {
     public function componentDetails()
     {
@@ -80,34 +78,7 @@ class Quang_Post extends ComponentBase
         $this->postPage = $this->page['postPage'] = $this->property('postPage');
         $this->categoryPage = $this->page['categoryPage'] = $this->property('categoryPage');
     }
-    protected function getComponent(string $componentName, string $page)
-    {
-        $component = null;
 
-        $page = Page::load(Theme::getActiveTheme(), $page);
-
-        if (!is_null($page)) {
-            $component = $page->getComponent($componentName);
-        }
-
-        return $component;
-    }
-    protected function urlProperty(ComponentBase $component = null, string $name = '')
-    {
-        $property = null;
-
-        if ($component !== null && ($property = $component->property($name))) {
-            preg_match('/{{ :([^ ]+) }}/', $property, $matches);
-
-            if (isset($matches[1])) {
-                $property = $matches[1];
-            }
-        } else {
-            $property = $name;
-        }
-
-        return $property;
-    }
 
     public function loadPost()
     {
