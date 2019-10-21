@@ -1,0 +1,12 @@
+fields:
+    category_title:
+        label: 'Loại Bài Viết'
+        span: full
+        type: text
+    slug:
+        label: Slug
+        span: full
+        preset:
+            field: category_title
+            type: slug
+        type: text

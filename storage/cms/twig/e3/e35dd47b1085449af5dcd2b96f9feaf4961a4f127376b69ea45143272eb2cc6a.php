@@ -139,8 +139,12 @@ class __TwigTemplate_5eb3a6f0aabb603d401e14261dce295987c044f81beec05d7e06dbd8f2c
         // line 61
         echo "assets/js/app.js";
         echo "\"></script>
-";
+<script src=\"";
         // line 62
+        echo "assets/js/common.js";
+        echo "\"></script>
+";
+        // line 63
         $_minify = System\Classes\CombineAssets::instance()->useMinify;
         if ($_minify) {
             echo '<script src="' . Request::getBasePath() . '/modules/system/assets/js/framework.combined-min.js"></script>'.PHP_EOL;
@@ -151,10 +155,10 @@ class __TwigTemplate_5eb3a6f0aabb603d401e14261dce295987c044f81beec05d7e06dbd8f2c
         }
         echo '<link rel="stylesheet" property="stylesheet" href="' . Request::getBasePath() .'/modules/system/assets/css/framework.extras'.($_minify ? '-min' : '').'.css">'.PHP_EOL;
         unset($_minify);
-        // line 63
+        // line 64
         echo $this->env->getExtension('Cms\Twig\Extension')->assetsFunction('js');
         echo $this->env->getExtension('Cms\Twig\Extension')->displayBlock('scripts');
-        // line 64
+        // line 65
         echo "
 </body>
 </html>";
@@ -172,7 +176,7 @@ class __TwigTemplate_5eb3a6f0aabb603d401e14261dce295987c044f81beec05d7e06dbd8f2c
 
     public function getDebugInfo()
     {
-        return array (  158 => 64,  155 => 63,  144 => 62,  140 => 61,  124 => 47,  122 => 46,  111 => 37,  107 => 36,  103 => 34,  99 => 33,  93 => 30,  81 => 20,  78 => 19,  73 => 17,  69 => 16,  65 => 15,  58 => 11,  51 => 7,  47 => 6,  43 => 5,  37 => 1,);
+        return array (  162 => 65,  159 => 64,  148 => 63,  144 => 62,  140 => 61,  124 => 47,  122 => 46,  111 => 37,  107 => 36,  103 => 34,  99 => 33,  93 => 30,  81 => 20,  78 => 19,  73 => 17,  69 => 16,  65 => 15,  58 => 11,  51 => 7,  47 => 6,  43 => 5,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -238,6 +242,7 @@ class __TwigTemplate_5eb3a6f0aabb603d401e14261dce295987c044f81beec05d7e06dbd8f2c
         integrity=\"sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy\"
         crossorigin=\"anonymous\"></script>
 <script src=\"{{ 'assets/js/app.js' }}\"></script>
+<script src=\"{{ 'assets/js/common.js' }}\"></script>
 {% framework extras %}
 {% scripts %}
 

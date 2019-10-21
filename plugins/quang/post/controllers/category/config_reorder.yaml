@@ -1,0 +1,4 @@
+title: Category
+modelClass: Quang\Post\Models\Category
+toolbar:
+    buttons: reorder_toolbar

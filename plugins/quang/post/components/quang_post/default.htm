@@ -1,0 +1,25 @@
+{% set quang_posts=__SELF__.posts %}
+<div id="h_3" class="pl-lg-5 pr-lg-5 pl-3 pr-3">
+    <div class="row pl-lg-5 pr-lg-5 pl-3 pr-3">
+        <div class="col-12 title">
+            <h2>DỊCH VỤ CỦA CHÚNG TÔI</h2>
+            <p></p>
+        </div>
+        {% for post in quang_posts %}
+        <div class="col-md-4 mb-3">
+            <a href="{{ post.url }}">
+                <div class="sv_banner" style="background-image:url({{post.img_primary.path}});">
+                    <div class="border-top-bot"></div>
+                    <div class="sv_content">
+                        <h5>{{ post.title }}</h5>
+                        <div class="info pt-3">
+                            <p>{{ post.description }}</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>

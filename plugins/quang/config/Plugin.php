@@ -9,6 +9,7 @@ class Plugin extends PluginBase
     {
         return[
             'Quang\Config\Components\Sliders'=>'sliders'
+
         ];
     }
 

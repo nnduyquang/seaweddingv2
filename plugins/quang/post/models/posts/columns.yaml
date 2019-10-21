@@ -1,0 +1,4 @@
+columns:
+    title:
+        label: 'Tiêu đề'
+        type: text

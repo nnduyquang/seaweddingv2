@@ -2,8 +2,32 @@ title = "Trang Chủ"
 url = "/"
 layout = "master"
 is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
 
 [sliders]
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+categoryFilter = "uu-dai"
+postsPerPage = 4
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "uu-dai"
+postPage = "chi-tiet-uu-dai"
+
+[posts]
+results = 3
+categories = "dich-vu"
+categoryPage = "dich-vu"
+postPage = "chi-tiet-dich-vu"
+==
+<?php
+function onStart()
+{
+$this->addJs('assets/js/common.js');
+}
+?>
 ==
 {% component 'sliders' %}
 <div id="h_2">
@@ -15,7 +39,8 @@ is_hidden = 0
                         Chào mừng đến Sea Wedding
                     </h1>
                     <p class="sub-intro">WEDDING PHOTOGRAPHY STUDIO</p>
-                    <p class="content">Hãy lưu giữ lại những khoảnh khắc hạnh phúc nhất về tình yêu đôi lứa thông qua những bức hình cưới tuyệt đẹp cùng với đội ngũ chuyên nghiệp tại Sea Wedding </p>
+                    <p class="content">Hãy lưu giữ lại những khoảnh khắc hạnh phúc nhất về tình yêu đôi lứa thông qua
+                        những bức hình cưới tuyệt đẹp cùng với đội ngũ chuyên nghiệp tại Sea Wedding </p>
                     <div class="bottom">
                         <img src="{{ 'assets/images/temp/home/h2/welcome_icon.png'|theme }}" alt="">
                     </div>
@@ -27,3 +52,34 @@ is_hidden = 0
         </div>
     </div>
 </div>
+{% set posts = blogPosts.posts %}
+
+
+<div class="container-fluid mb-5" id="h_5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 title">
+                <h2>CHƯƠNG TRÌNH KHUYẾN MÃI ĐẶC BIỆT</h2>
+                <p>Ưu Đãi Độc Quyền Từ Sea Wedding</p>
+            </div>
+
+            {% for post in posts %}
+            <div class="col-md-6 mb-4">
+                <div class="one-item">
+                    <div class="bg-dv">
+                        {% for image in post.featured_images|slice(0, 1) %}
+                            {% if loop.index0 ==0 %}
+                        <img class="lazy-img-src" src="https://ik.imagekit.io/demo/img/image2.jpeg?tr=h-1:h-378"
+                             data-src="{{image.path}}" alt="">
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+{% component 'posts' %}
