@@ -41,7 +41,7 @@ return [
     |
     */
 
-    'url' => 'http://localhost:8080/seaweddingv2',
+    'url' => 'http://localhost',
 
     /*
     |--------------------------------------------------------------------------
@@ -101,7 +101,7 @@ return [
     |
     */
 
-    'key' => 'vqPh3QPtTUeSePmN6UIleB9TQiWaMt3r',
+    'key' => 'CHANGE_ME!!!!!!!!!!!!!!!!!!!!!!!',
 
     'cipher' => 'AES-256-CBC',
 

@@ -14,4 +14,46 @@ class Plugin extends PluginBase
     public function registerSettings()
     {
     }
+//    public function registerMarkupTags()
+//    {
+//        return [
+//            'functions' => [
+//
+//                'getImageSizeAttributes' => function($value) {
+//
+//                    if( !empty($value) ){
+//
+//                        $filePath = $value;
+//
+////                        dd(getimagesize($filePath));
+//                       return list($width,$height) =getimagesize($filePath);
+//
+//
+//
+//
+//
+//                    }
+//
+//                }
+//            ]
+//        ];
+//    }
+    public function registerMarkupTags()
+    {
+        return [
+            'functions' => [
+                'image_width' => function ($value) {return $this->getImageWidth($value);},
+                'image_height' => function ($value) {return $this->getImageHeight($value);},
+            ],
+        ];
+    }
+    public function getImageWidth($value) {
+        list($width,$height) =getimagesize($value);
+        return $width;
+    }
+    public function getImageHeight($value) {
+        list($width,$height) =getimagesize($value);
+        return $height;
+    }
+
 }

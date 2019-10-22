@@ -128,4 +128,5 @@
   'quang\\album\\Controllers\\Album' => 'plugins\\quang\\album\\controllers\\Album.php',
   'Quang\\Album\\Classes\\ComponentAbstract' => 'plugins\\quang\\album\\classes\\ComponentAbstract.php',
   'Quang\\Album\\Components\\Album_Home' => 'plugins\\quang\\album\\components\\Album_Home.php',
+  'RainLab\\Builder\\Classes\\ComponentHelper' => 'plugins\\rainlab\\builder\\classes\\ComponentHelper.php',
 );

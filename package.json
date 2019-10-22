@@ -18,5 +18,10 @@
         "sass": "^1.15.2",
         "sass-loader": "^7.1.0",
         "vue-template-compiler": "^2.6.10"
+    },
+    "dependencies": {
+        "fancybox": "^3.0.1",
+        "imagesloaded": "^4.1.4",
+        "masonry-layout": "^4.2.2"
     }
 }

@@ -2,4 +2,58 @@ title = "Chi Tiết Album"
 url = "/chi-tiet-album/:slug"
 layout = "master"
 is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[builderDetails]
+modelClass = "Quang\Album\Models\Album"
+identifierValue = "{{ :slug }}"
+modelKeyColumn = "slug"
+displayColumn = "title"
+notFoundMessage = "Record not found"
 ==
+{% set record = builderDetails.record %}
+{% set displayColumn = builderDetails.displayColumn %}
+{% set notFoundMessage = builderDetails.notFoundMessage %}
+
+{% if record %}
+{% partial "title-page" title_page=record.title %}
+
+<div id="alb_d_1">
+    <div class="container">
+        <div class="content">
+
+        </div>
+        <div class="album">
+            <div class="grid-album">
+                <div class="grid-sizer">
+                    {% for photo in record.photos %}
+                    {% set source = photo.photo_path|media %}
+                    {% set ratio= (image_height(source)/image_width(source))*100 %}
+
+                    {{source}} - {{ratio}}
+                    {{image_width(source)}} -   {{image_height(source)}}
+                    <div class="grid-item">
+                        <a class="fancybox" data-fancybox="gallery"
+                           href="{{source}}">
+                            <div class="wrapper" style="width:100%; padding-bottom: {{ratio}}%">
+                                <div class="inner">
+                                    <img class="lazy-img-src" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                         data-src="{{source}}"/>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% else %}
+{{ notFoundMessage }}
+{% endif %}

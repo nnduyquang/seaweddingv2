@@ -1,0 +1,87 @@
+#alb_d_1 {
+  .main-title {
+    background-color: #f4f4f4;
+    .icon-title {
+      background-position: center center !important;
+      background-repeat: no-repeat !important;
+      height: 21px;
+    }
+    h1 {
+      text-align: center;
+      line-height: 30px;
+      color: $main-color;
+      text-transform: Capitalize;
+      font-size: 36px;
+      padding: 15px 0px 15px 0px;
+    }
+  }
+  .content{
+    line-height: 1.5;
+    padding: 20px 0;
+  }
+  .album {
+    .grid-sizer, .grid-item {
+      width: 33.333%;
+    }
+    .grid-item {
+      float: left;
+      a.fancybox {
+        &:focus {
+          outline: none;
+        }
+        .wrapper {
+          position: relative;
+          > .inner {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            img {
+              display: block;
+              width: 100%;
+              padding: 10px;
+              border-radius: 20px;
+              transition: all 0.2s;
+              &:hover {
+                box-shadow: 0 10px 30px 0 rgba(58, 87, 135, 0.58);
+                padding: 0px;
+              }
+            }
+          }
+        }
+
+      }
+    }
+  }
+  .other {
+    padding: 60px 0;
+    h4 {
+      color: $main-color;
+      font-size: 16px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #d9dcdd;
+      padding-bottom: 10px;
+    }
+    .one-item {
+      box-shadow: 0 0 35px rgba(0, 0, 0, .1);
+      border-radius: 20px;
+      transition: all 0.2s;
+      &:hover {
+        box-shadow: 0 10px 30px 0 rgba(58, 87, 135, .58);
+      }
+      .img-cover {
+        a {
+          img {
+            width: 100%;
+            border-radius: 20px 20px 0 0;
+          }
+        }
+      }
+      span.title {
+        display: block;
+        padding: 20px
+      }
+    }
+  }
+}
