@@ -1,0 +1,25 @@
+{% set album_homes=__SELF__.albums %}
+<div id="h_4" class="pt-4 pb-4">
+    <div class="title">
+        <h2>ALBUM GALLERY</h2>
+        <p>hãy để chúng tôi là một phần trong ngày trọng đại của bạn</p>
+    </div>
+    <div class="row no-gutters">
+        {% for album in album_homes %}
+        <div class="col-md-4">
+            <div class="one-item">
+                <div class="img">
+                    <a href="{{ album.url }}">
+
+                        <img src="{{album.img_primary|media}}" alt="">
+                        <div class="content">
+                            <i class="far fa-heart"></i>
+                            <h3 class="title">{{album.title}}</h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>

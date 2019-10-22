@@ -1,0 +1,20 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table quang_album_'
+    - builder_table_create_quang_album_.php
+1.0.3:
+    - 'Created table quang_album_category'
+    - builder_table_create_quang_album_category.php
+1.0.4:
+    - 'Updated table quang_album_'
+    - builder_table_update_quang_album_.php
+1.0.5:
+    - 'Created table quang_album_album_category'
+    - builder_table_create_quang_album_album_category.php
+1.0.6:
+    - 'Updated table quang_album_'
+    - builder_table_update_quang_album__2.php
+1.0.7:
+    - 'Updated table quang_album_'
+    - builder_table_update_quang_album__3.php

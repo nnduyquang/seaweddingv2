@@ -1,0 +1,4 @@
+title: Album
+modelClass: Quang\Album\Models\Album
+toolbar:
+    buttons: reorder_toolbar

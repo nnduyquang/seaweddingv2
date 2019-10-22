@@ -157,6 +157,10 @@ class __TwigTemplate_bd8afda338d87022f0b955a297f2050d6a7fd2c746f04d3596e8763a605
         $context['__cms_component_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->componentFunction("posts"        , $context['__cms_component_params']        );
         unset($context['__cms_component_params']);
+        // line 55
+        $context['__cms_component_params'] = [];
+        echo $this->env->getExtension('Cms\Twig\Extension')->componentFunction("albums"        , $context['__cms_component_params']        );
+        unset($context['__cms_component_params']);
     }
 
     public function getTemplateName()
@@ -171,7 +175,7 @@ class __TwigTemplate_bd8afda338d87022f0b955a297f2050d6a7fd2c746f04d3596e8763a605
 
     public function getDebugInfo()
     {
-        return array (  157 => 54,  151 => 50,  139 => 46,  136 => 45,  122 => 44,  117 => 42,  114 => 41,  111 => 40,  94 => 39,  89 => 36,  85 => 35,  73 => 25,  71 => 24,  63 => 19,  55 => 14,  41 => 2,  37 => 1,);
+        return array (  161 => 55,  157 => 54,  151 => 50,  139 => 46,  136 => 45,  122 => 44,  117 => 42,  114 => 41,  111 => 40,  94 => 39,  89 => 36,  85 => 35,  73 => 25,  71 => 24,  63 => 19,  55 => 14,  41 => 2,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -229,6 +233,7 @@ class __TwigTemplate_bd8afda338d87022f0b955a297f2050d6a7fd2c746f04d3596e8763a605
         </div>
     </div>
 </div>
-{% component 'posts' %}", "C:\\xampp\\htdocs\\seaweddingv2/themes/sea-wedding/pages/home.htm", "");
+{% component 'posts' %}
+{% component 'albums' %}", "C:\\xampp\\htdocs\\seaweddingv2/themes/sea-wedding/pages/home.htm", "");
     }
 }

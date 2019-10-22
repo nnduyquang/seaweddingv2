@@ -120,4 +120,12 @@
   'October\\Demo\\Components\\Todo' => 'plugins\\october\\demo\\components\\Todo.php',
   'Quang\\Post\\Components\\Quang_Post' => 'plugins\\quang\\post\\components\\Quang_Post.php',
   'Quang\\Post\\Classes\\ComponentAbstract' => 'plugins\\quang\\post\\classes\\ComponentAbstract.php',
+  'quang\\album\\Plugin' => 'plugins\\quang\\album\\Plugin.php',
+  'quang\\album\\Controllers\\album' => 'plugins\\quang\\album\\controllers\\album.php',
+  'Quang\\Album\\Models\\Album' => 'plugins\\quang\\album\\models\\Album.php',
+  'Quang\\Album\\Models\\Category' => 'plugins\\quang\\album\\models\\Category.php',
+  'quang\\album\\Controllers\\category' => 'plugins\\quang\\album\\controllers\\category.php',
+  'quang\\album\\Controllers\\Album' => 'plugins\\quang\\album\\controllers\\Album.php',
+  'Quang\\Album\\Classes\\ComponentAbstract' => 'plugins\\quang\\album\\classes\\ComponentAbstract.php',
+  'Quang\\Album\\Components\\Album_Home' => 'plugins\\quang\\album\\components\\Album_Home.php',
 );

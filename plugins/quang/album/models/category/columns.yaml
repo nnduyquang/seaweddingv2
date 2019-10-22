@@ -1,0 +1,9 @@
+columns:
+    title:
+        label: 'Tiêu Đè'
+        type: text
+        searchable: true
+        sortable: true
+    slug:
+        label: Slug
+        type: text

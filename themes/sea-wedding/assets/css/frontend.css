@@ -332,3 +332,128 @@
     height: 438px;
   }
 }
+#h_4 .title {
+  margin-bottom: 38px;
+}
+#h_4 .title h2 {
+  font-size: 26px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+  color: #034b93;
+  font-weight: bold;
+  position: relative;
+  padding-bottom: 18px;
+  margin-bottom: 10px;
+}
+#h_4 .title h2:before {
+  position: absolute;
+  content: "";
+  width: 68px;
+  height: 2px;
+  background-color: #034b93;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#h_4 .title p {
+  font-size: 16px;
+  text-transform: capitalize;
+  text-align: center;
+}
+#h_4 .one-item {
+  display: flex;
+  height: 100%;
+}
+#h_4 .one-item .img {
+  display: flex;
+}
+#h_4 .one-item .img a {
+  position: relative;
+}
+#h_4 .one-item .img a .content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 2;
+}
+#h_4 .one-item .img a .content i {
+  font-size: 24px;
+  line-height: 28.8px;
+  color: white;
+  opacity: 0;
+  transition: all 2s;
+}
+#h_4 .one-item .img a .content h3.title {
+  font-size: 24px;
+  line-height: 40px;
+  padding: 5px 0 0;
+  opacity: 0;
+  transition: all 2s;
+}
+#h_4 .one-item .img a:before {
+  position: absolute;
+  content: "";
+  width: 1%;
+  height: 94%;
+  opacity: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-bottom: 2px solid white;
+  border-top: 2px solid white;
+  transition: 0.6s;
+  z-index: 999;
+}
+#h_4 .one-item .img a:after {
+  position: absolute;
+  content: "";
+  width: 97%;
+  height: 1%;
+  opacity: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-right: 2px solid white;
+  border-left: 2px solid white;
+  transition: 0.6s;
+  z-index: 999;
+}
+#h_4 .one-item .img a:hover {
+  transition: all 0.5s;
+}
+#h_4 .one-item .img a:hover:before {
+  opacity: 1;
+  width: 96%;
+}
+#h_4 .one-item .img a:hover:after {
+  opacity: 1;
+  height: 94%;
+}
+#h_4 .one-item .img a:hover img {
+  transition: 1s;
+  -webkit-filter: blur(8px);
+          filter: blur(8px);
+}
+#h_4 .one-item .img a:hover .content i {
+  -webkit-animation: slideInUp 1s;
+          animation: slideInUp 1s;
+  opacity: 1;
+}
+#h_4 .one-item .img a:hover .content h3.title {
+  -webkit-animation: slideInUp 1s;
+          animation: slideInUp 1s;
+  opacity: 1;
+}
+#h_4 .one-item .img a:hover .content .time-wedding {
+  -webkit-animation: slideInUp 1s;
+          animation: slideInUp 1s;
+  opacity: 1;
+}
+#h_4 .one-item .img img {
+  width: 100%;
+  height: 100%;
+}

@@ -1,0 +1,15 @@
+columns:
+    title:
+        label: 'Tên Album'
+        type: text
+        searchable: true
+        sortable: true
+    categoryalbum:
+        label: 'Loại album'
+        type: text
+        select: title
+        relation: category
+    img_primary:
+        label: 'Hình đại diện'
+        type: partial
+        path: ~/plugins/quang/album/models/album/_img_primary_column.htm

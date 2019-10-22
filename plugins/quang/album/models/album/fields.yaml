@@ -1,0 +1,50 @@
+fields:
+    title:
+        label: 'Tên Album'
+        span: full
+        required: 1
+        type: text
+    slug:
+        label: Slug
+        span: full
+        preset:
+            field: title
+            type: slug
+        type: text
+    descritption:
+        label: 'Mô tả'
+        size: ''
+        span: full
+        type: textarea
+    content:
+        label: 'Nội Dung'
+        size: ''
+        span: full
+        type: richeditor
+    category:
+        label: 'Loại Album'
+        nameFrom: title
+        descriptionFrom: description
+        span: left
+        type: relation
+    img_primary:
+        label: 'Hình đại diện'
+        span: auto
+        mode: image
+        type: mediafinder
+    is_active:
+        label: 'Kích hoạt?'
+        span: left
+        type: switch
+    photos:
+        label: 'Danh sách hình trong album'
+        prompt: 'Thêm hình'
+        span: full
+        type: repeater
+        form:
+            fields:
+                photo_path:
+                    label: 'Chọn hình'
+                    mode: image
+                    span: full
+                    type: mediafinder

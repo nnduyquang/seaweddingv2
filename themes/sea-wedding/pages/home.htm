@@ -21,6 +21,12 @@ results = 3
 categories = "dich-vu"
 categoryPage = "dich-vu"
 postPage = "chi-tiet-dich-vu"
+
+[albums]
+results = 6
+categories = "album-anh-cuoi"
+categoryPage = "chi-tiet-album"
+postPage = "chi-tiet-album"
 ==
 <?php
 function onStart()
@@ -83,3 +89,4 @@ $this->addJs('assets/js/common.js');
     </div>
 </div>
 {% component 'posts' %}
+{% component 'albums' %}

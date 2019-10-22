@@ -1,0 +1,13 @@
+fields:
+    title:
+        label: 'Loại Album'
+        span: auto
+        required: 1
+        type: text
+    slug:
+        label: Slug
+        span: auto
+        preset:
+            field: title
+            type: slug
+        type: text

@@ -1,0 +1,10 @@
+name: Category
+form: $/quang/album/models/category/fields.yaml
+modelClass: Quang\Album\Models\Category
+defaultRedirect: quang/album/category
+create:
+    redirect: 'quang/album/category/update/:id'
+    redirectClose: quang/album/category
+update:
+    redirect: quang/album/category
+    redirectClose: quang/album/category

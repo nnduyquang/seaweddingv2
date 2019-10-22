@@ -1,0 +1,10 @@
+name: Album
+form: $/quang/album/models/album/fields.yaml
+modelClass: Quang\Album\Models\Album
+defaultRedirect: quang/album/album
+create:
+    redirect: 'quang/album/album/update/:id'
+    redirectClose: quang/album/album
+update:
+    redirect: quang/album/album
+    redirectClose: quang/album/album

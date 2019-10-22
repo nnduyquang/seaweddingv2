@@ -1,0 +1,16 @@
+plugin:
+    name: 'quang.album::lang.plugin.name'
+    description: 'quang.album::lang.plugin.description'
+    author: Quang
+    icon: oc-icon-diamond
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Album
+        url: quang/album/album
+        icon: icon-diamond
+        sideMenu:
+            side-menu-item:
+                label: 'Loại Album'
+                url: quang/album/category
+                icon: icon-book
