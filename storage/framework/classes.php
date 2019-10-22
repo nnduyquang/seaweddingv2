@@ -119,4 +119,5 @@
   'Quang\\Post\\Components\\Posts' => 'plugins\\quang\\post\\components\\Posts.php',
   'October\\Demo\\Components\\Todo' => 'plugins\\october\\demo\\components\\Todo.php',
   'Quang\\Post\\Components\\Quang_Post' => 'plugins\\quang\\post\\components\\Quang_Post.php',
+  'Quang\\Post\\Classes\\ComponentAbstract' => 'plugins\\quang\\post\\classes\\ComponentAbstract.php',
 );
