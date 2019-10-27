@@ -55,7 +55,7 @@ class __TwigTemplate_45cf762f23783c025a225c1cebd5a2257001437c83180dac409c6b998c1
             echo "\">
                 <div class=\"sv_banner\" style=\"background-image:url(";
             // line 11
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["post"], "img_primary", [], "any", false, false, false, 11), "path", [], "any", false, false, false, 11), "html", null, true);
+            echo $this->extensions['System\Twig\Extension']->mediaFilter(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["post"], "img_primary", [], "any", false, false, false, 11), "path", [], "any", false, false, false, 11));
             echo ");\">
                     <div class=\"border-top-bot\"></div>
                     <div class=\"sv_content\">
@@ -111,7 +111,7 @@ class __TwigTemplate_45cf762f23783c025a225c1cebd5a2257001437c83180dac409c6b998c1
         {% for post in quang_posts %}
         <div class=\"col-md-4 mb-3\">
             <a href=\"{{ post.url }}\">
-                <div class=\"sv_banner\" style=\"background-image:url({{post.img_primary.path}});\">
+                <div class=\"sv_banner\" style=\"background-image:url({{post.img_primary.path|media}});\">
                     <div class=\"border-top-bot\"></div>
                     <div class=\"sv_content\">
                         <h5>{{ post.title }}</h5>

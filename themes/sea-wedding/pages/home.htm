@@ -7,15 +7,6 @@ robot_follow = "follow"
 
 [sliders]
 
-[blogPosts]
-pageNumber = "{{ :page }}"
-categoryFilter = "uu-dai"
-postsPerPage = 4
-noPostsMessage = "No posts found"
-sortOrder = "published_at desc"
-categoryPage = "uu-dai"
-postPage = "chi-tiet-uu-dai"
-
 [posts]
 results = 3
 categories = "dich-vu"
@@ -27,6 +18,12 @@ results = 6
 categories = "album-anh-cuoi"
 categoryPage = "chi-tiet-album"
 postPage = "chi-tiet-album"
+
+[post_all]
+results = 0
+categories = "uu-dai"
+categoryPage = "chi-tiet-uu-dai"
+postPage = "chi-tiet-uu-dai"
 ==
 <?php
 function onStart()
@@ -58,7 +55,9 @@ $this->addJs('assets/js/common.js');
         </div>
     </div>
 </div>
-{% set posts = blogPosts.posts %}
+
+{% set posts=post_all.posts %}
+
 
 
 <div class="container-fluid mb-5" id="h_5">
@@ -73,12 +72,10 @@ $this->addJs('assets/js/common.js');
             <div class="col-md-6 mb-4">
                 <div class="one-item">
                     <div class="bg-dv">
-                        {% for image in post.featured_images|slice(0, 1) %}
-                            {% if loop.index0 ==0 %}
+
                         <img class="lazy-img-src" src="https://ik.imagekit.io/demo/img/image2.jpeg?tr=h-1:h-378"
-                             data-src="{{image.path}}" alt="">
-                            {% endif %}
-                        {% endfor %}
+                             data-src="{{post.img_primary|media}}" alt="">
+
                     </div>
                     <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
                 </div>

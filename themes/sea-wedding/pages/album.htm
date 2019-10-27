@@ -2,4 +2,14 @@ title = "Album"
 url = "/album"
 layout = "master"
 is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[albums_page]
+results = 0
+categories = "album-anh-cuoi"
+categoryPage = "chi-tiet-album"
+postPage = "chi-tiet-album"
 ==
+{% partial "title-page" title_page='Album' %}
+{% component 'albums_page' %}

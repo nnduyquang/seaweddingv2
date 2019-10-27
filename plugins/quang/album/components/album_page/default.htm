@@ -1,0 +1,19 @@
+{% set albums_pages=__SELF__.albumsPage %}
+<div id="alb_2">
+
+    <div class="container">
+        <div class="row">
+            {% for album_page in albums_pages %}
+            <div class="col-md-4 mb-1 p-2">
+                <div class="post-item-wp">
+                    <div class="entry-thumbnail"><img class="lazy-img-src" src="https://ik.imagekit.io/demo/img/image2.jpeg?tr=h-1:h-378" data-src="{{album_page.img_primary|media}}" alt=""></div>
+                    <div class="entry-content">
+                        <div class="content-inner"><a href="{{ album_page.url }}">{{album_page.title}}</a></div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+</div>

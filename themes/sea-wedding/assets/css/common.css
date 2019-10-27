@@ -436,3 +436,66 @@
   -webkit-animation: shimmerBackground 2.5s linear infinite;
           animation: shimmerBackground 2.5s linear infinite;
 }
+
+.sidebar-sea {
+  margin: 20px 0;
+  background-color: white;
+  border-top: 6px solid #08327E;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+}
+.sidebar-sea h3 {
+  background-color: transparent;
+  font-weight: 700;
+  font-size: 14px;
+  color: #08327E;
+  padding: 18px 14px;
+  text-transform: uppercase;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+#sidebar_event a img {
+  padding: 10px;
+  width: 100%;
+}
+
+#sidebar_service ul {
+  padding: 20px;
+}
+#sidebar_service ul li {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  padding: 10px 0;
+  line-height: 1.5;
+}
+#sidebar_service ul li a {
+  color: #454545;
+  transition: all 0.5s;
+  text-transform: capitalize;
+}
+#sidebar_service ul li a:hover {
+  color: #007bff;
+}
+
+#sidebar_news ul {
+  margin-top: 15px;
+  list-style: none;
+}
+#sidebar_news ul li {
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+#sidebar_news ul li a {
+  color: black;
+  transition: all 0.2s;
+}
+#sidebar_news ul li a img {
+  width: 100%;
+  padding: 0 5px 5px 5px;
+}
+#sidebar_news ul li a:hover {
+  color: #08327E;
+}

@@ -8,7 +8,7 @@
         {% for post in quang_posts %}
         <div class="col-md-4 mb-3">
             <a href="{{ post.url }}">
-                <div class="sv_banner" style="background-image:url({{post.img_primary.path}});">
+                <div class="sv_banner" style="background-image:url({{post.img_primary.path|media}});">
                     <div class="border-top-bot"></div>
                     <div class="sv_content">
                         <h5>{{ post.title }}</h5>

@@ -1,4 +1,105 @@
 title = "Tin Tức"
 url = "/tin-tuc"
+layout = "master"
 is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+categoryFilter = "tin-tuc"
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "chi-tiet-tin-tuc"
+postPage = "chi-tiet-tin-tuc"
+
+[post_categories]
+results = 0
+categories = "dich-vu"
+categoryPage = "chi-tiet-dich-vu"
+postPage = "chi-tiet-dich-vu"
+
+[post_all]
+results = 0
+categories = "tin-tuc"
+categoryPage = "chi-tiet-tin-tuc"
+postPage = "chi-tiet-tin-tuc"
 ==
+{% partial 'title-page' title_page='Cập nhật tin tức ngành cưới'%}
+<div id="blog1">
+    <div class="container">
+        <div class="row">
+            <div id="main-contain" class="col-md-9">
+                <div class="row mt-3">
+                    {% set posts=post_all.posts %}
+                    {% if posts.count !=0 %}
+                    {% set countPost=0 %}
+                    <div class="main-blog col-md-6">
+                        {% for post in posts if countPost==0 %}
+                        {% if countPost==0 %}
+
+                        <img src="{{post.img_primary|media}}" alt="">
+
+                        <h3><a href="{{post.url}}">{{post.title}}</a></h3>
+                        <p>{{post.description}}</p>
+                        {% set countPost=countPost+1 %}
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div class="sub-blog col-md-6">
+                        {% for post in posts %}
+                        {% if loop.index0>0 and loop.index0<5 %}
+                        <div class="mb-3 pb-3 d-flex align-items-center border-bottom border-light">
+                            <div class="pr-2 float-left">
+                                <a href="{{post.url}}">
+
+                                    <div class="img-sub-blogs"
+                                         style="background-image:url({{post.img_primary|media}});">
+
+                                    </div>
+
+                                </a>
+                            </div>
+                            <p><a href="{{post.url}}">{{post.title}}</a>
+                            </p>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div class="detail-blog col-12">
+                        {% for post in posts %}
+                        {% if loop.index0>=5 %}
+                        <div class="one-item mb-3 pb-3 d-flex  flex-md-row flex-column align-items-center border-bottom border-light">
+                            <a href="{{post.url}}">
+
+                                <div class="img-detail-blogs"
+                                     style="background-image:url({{post.img_primary|media}});"></div>
+
+                            </a>
+                            <div>
+                                <h4><a href="{{post.url}}">{{post.title}}</a></h4>
+                                <p class="time">
+                                    <span>Tin tức</span> - {{post.created_at}}
+                                </p>
+                                <p class="description">
+                                    {{post.description}}
+                                </p>
+                            </div>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    <div class="no-content">Tin tức chưa được cập nhật</div>
+                    {% endif %}
+                </div>
+            </div>
+            <div id="main-sidebar" class="col-md-3">
+                <div class="contain">
+                    {% component 'post_categories' %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

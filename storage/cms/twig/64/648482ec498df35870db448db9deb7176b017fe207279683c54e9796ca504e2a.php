@@ -72,12 +72,16 @@ class __TwigTemplate_64ba5d35315061c9ea9354ee5f122ba91c7354ecbb06c906a2cae570715
         // line 17
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/css/frontend.css");
         echo "\" rel=\"stylesheet\">
+    <link href=\"";
+        // line 18
+        echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/css/core.common.css");
+        echo "\" rel=\"stylesheet\">
 
     ";
-        // line 19
+        // line 20
         echo $this->env->getExtension('Cms\Twig\Extension')->assetsFunction('css');
         echo $this->env->getExtension('Cms\Twig\Extension')->displayBlock('styles');
-        // line 20
+        // line 21
         echo "</head>
 <body>
 
@@ -89,25 +93,25 @@ class __TwigTemplate_64ba5d35315061c9ea9354ee5f122ba91c7354ecbb06c906a2cae570715
                 <div class=\"header-inner\">
                     <div class=\"logo\">
                         <a href=\"#\"> <img class=\"logo-smartlinks\" src=\"";
-        // line 30
+        // line 31
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/images/logo/logo_white.png");
         echo "\" alt=\"\"></a>
                     </div>
                     <div class=\"items-left\">
                         ";
-        // line 33
+        // line 34
         $context['__cms_component_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->componentFunction("menu_left"        , $context['__cms_component_params']        );
         unset($context['__cms_component_params']);
-        // line 34
+        // line 35
         echo "                    </div>
                     <div class=\"items-right\">
                         ";
-        // line 36
+        // line 37
         $context['__cms_component_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->componentFunction("menu_right"        , $context['__cms_component_params']        );
         unset($context['__cms_component_params']);
-        // line 37
+        // line 38
         echo "                    </div>
                 </div>
             </div>
@@ -118,9 +122,9 @@ class __TwigTemplate_64ba5d35315061c9ea9354ee5f122ba91c7354ecbb06c906a2cae570715
 <!-- Content -->
 <section id=\"layout-content\">
     ";
-        // line 46
-        echo $this->env->getExtension('Cms\Twig\Extension')->pageFunction();
         // line 47
+        echo $this->env->getExtension('Cms\Twig\Extension')->pageFunction();
+        // line 48
         echo "</section>
 
 <!-- Footer -->
@@ -129,22 +133,27 @@ class __TwigTemplate_64ba5d35315061c9ea9354ee5f122ba91c7354ecbb06c906a2cae570715
 </footer>
 
 <!-- Scripts -->
-<script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\"
-        integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\"
+<script
+        src=\"https://code.jquery.com/jquery-3.4.1.js\"
+        integrity=\"sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=\"
         crossorigin=\"anonymous\"></script>
 <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js\"
         integrity=\"sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy\"
         crossorigin=\"anonymous\"></script>
+<!--<script src=\"";
+        // line 63
+        echo "assets/js/app.js|theme";
+        echo "\"></script>-->
 <script src=\"";
-        // line 61
-        echo "assets/js/app.js";
+        // line 64
+        echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/js/common.js");
         echo "\"></script>
 <script src=\"";
-        // line 62
-        echo "assets/js/common.js";
+        // line 65
+        echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/js/core.common.js");
         echo "\"></script>
 ";
-        // line 63
+        // line 66
         $_minify = System\Classes\CombineAssets::instance()->useMinify;
         if ($_minify) {
             echo '<script src="' . Request::getBasePath() . '/modules/system/assets/js/framework.combined-min.js"></script>'.PHP_EOL;
@@ -155,10 +164,10 @@ class __TwigTemplate_64ba5d35315061c9ea9354ee5f122ba91c7354ecbb06c906a2cae570715
         }
         echo '<link rel="stylesheet" property="stylesheet" href="' . Request::getBasePath() .'/modules/system/assets/css/framework.extras'.($_minify ? '-min' : '').'.css">'.PHP_EOL;
         unset($_minify);
-        // line 64
+        // line 67
         echo $this->env->getExtension('Cms\Twig\Extension')->assetsFunction('js');
         echo $this->env->getExtension('Cms\Twig\Extension')->displayBlock('scripts');
-        // line 65
+        // line 68
         echo "
 </body>
 </html>";
@@ -176,7 +185,7 @@ class __TwigTemplate_64ba5d35315061c9ea9354ee5f122ba91c7354ecbb06c906a2cae570715
 
     public function getDebugInfo()
     {
-        return array (  162 => 65,  159 => 64,  148 => 63,  144 => 62,  140 => 61,  124 => 47,  122 => 46,  111 => 37,  107 => 36,  103 => 34,  99 => 33,  93 => 30,  81 => 20,  78 => 19,  73 => 17,  69 => 16,  65 => 15,  58 => 11,  51 => 7,  47 => 6,  43 => 5,  37 => 1,);
+        return array (  171 => 68,  168 => 67,  157 => 66,  153 => 65,  149 => 64,  145 => 63,  128 => 48,  126 => 47,  115 => 38,  111 => 37,  107 => 35,  103 => 34,  97 => 31,  85 => 21,  82 => 20,  77 => 18,  73 => 17,  69 => 16,  65 => 15,  58 => 11,  51 => 7,  47 => 6,  43 => 5,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -198,6 +207,7 @@ class __TwigTemplate_64ba5d35315061c9ea9354ee5f122ba91c7354ecbb06c906a2cae570715
     <link href=\"{{ 'assets/css/reset.css'|theme }}\" rel=\"stylesheet\">
     <link href=\"{{ 'assets/css/common.css'|theme }}\" rel=\"stylesheet\">
     <link href=\"{{ 'assets/css/frontend.css'|theme }}\" rel=\"stylesheet\">
+    <link href=\"{{ 'assets/css/core.common.css'|theme }}\" rel=\"stylesheet\">
 
     {% styles %}
 </head>
@@ -235,14 +245,16 @@ class __TwigTemplate_64ba5d35315061c9ea9354ee5f122ba91c7354ecbb06c906a2cae570715
 </footer>
 
 <!-- Scripts -->
-<script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\"
-        integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\"
+<script
+        src=\"https://code.jquery.com/jquery-3.4.1.js\"
+        integrity=\"sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=\"
         crossorigin=\"anonymous\"></script>
 <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js\"
         integrity=\"sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy\"
         crossorigin=\"anonymous\"></script>
-<script src=\"{{ 'assets/js/app.js' }}\"></script>
-<script src=\"{{ 'assets/js/common.js' }}\"></script>
+<!--<script src=\"{{ 'assets/js/app.js|theme' }}\"></script>-->
+<script src=\"{{ 'assets/js/common.js'|theme }}\"></script>
+<script src=\"{{ 'assets/js/core.common.js'|theme }}\"></script>
 {% framework extras %}
 {% scripts %}
 

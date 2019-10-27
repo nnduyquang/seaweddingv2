@@ -7,7 +7,9 @@ class Plugin extends PluginBase
     public function registerComponents()
     {
         return [
-            'Quang\Album\Components\Album_Home' => 'albums'
+            'Quang\Album\Components\Album_Home' => 'albums',
+            'Quang\Album\Components\Album_Other' => 'others',
+            'Quang\Album\Components\Album_Page' => 'albums_page',
         ];
     }
 

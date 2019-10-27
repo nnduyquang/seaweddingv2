@@ -48,7 +48,4 @@ class Posts extends Model
         return $this->url = $controller->pageUrl($pageName, $params);
     }
 
-    public $attachOne=[
-        'img_primary'=>'System\Models\File'
-    ];
 }

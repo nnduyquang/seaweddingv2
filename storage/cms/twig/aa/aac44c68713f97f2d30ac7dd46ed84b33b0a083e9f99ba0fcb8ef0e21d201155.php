@@ -66,11 +66,13 @@ class __TwigTemplate_588fed93ce1c0087a806e27b62c686cbd2a3c57a7686f4ff397ade5d7e9
         </div>
     </div>
 </div>
+
 ";
-        // line 24
-        $context["posts"] = twig_get_attribute($this->env, $this->source, ($context["blogPosts"] ?? null), "posts", [], "any", false, false, false, 24);
         // line 25
+        $context["posts"] = twig_get_attribute($this->env, $this->source, ($context["post_all"] ?? null), "posts", [], "any", false, false, false, 25);
+        // line 26
         echo "
+
 
 <div class=\"container-fluid mb-5\" id=\"h_5\">
     <div class=\"container\">
@@ -81,59 +83,22 @@ class __TwigTemplate_588fed93ce1c0087a806e27b62c686cbd2a3c57a7686f4ff397ade5d7e9
             </div>
 
             ";
-        // line 35
+        // line 37
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["posts"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["post"]) {
-            // line 36
+            // line 38
             echo "            <div class=\"col-md-6 mb-4\">
                 <div class=\"one-item\">
                     <div class=\"bg-dv\">
-                        ";
-            // line 39
-            $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(twig_slice($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "featured_images", [], "any", false, false, false, 39), 0, 1));
-            $context['loop'] = [
-              'parent' => $context['_parent'],
-              'index0' => 0,
-              'index'  => 1,
-              'first'  => true,
-            ];
-            if (is_array($context['_seq']) || (is_object($context['_seq']) && $context['_seq'] instanceof \Countable)) {
-                $length = count($context['_seq']);
-                $context['loop']['revindex0'] = $length - 1;
-                $context['loop']['revindex'] = $length;
-                $context['loop']['length'] = $length;
-                $context['loop']['last'] = 1 === $length;
-            }
-            foreach ($context['_seq'] as $context["_key"] => $context["image"]) {
-                // line 40
-                echo "                            ";
-                if ((twig_get_attribute($this->env, $this->source, $context["loop"], "index0", [], "any", false, false, false, 40) == 0)) {
-                    // line 41
-                    echo "                        <img class=\"lazy-img-src\" src=\"https://ik.imagekit.io/demo/img/image2.jpeg?tr=h-1:h-378\"
+
+                        <img class=\"lazy-img-src\" src=\"https://ik.imagekit.io/demo/img/image2.jpeg?tr=h-1:h-378\"
                              data-src=\"";
-                    // line 42
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["image"], "path", [], "any", false, false, false, 42), "html", null, true);
-                    echo "\" alt=\"\">
-                            ";
-                }
-                // line 44
-                echo "                        ";
-                ++$context['loop']['index0'];
-                ++$context['loop']['index'];
-                $context['loop']['first'] = false;
-                if (isset($context['loop']['length'])) {
-                    --$context['loop']['revindex0'];
-                    --$context['loop']['revindex'];
-                    $context['loop']['last'] = 0 === $context['loop']['revindex0'];
-                }
-            }
-            $_parent = $context['_parent'];
-            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['image'], $context['_parent'], $context['loop']);
-            $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 45
-            echo "                    </div>
+            // line 43
+            echo $this->extensions['System\Twig\Extension']->mediaFilter(twig_get_attribute($this->env, $this->source, $context["post"], "img_primary", [], "any", false, false, false, 43));
+            echo "\" alt=\"\">
+
+                    </div>
                     <h3><a href=\"";
             // line 46
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "url", [], "any", false, false, false, 46), "html", null, true);
@@ -175,7 +140,7 @@ class __TwigTemplate_588fed93ce1c0087a806e27b62c686cbd2a3c57a7686f4ff397ade5d7e9
 
     public function getDebugInfo()
     {
-        return array (  161 => 55,  157 => 54,  151 => 50,  139 => 46,  136 => 45,  122 => 44,  117 => 42,  114 => 41,  111 => 40,  94 => 39,  89 => 36,  85 => 35,  73 => 25,  71 => 24,  63 => 19,  55 => 14,  41 => 2,  37 => 1,);
+        return array (  126 => 55,  122 => 54,  116 => 50,  104 => 46,  98 => 43,  91 => 38,  87 => 37,  74 => 26,  72 => 25,  63 => 19,  55 => 14,  41 => 2,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -203,7 +168,9 @@ class __TwigTemplate_588fed93ce1c0087a806e27b62c686cbd2a3c57a7686f4ff397ade5d7e9
         </div>
     </div>
 </div>
-{% set posts = blogPosts.posts %}
+
+{% set posts=post_all.posts %}
+
 
 
 <div class=\"container-fluid mb-5\" id=\"h_5\">
@@ -218,12 +185,10 @@ class __TwigTemplate_588fed93ce1c0087a806e27b62c686cbd2a3c57a7686f4ff397ade5d7e9
             <div class=\"col-md-6 mb-4\">
                 <div class=\"one-item\">
                     <div class=\"bg-dv\">
-                        {% for image in post.featured_images|slice(0, 1) %}
-                            {% if loop.index0 ==0 %}
+
                         <img class=\"lazy-img-src\" src=\"https://ik.imagekit.io/demo/img/image2.jpeg?tr=h-1:h-378\"
-                             data-src=\"{{image.path}}\" alt=\"\">
-                            {% endif %}
-                        {% endfor %}
+                             data-src=\"{{post.img_primary|media}}\" alt=\"\">
+
                     </div>
                     <h3><a href=\"{{ post.url }}\">{{ post.title }}</a></h3>
                 </div>

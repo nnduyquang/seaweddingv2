@@ -11,16 +11,10 @@ fields:
             type: slug
         type: text
     img_primary:
-        label: 'Hình Đại Điện'
+        label: 'Hình Đại Diện'
         mode: image
-        useCaption: true
-        thumbOptions:
-            mode: crop
-            extension: auto
         span: auto
-        imageWidth: '100'
-        imageHeight: '100'
-        type: fileupload
+        type: mediafinder
     description:
         label: 'Mô tả'
         size: small

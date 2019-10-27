@@ -1,5 +1,8 @@
 <?php 
-class Cms5daf322fedf80992376516_57f873efb49d37a962f839000f24c96bClass extends Cms\Classes\PageCode
+class Cms5db53b6b6d40b653415763_e86efd9a9e708b696cf8e4cb5cec964bClass extends Cms\Classes\PageCode
 {
-
+public function onStart()
+{
+$this->addJs('assets/js/album-detail.js');
+}
 }

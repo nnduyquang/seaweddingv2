@@ -21,3 +21,9 @@
 1.0.8:
     - 'Updated table quang_post_post_category'
     - builder_table_update_quang_post_post_category.php
+1.0.9:
+    - 'Updated table quang_post_'
+    - builder_table_update_quang_post__3.php
+1.0.10:
+    - 'Updated table quang_post_'
+    - builder_table_update_quang_post__4.php

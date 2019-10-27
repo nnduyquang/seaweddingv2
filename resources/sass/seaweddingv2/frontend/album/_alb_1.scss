@@ -1,0 +1,62 @@
+#alb_2 {
+  .post-item-wp{
+    padding: 0;
+    position: relative;
+    .entry-thumbnail img {
+      //height: 110px;
+      width: 100%
+    }
+    .entry-content{
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      text-align: center;
+      background-color: rgba(0, 0, 0,0.4);
+      margin: 0;
+      opacity: 0;
+      transition: all ease .5s;
+      transform: scale(0);
+      .content-inner{
+        a{
+          color: #fff;
+          line-height: 140%;
+          font-size: 14px;
+          padding: 5px;
+          color: #fff;
+          text-transform: capitalize;
+          line-height: 140%;
+          font-size: 18px;
+          text-align: center;
+          position: absolute;
+          top: 10px;
+          left: 10px;
+          right: 10px;
+          bottom: 10px;
+          margin: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 1px solid #fff;
+          padding: 5px;
+          &:hover{
+            color: #f9f9f9;
+          }
+        }
+      }
+    }
+    &:hover{
+      .entry-content {
+        transition: all ease .5s;
+        opacity: 1;
+        transform: scale(1)
+      }
+    }
+  }
+}

@@ -4,4 +4,33 @@ layout = "master"
 meta_title = "asd"
 meta_description = "asdasd"
 is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[posts_other]
+results = 0
+categories = "tin-tuc"
+identifierValue = "{{ :slug }}"
+categoryPage = "chi-tiet-tin-tuc"
+postPage = "chi-tiet-tin-tuc"
+
+[post_detail]
+results = 0
+identifierValue = "{{ :slug }}"
 ==
+{% set post=post_detail.post %}
+{% partial "title-page" title_page=post.title %}
+<div id="blo_d_1">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 p-0">
+                <div class="description">
+                    {{post.content|raw}}
+                </div>
+            </div>
+            <div class="col-md-3">
+                {% component 'posts_other' %}
+            </div>
+        </div>
+    </div>
+</div>
