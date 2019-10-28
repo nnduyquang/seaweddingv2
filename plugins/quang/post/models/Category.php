@@ -9,6 +9,7 @@ use Model;
 class Category extends Model
 {
     use \October\Rain\Database\Traits\Validation;
+    use \October\Rain\Database\Traits\NestedTree;
 
 
     /**
@@ -27,6 +28,16 @@ class Category extends Model
             'table'=>'quang_post_post_category',
         ]
     ];
+
+    public $hasMany=[
+        'children'=>[
+            'Quang\Post\Models\Category',
+            'table'=>'quang_post_category',
+            'key'=>'id',
+            'otherKey'=>'parent_id'
+        ]
+    ];
+
     public function setUrl($pageName, $controller, array $urlParams = array())
     {
         $params = [

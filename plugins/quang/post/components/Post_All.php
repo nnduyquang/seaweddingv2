@@ -26,7 +26,7 @@ class Post_All extends ComponentAbstract
             ],
             'categories' => [
                 'title' => 'Chọn loại bài viết',
-                'description' => 'Album hiển thị theo loại album',
+                'description' => 'Bài viết hiển thị theo loại danh mục',
                 'type' => 'dropdown'
 
             ],

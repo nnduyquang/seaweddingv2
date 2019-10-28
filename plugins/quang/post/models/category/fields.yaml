@@ -10,3 +10,8 @@ fields:
             field: category_title
             type: slug
         type: text
+    img_primary:
+        label: 'Hình đại diện (nếu cần thiết)'
+        span: auto
+        mode: image
+        type: mediafinder

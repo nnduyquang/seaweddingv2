@@ -1,0 +1,49 @@
+title = "Chi Tiết Bảng Giá"
+url = "/chi-tiet-bang-gia/:slug"
+layout = "master"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[categories_child]
+results = 0
+categories = "bang-gia"
+identifierValue = "{{ :slug }}"
+categoryPage = "chi-tiet-bang-gia"
+postPage = "chi-tiet-bang-gia"
+==
+{% set categories_child=categories_child.categoriesChild %}
+
+
+<div id="p-d">
+    <div class="container">
+        <div class="price-category">
+            <div class="row">
+                {% for category_child in categories_child%}
+                <div class="col-md-3 col-6 mt-2 mb-2">
+                    <a class="" href="{{category_child.url}}">
+                        <div class="border-round {% if category_child.is_active==1%} active {% endif %}">
+                            <div class="inner d-flex align-items-center">
+                                <img src="{{category_child.img_primary|media}}" alt="">
+                                <div class="nav-text"> {{category_child.category_title}}</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="price-detail">
+            <h2>Sea Wedding Studio Bảng Giá Và Gói Chụp</h2>
+            <hr>
+            <div class="info">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="" alt="">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

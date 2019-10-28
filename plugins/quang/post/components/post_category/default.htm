@@ -1,9 +1,0 @@
-{% set post_categories=__SELF__.postCategories %}
-<div class="sidebar-sea" id="sidebar_service">
-    <h3>Dịch vụ của chúng tôi</h3>
-    <ul>
-        {% for post_category in post_categories %}
-        <li><a href="{{post_category.url}}">{{post_category.title}}</a></li>
-        {% endfor %}
-    </ul>
-</div>

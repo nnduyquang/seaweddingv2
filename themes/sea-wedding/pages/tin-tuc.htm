@@ -14,17 +14,17 @@ sortOrder = "published_at desc"
 categoryPage = "chi-tiet-tin-tuc"
 postPage = "chi-tiet-tin-tuc"
 
-[post_categories]
-results = 0
-categories = "dich-vu"
-categoryPage = "chi-tiet-dich-vu"
-postPage = "chi-tiet-dich-vu"
-
 [post_all]
 results = 0
 categories = "tin-tuc"
 categoryPage = "chi-tiet-tin-tuc"
 postPage = "chi-tiet-tin-tuc"
+
+[post_all post_all_service]
+results = 0
+categories = "dich-vu"
+categoryPage = "chi-tiet-dich-vu"
+postPage = "chi-tiet-dich-vu"
 ==
 {% partial 'title-page' title_page='Cập nhật tin tức ngành cưới'%}
 <div id="blog1">
@@ -97,7 +97,16 @@ postPage = "chi-tiet-tin-tuc"
             </div>
             <div id="main-sidebar" class="col-md-3">
                 <div class="contain">
-                    {% component 'post_categories' %}
+                    {% set posts=post_all_service.posts %}
+
+                    <div class="sidebar-sea" id="sidebar_service">
+                        <h3>Dịch vụ của chúng tôi</h3>
+                        <ul>
+                            {% for post_category in posts %}
+                            <li><a href="{{post_category.url}}">{{post_category.title}}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

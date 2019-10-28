@@ -1158,3 +1158,41 @@
   padding: 15px;
   line-height: 1.5;
 }
+
+#p-d .price-category a .border-round.active {
+  border: 2px solid #24C5B4;
+}
+#p-d .price-category a .border-round.active .inner {
+  border: 1px solid #24C5B4;
+}
+#p-d .price-category a .border-round .inner {
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  transition: 0.2s ease;
+}
+#p-d .price-category a .border-round .inner img {
+  width: 40%;
+  max-width: 95px;
+}
+#p-d .price-category a .border-round .inner .nav-text {
+  margin-left: 15px;
+  text-transform: uppercase;
+  color: #555555;
+  letter-spacing: 2px;
+  font-weight: 600;
+  font-size: 12px;
+}
+#p-d .price-detail {
+  margin-top: 30px;
+}
+#p-d .price-detail h2 {
+  font-size: 18px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #555555;
+  margin-top: 0px;
+}
+#p-d .price-detail hr {
+  border-top: 1px solid #8c8b8b;
+}
