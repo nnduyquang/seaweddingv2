@@ -83,6 +83,48 @@ class __TwigTemplate_22968eef2cbf971389853621cc6e6e09d86f566099295afd4b770a5882a
         <div class=\"price-detail\">
             <h2>Sea Wedding Studio Bảng Giá Và Gói Chụp</h2>
             <hr>
+            <div class=\"info\">
+                <div class=\"row\">
+                    ";
+        // line 27
+        $context["categories_post"] = twig_get_attribute($this->env, $this->source, ($context["categories_post"] ?? null), "categoriesPost", [], "any", false, false, false, 27);
+        // line 28
+        echo "                    ";
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(($context["categories_post"] ?? null));
+        foreach ($context['_seq'] as $context["_key"] => $context["post"]) {
+            // line 29
+            echo "                    <div class=\"col-md-6 mb-3\">
+                        <div class=\"one-item\">
+                            <div class=\"img-main\">
+                                <img src=\"";
+            // line 32
+            echo $this->extensions['System\Twig\Extension']->mediaFilter(twig_get_attribute($this->env, $this->source, $context["post"], "img_primary", [], "any", false, false, false, 32));
+            echo "\" alt=\"\">
+                                <div class=\"title\">";
+            // line 33
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "title", [], "any", false, false, false, 33), "html", null, true);
+            echo " <span>";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "description", [], "any", false, false, false, 33), "html", null, true);
+            echo "</span></div>
+                            </div>
+                            <div class=\"description\">
+                                ";
+            // line 36
+            echo twig_get_attribute($this->env, $this->source, $context["post"], "content", [], "any", false, false, false, 36);
+            echo "
+                            </div>
+                        </div>
+
+                    </div>
+                    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['post'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 42
+        echo "                </div>
+            </div>
         </div>
     </div>
 </div>";
@@ -100,7 +142,7 @@ class __TwigTemplate_22968eef2cbf971389853621cc6e6e09d86f566099295afd4b770a5882a
 
     public function getDebugInfo()
     {
-        return array (  81 => 20,  69 => 14,  65 => 13,  58 => 11,  54 => 10,  51 => 9,  47 => 8,  39 => 2,  37 => 1,);
+        return array (  126 => 42,  114 => 36,  106 => 33,  102 => 32,  97 => 29,  92 => 28,  90 => 27,  81 => 20,  69 => 14,  65 => 13,  58 => 11,  54 => 10,  51 => 9,  47 => 8,  39 => 2,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -129,6 +171,25 @@ class __TwigTemplate_22968eef2cbf971389853621cc6e6e09d86f566099295afd4b770a5882a
         <div class=\"price-detail\">
             <h2>Sea Wedding Studio Bảng Giá Và Gói Chụp</h2>
             <hr>
+            <div class=\"info\">
+                <div class=\"row\">
+                    {% set categories_post=categories_post.categoriesPost %}
+                    {% for post in categories_post%}
+                    <div class=\"col-md-6 mb-3\">
+                        <div class=\"one-item\">
+                            <div class=\"img-main\">
+                                <img src=\"{{post.img_primary|media}}\" alt=\"\">
+                                <div class=\"title\">{{post.title}} <span>{{post.description}}</span></div>
+                            </div>
+                            <div class=\"description\">
+                                {{post.content|raw}}
+                            </div>
+                        </div>
+
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
         </div>
     </div>
 </div>", "C:\\xampp\\htdocs\\seaweddingv2/themes/sea-wedding/pages/chi-tiet-bang-gia.htm", "");

@@ -93,7 +93,6 @@ class Category_Child extends ComponentAbstract
             }else{
                 $item->is_active=0;
             }
-            $item->posts=$item->post()->get();
         }
         $blogPostComponent = $this->getComponent('blogPost', $this->postPage);
         $blogPostsComponent = $this->getComponent('blogPosts', $this->categoryPage);

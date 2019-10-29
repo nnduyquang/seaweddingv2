@@ -59,29 +59,30 @@ class __TwigTemplate_5eb3a6f0aabb603d401e14261dce295987c044f81beec05d7e06dbd8f2c
         echo "\">
     <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css\"
           integrity=\"sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO\" crossorigin=\"anonymous\">
+    <link href=\"https://fonts.googleapis.com/css?family=Roboto&display=swap\" rel=\"stylesheet\">
     <script src=\"https://kit.fontawesome.com/20005df3fc.js\" crossorigin=\"anonymous\"></script>
     <link href=\"";
-        // line 15
+        // line 16
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/css/reset.css");
         echo "\" rel=\"stylesheet\">
     <link href=\"";
-        // line 16
+        // line 17
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/css/common.css");
         echo "\" rel=\"stylesheet\">
     <link href=\"";
-        // line 17
+        // line 18
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/css/frontend.css");
         echo "\" rel=\"stylesheet\">
     <link href=\"";
-        // line 18
+        // line 19
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/css/core.common.css");
         echo "\" rel=\"stylesheet\">
 
     ";
-        // line 20
+        // line 21
         echo $this->env->getExtension('Cms\Twig\Extension')->assetsFunction('css');
         echo $this->env->getExtension('Cms\Twig\Extension')->displayBlock('styles');
-        // line 21
+        // line 22
         echo "</head>
 <body>
 
@@ -93,25 +94,25 @@ class __TwigTemplate_5eb3a6f0aabb603d401e14261dce295987c044f81beec05d7e06dbd8f2c
                 <div class=\"header-inner\">
                     <div class=\"logo\">
                         <a href=\"#\"> <img class=\"logo-smartlinks\" src=\"";
-        // line 31
+        // line 32
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/images/logo/logo_white.png");
         echo "\" alt=\"\"></a>
                     </div>
                     <div class=\"items-left\">
                         ";
-        // line 34
+        // line 35
         $context['__cms_component_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->componentFunction("menu_left"        , $context['__cms_component_params']        );
         unset($context['__cms_component_params']);
-        // line 35
+        // line 36
         echo "                    </div>
                     <div class=\"items-right\">
                         ";
-        // line 37
+        // line 38
         $context['__cms_component_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->componentFunction("menu_right"        , $context['__cms_component_params']        );
         unset($context['__cms_component_params']);
-        // line 38
+        // line 39
         echo "                    </div>
                 </div>
             </div>
@@ -122,9 +123,9 @@ class __TwigTemplate_5eb3a6f0aabb603d401e14261dce295987c044f81beec05d7e06dbd8f2c
 <!-- Content -->
 <section id=\"layout-content\">
     ";
-        // line 47
-        echo $this->env->getExtension('Cms\Twig\Extension')->pageFunction();
         // line 48
+        echo $this->env->getExtension('Cms\Twig\Extension')->pageFunction();
+        // line 49
         echo "</section>
 
 <!-- Footer -->
@@ -141,19 +142,19 @@ class __TwigTemplate_5eb3a6f0aabb603d401e14261dce295987c044f81beec05d7e06dbd8f2c
         integrity=\"sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy\"
         crossorigin=\"anonymous\"></script>
 <!--<script src=\"";
-        // line 63
+        // line 64
         echo "assets/js/app.js|theme";
         echo "\"></script>-->
 <script src=\"";
-        // line 64
+        // line 65
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/js/common.js");
         echo "\"></script>
 <script src=\"";
-        // line 65
+        // line 66
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/js/core.common.js");
         echo "\"></script>
 ";
-        // line 66
+        // line 67
         $_minify = System\Classes\CombineAssets::instance()->useMinify;
         if ($_minify) {
             echo '<script src="' . Request::getBasePath() . '/modules/system/assets/js/framework.combined-min.js"></script>'.PHP_EOL;
@@ -164,10 +165,10 @@ class __TwigTemplate_5eb3a6f0aabb603d401e14261dce295987c044f81beec05d7e06dbd8f2c
         }
         echo '<link rel="stylesheet" property="stylesheet" href="' . Request::getBasePath() .'/modules/system/assets/css/framework.extras'.($_minify ? '-min' : '').'.css">'.PHP_EOL;
         unset($_minify);
-        // line 67
+        // line 68
         echo $this->env->getExtension('Cms\Twig\Extension')->assetsFunction('js');
         echo $this->env->getExtension('Cms\Twig\Extension')->displayBlock('scripts');
-        // line 68
+        // line 69
         echo "
 </body>
 </html>";
@@ -185,7 +186,7 @@ class __TwigTemplate_5eb3a6f0aabb603d401e14261dce295987c044f81beec05d7e06dbd8f2c
 
     public function getDebugInfo()
     {
-        return array (  171 => 68,  168 => 67,  157 => 66,  153 => 65,  149 => 64,  145 => 63,  128 => 48,  126 => 47,  115 => 38,  111 => 37,  107 => 35,  103 => 34,  97 => 31,  85 => 21,  82 => 20,  77 => 18,  73 => 17,  69 => 16,  65 => 15,  58 => 11,  51 => 7,  47 => 6,  43 => 5,  37 => 1,);
+        return array (  172 => 69,  169 => 68,  158 => 67,  154 => 66,  150 => 65,  146 => 64,  129 => 49,  127 => 48,  116 => 39,  112 => 38,  108 => 36,  104 => 35,  98 => 32,  86 => 22,  83 => 21,  78 => 19,  74 => 18,  70 => 17,  66 => 16,  58 => 11,  51 => 7,  47 => 6,  43 => 5,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -203,6 +204,7 @@ class __TwigTemplate_5eb3a6f0aabb603d401e14261dce295987c044f81beec05d7e06dbd8f2c
     <link rel=\"icon\" type=\"image/png\" href=\"{{ 'assets/images/october.png'|theme }}\">
     <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css\"
           integrity=\"sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO\" crossorigin=\"anonymous\">
+    <link href=\"https://fonts.googleapis.com/css?family=Roboto&display=swap\" rel=\"stylesheet\">
     <script src=\"https://kit.fontawesome.com/20005df3fc.js\" crossorigin=\"anonymous\"></script>
     <link href=\"{{ 'assets/css/reset.css'|theme }}\" rel=\"stylesheet\">
     <link href=\"{{ 'assets/css/common.css'|theme }}\" rel=\"stylesheet\">

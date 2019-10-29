@@ -9,8 +9,8 @@ class Post_All extends ComponentAbstract
     public function componentDetails()
     {
         return [
-            'name' => 'Bài Viết Theo Danh Mục',
-            'description' => 'Bài Viết Theo Danh Mục'
+            'name' => 'Bài Viết Theo Danh Mục Định Sẵn',
+            'description' => 'Bài Viết Theo Danh Mục Định Sẵn'
         ];
     }
 

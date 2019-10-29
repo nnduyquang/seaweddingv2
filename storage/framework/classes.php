@@ -140,4 +140,5 @@
   'Quang\\Post\\Components\\Post_Detail' => 'plugins\\quang\\post\\components\\Post_Detail.php',
   'Quang\\Post\\Components\\Post_All' => 'plugins\\quang\\post\\components\\Post_All.php',
   'Quang\\Post\\Components\\Category_Child' => 'plugins\\quang\\post\\components\\Category_Child.php',
+  'Quang\\Post\\Components\\Category_Post' => 'plugins\\quang\\post\\components\\Category_Post.php',
 );

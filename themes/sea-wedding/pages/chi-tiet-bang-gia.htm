@@ -11,6 +11,10 @@ categories = "bang-gia"
 identifierValue = "{{ :slug }}"
 categoryPage = "chi-tiet-bang-gia"
 postPage = "chi-tiet-bang-gia"
+
+[categories_post]
+results = 0
+identifierValue = "{{ :slug }}"
 ==
 {% set categories_child=categories_child.categoriesChild %}
 
@@ -38,10 +42,21 @@ postPage = "chi-tiet-bang-gia"
             <hr>
             <div class="info">
                 <div class="row">
-                    <div class="col-md-6">
-                        <img src="" alt="">
-                        
+                    {% set categories_post=categories_post.categoriesPost %}
+                    {% for post in categories_post%}
+                    <div class="col-md-6 mb-3">
+                        <div class="one-item">
+                            <div class="img-main">
+                                <img src="{{post.img_primary|media}}" alt="">
+                                <div class="title">{{post.title}} <span>{{post.description}}</span></div>
+                            </div>
+                            <div class="description">
+                                {{post.content|raw}}
+                            </div>
+                        </div>
+
                     </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>

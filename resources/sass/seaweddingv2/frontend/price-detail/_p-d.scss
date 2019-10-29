@@ -2,20 +2,20 @@
   .price-category {
     a {
       .border-round {
-        &.active{
+        &.active {
           border: 2px solid #24C5B4;
-          .inner{
+          .inner {
             border: 1px solid #24C5B4;
           }
         }
         .inner {
-          box-shadow: 0px 2px 4px rgba(0,0,0,0.1);
+          box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
           transition: 0.2s ease;
-          img{
+          img {
             width: 40%;
             max-width: 95px;
           }
-          .nav-text{
+          .nav-text {
             margin-left: 15px;
             text-transform: uppercase;
             color: #555555;
@@ -27,9 +27,9 @@
       }
     }
   }
-  .price-detail{
+  .price-detail {
     margin-top: 30px;
-    h2{
+    h2 {
       font-size: 18px;
       letter-spacing: 1.5px;
       text-transform: uppercase;
@@ -38,8 +38,72 @@
       color: #555555;
       margin-top: 0px;
     }
-    hr{
+    hr {
       border-top: 1px solid #8c8b8b;
+    }
+    .info {
+      .one-item {
+        background-color: #EBE9EA;
+        padding-bottom: 20px;
+        height: 100%;
+        transition: all 0.2s;
+        &:hover{
+          box-shadow: -1px 4px 8px 4px #d0d0d0;
+        }
+        .img-main {
+          position: relative;
+          img{
+            width: 100%;
+          }
+          .title {
+            position: absolute;
+            width: 80%;
+            left: 50%;
+            transform: translate(-50%, -58%);
+            font-size: 28px;
+            text-align: center;
+            text-shadow: 2px 2px 8px #0014ff;
+            color: #ffffff;
+            display: block;
+            background-color: #0296d69e;
+            padding: 6px;
+            line-height: 1.3;
+            box-shadow: -1px 4px 8px 0px #d0d0d0;
+            text-transform: uppercase;
+            span{
+              display: block;
+              font-size: 28px;
+              display: block;
+              position: relative;
+              &:before{
+                content: "";
+                display: block;
+                width: 65px;
+                height: 2px;
+                background-color: white;
+                position: absolute;
+                left: 10%;
+                top: 50%;
+              }
+              &:after{
+                content: "";
+                display: block;
+                width: 65px;
+                height: 2px;
+                background-color: white;
+                position: absolute;
+                right: 10%;
+                top: 50%;
+              }
+            }
+          }
+        }
+        .description{
+          margin-top: 80px;
+          color: #3c3c3b;
+          padding: 0 50px;
+        }
+      }
     }
   }
 }
