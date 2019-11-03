@@ -250,11 +250,32 @@ class __TwigTemplate_fa3b42796718a4e53ce72072cc0fc2742b61bc3a6c24a72c957c0cef117
                 <div class=\"contain\">
                     ";
         // line 72
-        $context['__cms_component_params'] = [];
-        echo $this->env->getExtension('Cms\Twig\Extension')->componentFunction("post_categories"        , $context['__cms_component_params']        );
-        unset($context['__cms_component_params']);
+        $context["posts"] = twig_get_attribute($this->env, $this->source, ($context["post_all_service"] ?? null), "posts", [], "any", false, false, false, 72);
         // line 73
-        echo "                </div>
+        echo "
+                    <div class=\"sidebar-sea\" id=\"sidebar_service\">
+                        <h3>Dịch vụ của chúng tôi</h3>
+                        <ul>
+                            ";
+        // line 77
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(($context["posts"] ?? null));
+        foreach ($context['_seq'] as $context["_key"] => $context["post_category"]) {
+            // line 78
+            echo "                            <li><a href=\"";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post_category"], "url", [], "any", false, false, false, 78), "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post_category"], "title", [], "any", false, false, false, 78), "html", null, true);
+            echo "</a></li>
+                            ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['post_category'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 80
+        echo "                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -273,7 +294,7 @@ class __TwigTemplate_fa3b42796718a4e53ce72072cc0fc2742b61bc3a6c24a72c957c0cef117
 
     public function getDebugInfo()
     {
-        return array (  257 => 73,  253 => 72,  247 => 68,  243 => 66,  239 => 64,  225 => 63,  217 => 58,  211 => 55,  204 => 53,  197 => 49,  191 => 46,  188 => 45,  185 => 44,  168 => 43,  164 => 41,  150 => 40,  141 => 36,  132 => 30,  126 => 27,  122 => 25,  119 => 24,  102 => 23,  98 => 21,  91 => 20,  88 => 19,  86 => 18,  82 => 17,  76 => 16,  71 => 14,  68 => 13,  65 => 12,  60 => 11,  57 => 10,  54 => 9,  51 => 8,  49 => 7,  42 => 2,  37 => 1,);
+        return array (  276 => 80,  265 => 78,  261 => 77,  255 => 73,  253 => 72,  247 => 68,  243 => 66,  239 => 64,  225 => 63,  217 => 58,  211 => 55,  204 => 53,  197 => 49,  191 => 46,  188 => 45,  185 => 44,  168 => 43,  164 => 41,  150 => 40,  141 => 36,  132 => 30,  126 => 27,  122 => 25,  119 => 24,  102 => 23,  98 => 21,  91 => 20,  88 => 19,  86 => 18,  82 => 17,  76 => 16,  71 => 14,  68 => 13,  65 => 12,  60 => 11,  57 => 10,  54 => 9,  51 => 8,  49 => 7,  42 => 2,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -349,7 +370,16 @@ class __TwigTemplate_fa3b42796718a4e53ce72072cc0fc2742b61bc3a6c24a72c957c0cef117
             </div>
             <div id=\"main-sidebar\" class=\"col-md-3\">
                 <div class=\"contain\">
-                    {% component 'post_categories' %}
+                    {% set posts=post_all_service.posts %}
+
+                    <div class=\"sidebar-sea\" id=\"sidebar_service\">
+                        <h3>Dịch vụ của chúng tôi</h3>
+                        <ul>
+                            {% for post_category in posts %}
+                            <li><a href=\"{{post_category.url}}\">{{post_category.title}}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

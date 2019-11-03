@@ -3,6 +3,8 @@ menu_id = 1
 
 [menu menu_right]
 menu_id = 3
+
+[config_script_body]
 ==
 <!DOCTYPE html>
 <html>
@@ -58,6 +60,7 @@ menu_id = 3
 <footer id="layout-footer">
 
 </footer>
+{% partial "footer" %}
 
 <!-- Scripts -->
 <script
@@ -72,6 +75,7 @@ menu_id = 3
 <script src="{{ 'assets/js/core.common.js'|theme }}"></script>
 {% framework extras %}
 {% scripts %}
-
+{% set config_script_body=config_script_body.configScriptBody %}
+{{config_script_body|raw}}
 </body>
 </html>

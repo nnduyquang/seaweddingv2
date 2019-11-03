@@ -12,6 +12,7 @@ class Plugin extends PluginBase
             'Quang\Post\Components\Post_All' => 'post_all',
             'Quang\Post\Components\Category_Child' => 'categories_child',
             'Quang\Post\Components\Category_Post' => 'categories_post',
+            'Quang\Post\Components\Category_Detail' => 'category_detail',
         ];
     }
 

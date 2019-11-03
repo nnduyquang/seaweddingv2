@@ -15,3 +15,15 @@ fields:
         span: auto
         mode: image
         type: mediafinder
+    photos:
+        label: 'Danh sách hình Category (nếu cần thiết)'
+        prompt: 'Thềm hình'
+        span: full
+        type: repeater
+        form:
+            fields:
+                photo_path:
+                    label: 'Media finder'
+                    mode: image
+                    span: full
+                    type: mediafinder

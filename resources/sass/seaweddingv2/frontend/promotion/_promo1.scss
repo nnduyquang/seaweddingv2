@@ -1,0 +1,48 @@
+#promo1 {
+  .one-item {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+    .info {
+      h6 {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-top: 25px;
+        margin-bottom: 12.5px;
+        font-size: 3rem;
+        font-weight: 500;
+        color: #21b6ff;
+        position: relative;
+        a {
+          color: $main-color;
+        }
+        p {
+          line-height: 24px;
+          padding-bottom: 5px;
+        }
+        &:after {
+          content: '';
+          width: 200px;
+          height: 2px;
+          position: absolute;
+          background-color: $main-color;
+          bottom: 0;
+          left: 0;
+        }
+        + span {
+          padding: 20px 0;
+          display: block;
+        }
+      }
+      .content {
+        line-height: 1.5;
+        color: #6b758a;
+        + a {
+          font-size: 18px;
+          text-transform: capitalize;
+          display: block;
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+}

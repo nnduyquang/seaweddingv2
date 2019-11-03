@@ -4,4 +4,36 @@ layout = "master"
 is_hidden = 0
 robot_index = "index"
 robot_follow = "follow"
+
+[post_all]
+results = 0
+categories = "dich-vu"
+categoryPage = "chi-tiet-dich-vu"
+postPage = "chi-tiet-dich-vu"
 ==
+{% partial 'title-page' title_page='Dịch vụ'%}
+{% set posts=post_all.posts %}
+
+<div id="ser1">
+    <div class="container">
+        <div class="content">
+            <div class="row">
+                {% for post in posts %}
+                <div class="col-md-6">
+                    <div class="one-item lazy-background-img" style="background-image:url({{post.img_primary|media}});">
+                        <div class="info">
+                            <h3><a href="">{{post.title}}</a></h3>
+                            <hr>
+                            <div class="description">
+                                {{ post.description }}
+                            </div>
+                            <div class="button"><a href="{{post.url}}">Xem thêm</a></div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -8,7 +8,7 @@ use Model;
 class Category extends Model
 {
     use \October\Rain\Database\Traits\Validation;
-    
+
 
     /**
      * @var string The database table used by the model.
@@ -20,6 +20,7 @@ class Category extends Model
      */
     public $rules = [
     ];
+
     public $belongsToMany = [
         'album' => [
             'Quang\Album\Models\Album',

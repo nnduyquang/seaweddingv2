@@ -19,41 +19,7 @@
     line-height: 1.5;
     padding: 20px 0;
   }
-  .album {
-    .grid-sizer, .grid-item {
-      width: 33.333%;
-    }
-    .grid-item {
-      float: left;
-      a.fancybox {
-        &:focus {
-          outline: none;
-        }
-        .wrapper {
-          position: relative;
-          > .inner {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            img {
-              display: block;
-              width: 100%;
-              padding: 10px;
-              border-radius: 20px;
-              transition: all 0.2s;
-              &:hover {
-                box-shadow: 0 10px 30px 0 rgba(58, 87, 135, 0.58);
-                padding: 0px;
-              }
-            }
-          }
-        }
 
-      }
-    }
-  }
   .other {
     padding: 60px 0;
     h4 {

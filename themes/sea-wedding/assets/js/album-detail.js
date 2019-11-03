@@ -1,5 +1,5 @@
 var pluginAlbum = {
-    gridCollection: $('#alb_d_1 .album .grid-album'),
+    gridCollection: $('.grid-album'),
 };
 $(document).ready(function () {
     function runGridCollection() {

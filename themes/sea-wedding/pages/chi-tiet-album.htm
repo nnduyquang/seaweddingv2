@@ -45,9 +45,6 @@ $this->addJs('assets/js/album-detail.js');
                     {% for photo in record.photos %}
                     {% set source = photo.photo_path|media %}
                     {% set ratio= (image_height(source)/image_width(source))*100 %}
-
-                    <!--{{source}} - {{ratio}}-->
-                    <!--{{image_width(source)}} -   {{image_height(source)}}-->
                     <div class="grid-item">
                         <a class="fancybox" data-fancybox="gallery"
                            href="{{source}}">

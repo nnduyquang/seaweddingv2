@@ -119,10 +119,57 @@ class __TwigTemplate_588fed93ce1c0087a806e27b62c686cbd2a3c57a7686f4ff397ade5d7e9
 </div>
 ";
         // line 54
-        $context['__cms_component_params'] = [];
-        echo $this->env->getExtension('Cms\Twig\Extension')->componentFunction("posts"        , $context['__cms_component_params']        );
-        unset($context['__cms_component_params']);
+        $context["posts"] = twig_get_attribute($this->env, $this->source, ($context["post_all_service"] ?? null), "posts", [], "any", false, false, false, 54);
         // line 55
+        echo "
+<div id=\"h_3\" class=\"pl-lg-5 pr-lg-5 pl-3 pr-3\">
+    <div class=\"row pl-lg-5 pr-lg-5 pl-3 pr-3\">
+        <div class=\"col-12 title\">
+            <h2>DỊCH VỤ CỦA CHÚNG TÔI</h2>
+            <p></p>
+        </div>
+        ";
+        // line 62
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(($context["posts"] ?? null));
+        foreach ($context['_seq'] as $context["_key"] => $context["post"]) {
+            // line 63
+            echo "        <div class=\"col-md-4 mb-3\">
+            <a href=\"";
+            // line 64
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "url", [], "any", false, false, false, 64), "html", null, true);
+            echo "\">
+                <div class=\"sv_banner\" style=\"background-image:url(";
+            // line 65
+            echo $this->extensions['System\Twig\Extension']->mediaFilter(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["post"], "img_primary", [], "any", false, false, false, 65), "path", [], "any", false, false, false, 65));
+            echo ");\">
+                    <div class=\"border-top-bot\"></div>
+                    <div class=\"sv_content\">
+                        <h5>";
+            // line 68
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "title", [], "any", false, false, false, 68), "html", null, true);
+            echo "</h5>
+                        <div class=\"info pt-3\">
+                            <p>";
+            // line 70
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "description", [], "any", false, false, false, 70), "html", null, true);
+            echo "</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['post'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 77
+        echo "    </div>
+
+</div>
+";
+        // line 80
         $context['__cms_component_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->componentFunction("albums"        , $context['__cms_component_params']        );
         unset($context['__cms_component_params']);
@@ -140,7 +187,7 @@ class __TwigTemplate_588fed93ce1c0087a806e27b62c686cbd2a3c57a7686f4ff397ade5d7e9
 
     public function getDebugInfo()
     {
-        return array (  126 => 55,  122 => 54,  116 => 50,  104 => 46,  98 => 43,  91 => 38,  87 => 37,  74 => 26,  72 => 25,  63 => 19,  55 => 14,  41 => 2,  37 => 1,);
+        return array (  173 => 80,  168 => 77,  155 => 70,  150 => 68,  144 => 65,  140 => 64,  137 => 63,  133 => 62,  124 => 55,  122 => 54,  116 => 50,  104 => 46,  98 => 43,  91 => 38,  87 => 37,  74 => 26,  72 => 25,  63 => 19,  55 => 14,  41 => 2,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -198,7 +245,32 @@ class __TwigTemplate_588fed93ce1c0087a806e27b62c686cbd2a3c57a7686f4ff397ade5d7e9
         </div>
     </div>
 </div>
-{% component 'posts' %}
+{% set posts=post_all_service.posts %}
+
+<div id=\"h_3\" class=\"pl-lg-5 pr-lg-5 pl-3 pr-3\">
+    <div class=\"row pl-lg-5 pr-lg-5 pl-3 pr-3\">
+        <div class=\"col-12 title\">
+            <h2>DỊCH VỤ CỦA CHÚNG TÔI</h2>
+            <p></p>
+        </div>
+        {% for post in posts %}
+        <div class=\"col-md-4 mb-3\">
+            <a href=\"{{ post.url }}\">
+                <div class=\"sv_banner\" style=\"background-image:url({{post.img_primary.path|media}});\">
+                    <div class=\"border-top-bot\"></div>
+                    <div class=\"sv_content\">
+                        <h5>{{ post.title }}</h5>
+                        <div class=\"info pt-3\">
+                            <p>{{ post.description }}</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
 {% component 'albums' %}", "E:\\xampp\\htdocs\\seaweddingv2/themes/sea-wedding/pages/home.htm", "");
     }
 }

@@ -106,4 +106,65 @@
       }
     }
   }
+  .price-photos{
+    h3 {
+      font-size: 18px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: #555555;
+      margin-top: 0px;
+    }
+    hr {
+      border-top: 1px solid #8c8b8b;
+    }
+  }
+  .price-plus{
+    margin-top: 20px;
+    thead{
+      tr{
+        th{
+          font-size: 18px;
+          letter-spacing: 1.5px;
+          text-transform: uppercase;
+          font-weight: 600;
+          margin-bottom: 20px;
+          color: #555555;
+          margin-top: 0px;
+        }
+      }
+    }
+    tbody {
+      tr {
+        td:nth-child(2) {
+          text-align: right;
+        }
+      }
+    }
+    #location-price {
+      h4{
+        line-height: 1.5;
+        color: $main-color;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+      h5{
+        line-height: 1.5;
+        text-transform: uppercase;
+        color: $main-color;
+        font-weight: bold;
+        padding: 20px 0;
+      }
+      p {
+        line-height: 1.5;
+      }
+      ul {
+        margin-left: 20px;
+        li {
+          line-height: 1.5;
+        }
+      }
+    }
+  }
 }

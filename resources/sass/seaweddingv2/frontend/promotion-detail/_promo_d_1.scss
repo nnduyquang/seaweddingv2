@@ -1,0 +1,631 @@
+#promo_d_1 {
+  .description {
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.1);
+    margin: 20px 0;
+    padding: 15px;
+    line-height: 1.5;
+    .block-01 {
+      padding-top: 40px;
+      .c-gallery {
+        width: 100%;
+      }
+      .c-gallery__item {
+        float: left;
+        width: 20%;
+        overflow: hidden;
+      }
+      .c-gallery__item img {
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+      @media only screen and (max-width: 575.98px) {
+        .c-gallery__item {
+          float: left;
+          width: 50%;
+          overflow: hidden;
+        }
+      }
+      @media only screen and (min-width: 720px) {
+        .c-gallery .c-gallery__item img {
+          transform-style: preserve-3d;
+          backface-visibility: hidden;
+          transition-duration: 0.5s;
+          transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+          transition-property: transform, opacity;
+        }
+        .c-gallery .c-gallery__item:hover img {
+          opacity: 0.75;
+          transform: scale(1.15);
+        }
+      }
+
+    }
+    .block-01 {
+      .c-headline {
+        z-index: 1;
+        position: relative;
+        width: 100%;
+        text-align: center;
+      }
+      .c-headline span {
+        vertical-align: middle;
+        z-index: 10;
+        position: relative;
+        display: inline-block;
+        color: #333333;
+        padding: 0 18px;
+        background: #fff;
+        //font-family: 'Muli', "Century Gothic", "Carme", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro", sans-serif;
+        font-weight: 200;
+        font-style: normal;
+        font-size: 28px;
+        line-height: 1.2;
+      }
+      .c-headline:after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        height: 1px;
+        background: #c8c8c8;
+      }
+
+      .c-headline--serif span {
+        color: #333333;
+        //font-family: 'Merriweather', 'YuMincho', YuMincho, '游明朝', serif;
+        font-style: italic;
+        font-size: 22px;
+        font-weight: bold;
+      }
+
+      .p-plan-details-costume {
+        position: relative;
+        background: #f3f3f3;
+        padding: 20px;
+      }
+      .p-plan-details-costume__item {
+        float: left;
+        display: table;
+        width: 50%;
+      }
+      .p-plan-details-costume__item__icon {
+        display: table-cell;
+        width: 50px;
+        padding: 0 20px 0 0;
+        vertical-align: middle;
+      }
+      .p-plan-details-costume__item__icon img {
+        display: block;
+      }
+      .p-plan-details-costume__item__text {
+        display: table-cell;
+        color: #333333;
+        //font-family: 'Muli', "Century Gothic", "Carme", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro", sans-serif;
+        font-weight: 200;
+        font-style: normal;
+        font-size: 22px;
+        line-height: 1.4;
+        vertical-align: middle;
+      }
+      .p-plan-details-costume__item:first-child .p-plan-details-costume__item__text {
+        padding-right: 20px;
+      }
+      .p-plan-details-costume__attrs {
+        margin: 15px 0 0;
+        text-align: center;
+      }
+      .p-plan-details-costume__attrs--small-margin {
+        margin: 5px 0 0;
+        text-align: center;
+      }
+      .p-plan-details-costume__attr {
+        position: relative;
+        display: inline-block;
+        margin: 0 30px 0 16px;
+        color: #333333;
+        //font-family: 'Muli', "Century Gothic", "Carme", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro", sans-serif;
+        font-weight: 200;
+        font-style: normal;
+        font-size: 13px;
+      }
+      .p-plan-details-costume__attr:before {
+        position: absolute;
+        top: 3px;
+        left: -16px;
+        content: "";
+        display: block;
+        width: 8px;
+        height: 8px;
+        border-radius: 4px;
+        background: #bdbdbd;
+      }
+      .p-plan-details-costume__notice {
+        color: #c30d23;
+        //font-family: 'Muli', "Century Gothic", "Carme", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro", sans-serif;
+        font-weight: 200;
+        font-style: normal;
+        font-size: 22px;
+        text-align: center;
+      }
+
+      .p-plan-details-list {
+        margin: 15px 0 0;
+        padding: 0 20px;
+      }
+      .p-plan-details-list__item {
+        display: table;
+        width: 100%;
+        border-top: 1px dashed #e3e3e3;
+        padding: 18px 0;
+      }
+      .p-plan-details-list__item:first-child {
+        border: none;
+      }
+      .p-plan-details-list__item__icon {
+        display: table-cell;
+        width: 50px;
+        padding: 0 20px 0 0;
+        vertical-align: middle;
+      }
+      .p-plan-details-list__item__icon img {
+        display: block;
+      }
+      .p-plan-details-list__item__text {
+        display: table-cell;
+        vertical-align: middle;
+        color: #333333;
+        margin: 3px 0 0 20px;
+        //font-family: 'Muli', "Century Gothic", "Carme", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro", sans-serif;
+        font-weight: 200;
+        font-style: normal;
+        font-size: 26px;
+        line-height: 1.4;
+      }
+      .p-plan-details-list__item ul {
+        list-style: none;
+        li {
+          float: left;
+          width: 50%;
+        }
+      }
+      .p-plan-details-list__item ul li:first-child {
+        padding-right: 20px;
+      }
+
+      .p-plan-details {
+        //margin: 70px 0 0;
+      }
+      .p-plan-details__box {
+        width: 80.0332778702%;
+        margin: 0 auto;
+      }
+
+      .p-plan-included-services {
+        display: table;
+        width: 100%;
+        margin: 50px 0 0;
+      }
+      .p-plan-included-services__title {
+        font-size: 22px;
+        //font-family: 'Muli', "Century Gothic", "Carme", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro", sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        text-align: center;
+      }
+      .p-plan-included-services__title:after {
+        content: "";
+        display: block;
+        width: 20px;
+        height: 1px;
+        margin: 10px auto 20px;
+        background: #c8c8c8;
+      }
+      .p-plan-included-services__items {
+        display: table;
+        width: 100%;
+        margin: 30px 0 0;
+      }
+      .p-plan-included-services__item {
+        float: left;
+        display: table-cell;
+        width: 50%;
+        margin: 30px 0 0;
+      }
+      .p-plan-included-services__item:nth-child(1) {
+        margin: 0;
+        padding-right: 10px;
+      }
+      .p-plan-included-services__item:nth-child(2) {
+        margin: 0;
+      }
+      .p-plan-included-services__notice {
+        margin: 30px 0 0;
+        color: #c30d23;
+        //font-family: 'Muli', "Century Gothic", "Carme", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro", sans-serif;
+        font-weight: 200;
+        font-style: normal;
+        font-size: 15px;
+      }
+      .p-plan-included-services__notice strong {
+        font-weight: bold;
+      }
+
+      .p-plan-included-service {
+        width: 50%;
+      }
+      .p-plan-included-service__icon {
+        width: 50px;
+        display: table-cell;
+        vertical-align: middle;
+      }
+      .p-plan-included-service__icon img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+      .p-plan-included-service__text {
+        padding: 0 0 0 20px;
+        display: table-cell;
+        vertical-align: middle;
+        color: #333333;
+        //font-family: 'Muli', "Century Gothic", "Carme", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro", sans-serif;
+        font-weight: 200;
+        font-style: normal;
+        font-size: 22px;
+        line-height: 1.3;
+      }
+      .p-plan-included-service__text small, .p-plan-included-service__text em {
+        display: block;
+        font-size: 15px;
+      }
+      .p-plan-included-service__text strong {
+        display: block;
+        color: #c30d23;
+        font-size: 15px;
+      }
+      .p-plan-gift-services {
+        margin: 20px 0 0 0;
+        //font-family: 'Muli', "Century Gothic", "Carme", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro", sans-serif;
+        ul {
+          list-style: none;
+          li {
+            line-height: 1.5;
+            font-size: 22px;
+            position: relative;
+            padding: 0 0 0 20px;
+            &:before{
+              position: absolute;
+              content: "\f06b";
+              font-family: 'Font Awesome 5 Free';
+              font-weight: 900;
+              color: red;
+              left:-5px;
+            }
+          }
+        }
+      }
+
+      .p-plan-related {
+        margin: 75px 0 0;
+      }
+      .p-plan-related__plans {
+        margin: 30px 0 0;
+      }
+
+      .p-plans-wrap {
+        margin: 60px 0 0;
+      }
+
+      .p-plans.is-more {
+        opacity: 0;
+        transform-style: preserve-3d;
+        backface-visibility: hidden;
+        transition-property: transform, opacity;
+        transition-duration: 0.5s;
+        transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+        transform: translate(0, 100px);
+      }
+      .p-plans.is-more.is-show {
+        opacity: 1;
+        transform: translate(0, 0);
+      }
+
+      .p-plans--top {
+        margin: 60px 0 0;
+      }
+
+      .p-plans--top-small {
+        margin: 30px 0 0;
+      }
+
+      .p-plan {
+        display: block;
+        position: relative;
+      }
+      @media only screen and (min-width: 720px) {
+        .p-plan .p-plan__photo img {
+          -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+          backface-visibility: hidden;
+          transition-duration: 0.5s;
+          transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+          transition-property: transform;
+        }
+        .p-plan:hover .p-plan__photo img {
+          transform: scale(1.15);
+        }
+      }
+      @media only screen and (max-width: 575.98px) {
+        .p-plan-details-list__item ul li {
+          width: 100%;
+        }
+        .p-plan-details-list__item__text {
+          font-size: 22px;
+        }
+        .p-plan-details-list__item ul li:first-child {
+          margin-bottom: 20px;
+        }
+        .p-plan-details-costume__item {
+          width: 100%;
+        }
+        .p-plan-details-costume__item__text {
+          font-size: 16px;
+        }
+        .p-plan-details-costume__attr {
+          padding-bottom: 10px;
+          &:before {
+            top: 3px;
+          }
+        }
+        .p-plan-included-service {
+          width: 100%;
+          padding-bottom: 20px;
+        }
+      }
+      @media only screen and (min-width: 720px) {
+        .p-plan .c-btn {
+          transform-style: preserve-3d;
+          backface-visibility: hidden;
+          transition-property: opacity;
+          transition-duration: 0.5s;
+          transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        .p-plan:hover .c-btn {
+          opacity: 0.75;
+        }
+      }
+      @media only screen and (min-width: 720px) {
+        .p-plan:hover .p-plan__box:after, .p-plan:hover .p-plan__box:before {
+          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.375);
+        }
+        .p-plan:hover .p-plan__box:before {
+          left: 3px;
+        }
+        .p-plan:hover .p-plan__box:after {
+          right: 3px;
+        }
+      }
+      .p-plan__photo {
+        position: relative;
+        z-index: 10;
+      }
+      .p-plan__photo__content {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+      .p-plan__photo__content img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+      .p-plan__photo:after {
+        display: block;
+        padding-top: 63.1578947368%;
+        content: ' ';
+      }
+      .p-plan__box {
+        position: relative;
+        z-index: 30;
+        width: 89.4736842105%;
+        margin: -20px auto 0;
+      }
+      .p-plan__box:after, .p-plan__box:before {
+        display: block;
+        position: absolute;
+        top: 3px;
+        width: 50%;
+        height: 50px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);
+        content: ' ';
+        transform-style: preserve-3d;
+        backface-visibility: hidden;
+        transition-duration: 0.5s;
+        transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+      }
+      .p-plan__box:before {
+        left: 5px;
+        transform: rotate(-3deg);
+      }
+      .p-plan__box:after {
+        right: 5px;
+        transform: rotate(3deg);
+      }
+      .p-plan__box__inner {
+        position: relative;
+        padding: 28px 28px 0;
+        background: #fff;
+        box-sizing: border-box;
+        z-index: 40;
+      }
+      .p-plan__box__title {
+        color: #000;
+        font-size: 17px;
+        text-align: center;
+      }
+      .p-plan__box__description {
+        margin: 10px 0 0;
+        color: #616161;
+        font-size: 13px;
+        word-break: break-all;
+      }
+      .p-plan__box__btn {
+        margin: 20px 0 0;
+        text-align: center;
+      }
+      .p-plan--small .p-plan__box {
+        margin-top: -12px;
+      }
+
+      .p-plans-more {
+        margin: 70px 0 0;
+      }
+      .p-plans-more__title {
+        color: #333333;
+        font-size: 30px;
+        //font-family: 'Muli', "Century Gothic", "Carme", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro", sans-serif;
+        font-weight: 200;
+        font-style: normal;
+        text-align: center;
+      }
+      .p-plans-more__items {
+        margin: 30px 0 0;
+      }
+      .p-plans-more__btn {
+        text-align: center;
+        margin: 80px 0 0;
+      }
+      padding: 20px 0px;
+      .image-content {
+        height: 100%;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+      }
+      .info {
+
+      }
+    }
+    .block-02 {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      margin-bottom: 20px;
+      .content {
+        padding: 15px;
+        background-color: #F95738;
+        a {
+          border: 1px solid white;
+          color: white;
+          transition: all 0.2s;
+          padding: 15px 60px;
+          text-transform: capitalize;
+          font-weight: bold;
+          display: block;
+
+        }
+        &:hover {
+          background-color: #EE964B;
+        }
+      }
+    }
+    .block-03 {
+      margin-bottom: 20px;
+      .project-items {
+        border: solid 1px $main-color;
+        .employee {
+          width: 100%;
+          height: 296px;
+          overflow: hidden;
+          position: relative;
+          cursor: pointer;
+          &:before {
+            position: absolute;
+            content: '';
+            width: 96%;
+            height: 97%;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+            transition: .6s;
+            z-index: 2;
+            border: 5px solid rgba(255, 255, 255, 0.6);
+            transition: .3s;
+          }
+          &:hover:before {
+            width: 100%;
+            height: 100%;
+            border: 10px solid rgba(255, 255, 255, 0.6);
+            top: 0;
+            left: 0;
+            transform: translate(0%, 0%);
+          }
+          &:hover {
+            .img-emp {
+              transform: scale(1.2) rotate(6deg);
+            }
+          }
+
+          .img-emp {
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            transition: .6s;
+            cursor: pointer;
+            //&.lazy-background-img{
+            //  background: none!important;
+            //}
+          }
+        }
+        .info {
+          padding: 10px 0;
+          h6 {
+            width: fit-content;
+            margin: 16px auto 8px auto;
+            font-size: 18px;
+            color: #034b93;
+          }
+          .description {
+          }
+        }
+      }
+    }
+    .block-04{
+      .wrapper{
+        .inner{
+          .img-examp{
+            height: 300px;
+            width: 100%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+          }
+        }
+      }
+    }
+  }
+
+}
+@media only screen and (max-width: 800px) {
+  #promo_d_1 {
+    .block-04{
+      .wrapper{
+        .inner{
+          .img-examp{
+            height: 180px;
+          }
+        }
+      }
+    }
+  }
+}

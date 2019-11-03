@@ -10,19 +10,53 @@ tabs:
             span: full
             type: text
             tab: 'Thông Tin Công Ty'
-        config_descrtiption_company:
+        config_description_company:
             label: 'Mô Tả Công Ty'
             size: ''
             span: full
             type: richeditor
             tab: 'Thông Tin Công Ty'
-        config_slider:
-            label: 'Slider Upload'
+        config_phone:
+            label: 'Điện thoại liên hệ'
             span: full
-            mode: image
-            useCaption: true
-            thumbOptions:
-                mode: crop
-                extension: auto
-            type: fileupload
+            type: text
+            tab: 'Thông Tin Công Ty'
+        config_email_company:
+            label: Email
+            span: full
+            type: text
+            tab: 'Thông Tin Công Ty'
+        config_slider:
+            label: Slider
+            prompt: 'Add new item'
+            span: full
+            type: repeater
             tab: Slider
+            form:
+                fields:
+                    config_slider:
+                        label: Slider
+                        prompt: 'Add new item'
+                        span: auto
+                        type: mediafinder
+        config_script_header:
+            label: 'Script Header'
+            size: large
+            language: php
+            span: full
+            type: codeeditor
+            tab: Script
+        config_script_body:
+            label: 'Code cài trước thẻ </body>'
+            size: large
+            language: php
+            span: full
+            type: codeeditor
+            tab: Script
+        config_script_fanpage:
+            label: 'Script Fanpage'
+            size: large
+            language: php
+            span: full
+            type: codeeditor
+            tab: Script

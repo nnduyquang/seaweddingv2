@@ -28,6 +28,7 @@ class Category extends Model
             'table'=>'quang_post_post_category',
         ]
     ];
+    protected $jsonable=['photos'];
 
     public $hasMany=[
         'children'=>[

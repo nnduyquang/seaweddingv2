@@ -1,4 +1,45 @@
 title = "Chi Tiết Ưu Đãi"
 url = "/chi-tiet-uu-dai/:slug"
+layout = "master"
 is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[post_detail]
+results = 0
+identifierValue = "{{ :slug }}"
+
+[post_all post_all_service]
+results = 0
+categories = "dich-vu"
+categoryPage = "chi-tiet-dich-vu"
+postPage = "chi-tiet-dich-vu"
 ==
+{% set post=post_detail.post %}
+{% partial "title-page" title_page=post.title %}
+<div id="promo_d_1">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 p-0">
+                <div class="description">
+                    <div class="block-01">
+                       {{post.content|raw}}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="contain">
+                    {% set posts=post_all_service.posts %}
+                    <div class="sidebar-sea" id="sidebar_service">
+                        <h3>Dịch vụ của chúng tôi</h3>
+                        <ul>
+                            {% for post_category in posts %}
+                            <li><a href="{{post_category.url}}">{{post_category.title}}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
