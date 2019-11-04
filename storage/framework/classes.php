@@ -156,4 +156,6 @@
   'system\\Controllers\\mailtemplates' => 'modules\\system\\controllers\\mailtemplates.php',
   'system\\Controllers\\maillayouts' => 'modules\\system\\controllers\\maillayouts.php',
   'system\\Controllers\\mailbrandsettings' => 'modules\\system\\controllers\\mailbrandsettings.php',
+  'romanov\\clearcachewidget\\Plugin' => 'plugins\\romanov\\clearcachewidget\\Plugin.php',
+  'Romanov\\ClearCacheWidget\\ReportWidgets\\ClearCache' => 'plugins\\romanov\\clearcachewidget\\reportwidgets\\ClearCache.php',
 );
