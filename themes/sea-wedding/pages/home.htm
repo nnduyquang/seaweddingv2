@@ -1,6 +1,7 @@
 title = "Trang Chủ"
 url = "/"
 layout = "master"
+meta_title = "Chụp Ảnh Cưới Đà Nẵng"
 is_hidden = 0
 robot_index = "index"
 robot_follow = "follow"
@@ -108,7 +109,7 @@ $this->addJs('assets/js/home.js');
         {% for post in posts %}
         <div class="col-md-4 mb-3">
             <a href="{{ post.url }}">
-                <div class="sv_banner" style="background-image:url({{post.img_primary.path|media}});">
+                <div class="sv_banner" style="background-image:url({{post.img_primary|media}});">
                     <div class="border-top-bot"></div>
                     <div class="sv_content">
                         <h5>{{ post.title }}</h5>

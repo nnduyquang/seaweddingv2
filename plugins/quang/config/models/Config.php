@@ -8,7 +8,7 @@ use Model;
 class Config extends Model
 {
     use \October\Rain\Database\Traits\Validation;
-    
+
     /*
      * Disable timestamps by default.
      * Remove this line if timestamps are defined in the database table.
@@ -26,7 +26,6 @@ class Config extends Model
      */
     public $rules = [
     ];
-    public $attachMany=[
-        'config_slider'=>'System\Models\File'
-    ];
+    protected $jsonable=['config_slider'];
+
 }

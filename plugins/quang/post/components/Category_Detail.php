@@ -35,6 +35,10 @@ class Category_Detail extends ComponentAbstract
     public function loadCategory()
     {
         $query = Category::where('slug', $this->property('identifierValue'))->first();
+//        $this->page['meta_title'] = $query->category_title;
+        $this->page->title = $query->category_title;
+        $this->page->meta_title = $this->page->meta_title.' - '.$query->category_title;
+        $this->page['meta_description'] = 'asdasdzzzzzz';
         return $query;
     }
 

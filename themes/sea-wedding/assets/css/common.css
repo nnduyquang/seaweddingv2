@@ -259,110 +259,15 @@
   background-color: #59e1cb;
 }
 
-#slider {
-  position: relative;
-}
-@-webkit-keyframes shake {
-  0% {
-    transform: translate(0);
-  }
-  20%, 40%, 60%, 80% {
-    transform: translate(0.8em);
-    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.5);
-  }
-  10%, 30%, 50% {
-    transform: translate(-0.2em);
-  }
-  70%, 100% {
-    transform: translate(0);
-  }
-}
-@keyframes shake {
-  0% {
-    transform: translate(0);
-  }
-  20%, 40%, 60%, 80% {
-    transform: translate(0.8em);
-    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.5);
-  }
-  10%, 30%, 50% {
-    transform: translate(-0.2em);
-  }
-  70%, 100% {
-    transform: translate(0);
-  }
-}
-#slider .img-content {
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 60vh;
+.slider:before {
+  display: block;
   width: 100%;
-  text-align: center;
-  padding-top: 38px;
-  overflow: hidden;
-}
-#slider .img-content .test-slide {
-  position: absolute;
-  text-align: center;
-  width: 100%;
-}
-#slider .img-content .test-slide h5 {
-  font-size: 28px;
-  font-weight: bold;
-  color: #007bff;
-}
-#slider .img-content .test-slide h4 {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  margin: 25px auto 20px auto;
-  font-size: 50px;
-  font-weight: bold;
-}
-#slider .img-content .test-slide h6 {
-  width: 60%;
-  font-size: 17px;
-  margin: auto;
-  color: #6b6a6a;
-}
-#slider .img-content .test-title {
-  position: absolute;
-  text-align: left;
-  width: 50%;
-  background-color: rgba(255, 255, 255, 0.66);
-  right: 0;
-  padding: 20px 20px;
-}
-#slider .img-content .test-title h4 {
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 30px;
+  content: " ";
 }
 
-@media (max-width: 575.98px) {
-  #slider .blink_text {
-    padding: 0.3em 0.7em;
-    font-size: 20px;
-    bottom: 20%;
-    top: auto;
-  }
-}
-@media only screen and (max-width: 800px) {
-  #slider .img-content .test-slide h5 {
-    font-size: 22px;
-  }
-  #slider .img-content .test-slide h4 {
-    font-size: 26px;
-  }
-  #slider .img-content .test-slide h6 {
-    width: 90%;
-  }
-  #slider .img-content .test-title {
-    width: 80%;
-  }
-  #slider .img-content .test-title h4 {
-    font-size: 15px;
+@media only screen and (max-width: 575.98px) {
+  .slider:before {
+    padding-top: 51px;
   }
 }
 .lazy-background-img {

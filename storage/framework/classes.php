@@ -158,4 +158,7 @@
   'system\\Controllers\\mailbrandsettings' => 'modules\\system\\controllers\\mailbrandsettings.php',
   'romanov\\clearcachewidget\\Plugin' => 'plugins\\romanov\\clearcachewidget\\Plugin.php',
   'Romanov\\ClearCacheWidget\\ReportWidgets\\ClearCache' => 'plugins\\romanov\\clearcachewidget\\reportwidgets\\ClearCache.php',
+  'SureSoftware\\PowerSEO\\Models\\Settings' => 'plugins\\suresoftware\\powerseo\\models\\Settings.php',
+  'SureSoftware\\PowerSEO\\models\\Settings' => 'plugins\\suresoftware\\powerseo\\models\\Settings.php',
+  'SureSoftware\\PowerSEO\\classes\\Helper' => 'plugins\\suresoftware\\powerseo\\classes\\Helper.php',
 );

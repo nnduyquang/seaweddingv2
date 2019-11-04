@@ -62,4 +62,16 @@ $(document).ready(function () {
         });
     }
     runH9CarouselSlider();
+    function runSlider() {
+        pluginHomes.slider.nivoSlider({
+            effect: 'fade',
+            animSpeed: 500,
+            pauseTime: 3000,
+            pauseOnHover: true,
+            controlNav: false,
+        });
+    }
+    if (pluginHomes.slider.length) {
+        runSlider();
+    }
 });

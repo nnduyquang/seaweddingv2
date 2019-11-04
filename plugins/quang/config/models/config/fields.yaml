@@ -34,8 +34,9 @@ tabs:
             tab: Slider
             form:
                 fields:
-                    config_slider:
+                    slider_path:
                         label: Slider
+                        mode: image
                         prompt: 'Add new item'
                         span: auto
                         type: mediafinder

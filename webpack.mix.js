@@ -27,6 +27,7 @@ mix.sass('resources/sass/seaweddingv2/frontend/common/common.scss', '../themes/s
         path_node_modules + 'masonry-layout/dist/masonry.pkgd.min.js',
         path_node_modules + 'owl.carousel/dist/owl.carousel.js',
         path_node_modules + 'lightslider/dist/js/lightslider.min.js',
+        path_node_modules + 'nivo-slider/jquery.nivo.slider.pack.js',
     ], 'themes/sea-wedding/assets/js/core.common.js')
     .styles('resources/js/frontend/album-detail/album-detail.js', 'themes/sea-wedding/assets/js/album-detail.js')
     .styles([
@@ -34,6 +35,7 @@ mix.sass('resources/sass/seaweddingv2/frontend/common/common.scss', '../themes/s
         path_node_modules + 'owl.carousel/dist/assets/owl.carousel.css',
         path_node_modules + 'owl.carousel/dist/assets/owl.theme.default.css',
         path_node_modules + 'lightslider/dist/css/lightslider.min.css',
+        path_node_modules + 'nivo-slider/nivo-slider.css',
 
     ], 'themes/sea-wedding/assets/css/core.common.css')
 
