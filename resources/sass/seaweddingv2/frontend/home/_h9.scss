@@ -1,0 +1,274 @@
+#h_9 {
+
+  #gts-testimonials ul.testimonials-list li blockquote {
+    color: #000000;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ol,
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0 0 20px;
+    letter-spacing: 1px;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+
+
+
+  blockquote {
+    margin: 24px 0;
+    font-style: italic;
+    font-size: 1.5em;
+  }
+
+
+
+  blockquote p:last-of-type {
+    margin: 0;
+  }
+
+  @media only screen and (min-width: 800px) {
+    blockquote {
+      font-size: 36px;
+    }
+  }
+
+
+  img {
+    height: auto;
+    max-width: 100%;
+  }
+
+  img.overlap {
+    position: relative;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+
+
+
+  .wrap {
+    margin: 0 auto;
+    padding: 0 5%;
+  }
+
+
+
+
+
+  @media only screen and (min-width: 1100px) {
+
+
+
+    .wrap {
+      max-width: 1248px;
+    }
+
+
+  }
+
+  @media only screen and (min-width: 1500px) {
+
+    .wrap {
+      max-width: 1300px;
+    }
+
+  }
+
+
+
+  /* Testimonials
+   * ========================================================================== */
+
+  #gts-testimonials .wrap {
+    padding: 0;
+  }
+
+  #gts-testimonials ul.testimonials-list li:before {
+    content: "'";
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 100px;
+    color: #000;
+  }
+
+  #gts-testimonials ul.testimonials-list li {
+    padding-left: 60px;
+    text-align: left;
+    position: relative;
+  }
+
+  #gts-testimonials ul.testimonials-list li blockquote {
+    font-style: normal;
+  }
+
+  #gts-testimonials ul.testimonials-list li h5 {
+    clear: both;
+  }
+
+  #gts-testimonials ul.testimonials-list li img {
+    border-radius: 0;
+  }
+
+  @media only screen and (min-width: 800px) {
+
+    #gts-testimonials .wrap {
+      max-width: 960px;
+      width: 80%;
+    }
+
+    #gts-testimonials ul.testimonials-list li {
+      padding-left: 120px;
+    }
+
+    #gts-testimonials ul.testimonials-list li:before {
+      font-size: 200px;
+      top: 10%;
+      line-height: 1;
+    }
+
+    #gts-testimonials ul.testimonials-list li blockquote {
+      width: 30%;
+      float: left;
+    }
+
+    #gts-testimonials ul.testimonials-list li img {
+      width: 60%;
+      float: right;
+      margin-left: -10%;
+      padding-right: 5%;
+      margin-top: -30%;
+    }
+
+  }
+
+
+  .flexible-widget-area > .wrap {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .flexible-widgets .widget {
+    margin: 0 auto 2rem;
+  }
+
+  .flexible-widgets .widget:last-child {
+    margin-bottom: 0;
+  }
+
+
+
+
+  .front-page-5 {
+    overflow: hidden;
+    display: inline-block;
+    width: 100%;
+  }
+
+
+  .front-page-5 .widget_text:first-child .widget-title {
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    position: absolute;
+    left: -42%;
+    margin: 10% 0 0 0;
+    height: 0;
+    width: 100%;
+    padding: 0;
+    white-space: nowrap;
+  }
+
+
+  .front-page-5 .widget_text:first-child .widget-title:after {
+    content: "";
+    height: 1px;
+    position: absolute;
+    width: 100px;
+    background: #000;
+    display: inline-block;
+    top: 7px;
+    margin-left: 8px;
+  }
+
+
+
+  /* Front Page 5
+   * ========================================================================== */
+
+  .front-page-5 {
+    background: #fff;
+    position: relative;
+    z-index: 2;
+  }
+
+  .front-page-5 .widget_gts_widget .widget-title {
+    max-width: 640px;
+    padding: 0 56px;
+    position: relative;
+    z-index: 99;
+    font-size: 34px;
+  }
+
+  .front-page-5 .widget:nth-of-type(1) {
+    text-align: center;
+  }
+
+  @media only screen and (min-width: 800px) {
+
+    .front-page-5 .widget_gts_widget .widget-title {
+      max-width: 640px;
+      font-size: 80px;
+      padding: 0;
+      margin-left: 10%;
+      margin-top: 10%;
+    }
+
+  }
+
+
+
+
+
+  /* Testimonials
+   * ========================================================================== */
+
+
+
+  #gts-testimonials .lSSlideOuter .lSPager.lSpg > li a {
+    background-color: #555;
+  }
+
+  #gts-testimonials .lSSlideOuter .lSPager.lSpg>li.active a,
+  #gts-testimonials .lSSlideOuter .lSPager.lSpg>li:hover a {
+    background-color: #d2c2b8;
+  }
+
+  .lSSlideOuter,
+  .lSSlideWrapper,
+  .lightSlider {
+    overflow: visible !important;
+  }
+
+
+
+}

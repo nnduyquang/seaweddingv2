@@ -73,7 +73,6 @@ class __TwigTemplate_bd8afda338d87022f0b955a297f2050d6a7fd2c746f04d3596e8763a605
         // line 26
         echo "
 
-
 <div class=\"container-fluid mb-5\" id=\"h_5\">
     <div class=\"container\">
         <div class=\"row\">
@@ -83,27 +82,27 @@ class __TwigTemplate_bd8afda338d87022f0b955a297f2050d6a7fd2c746f04d3596e8763a605
             </div>
 
             ";
-        // line 37
+        // line 36
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["posts"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["post"]) {
-            // line 38
+            // line 37
             echo "            <div class=\"col-md-6 mb-4\">
                 <div class=\"one-item\">
                     <div class=\"bg-dv\">
 
                         <img class=\"lazy-img-src\" src=\"https://ik.imagekit.io/demo/img/image2.jpeg?tr=h-1:h-378\"
                              data-src=\"";
-            // line 43
-            echo $this->extensions['System\Twig\Extension']->mediaFilter(twig_get_attribute($this->env, $this->source, $context["post"], "img_primary", [], "any", false, false, false, 43));
+            // line 42
+            echo $this->extensions['System\Twig\Extension']->mediaFilter(twig_get_attribute($this->env, $this->source, $context["post"], "img_primary", [], "any", false, false, false, 42));
             echo "\" alt=\"\">
 
                     </div>
                     <h3><a href=\"";
-            // line 46
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "url", [], "any", false, false, false, 46), "html", null, true);
+            // line 45
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "url", [], "any", false, false, false, 45), "html", null, true);
             echo "\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "title", [], "any", false, false, false, 46), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "title", [], "any", false, false, false, 45), "html", null, true);
             echo "</a></h3>
                 </div>
             </div>
@@ -112,15 +111,15 @@ class __TwigTemplate_bd8afda338d87022f0b955a297f2050d6a7fd2c746f04d3596e8763a605
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['post'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 50
+        // line 49
         echo "
         </div>
     </div>
 </div>
 ";
+        // line 53
+        $context["posts"] = twig_get_attribute($this->env, $this->source, ($context["post_all_service"] ?? null), "posts", [], "any", false, false, false, 53);
         // line 54
-        $context["posts"] = twig_get_attribute($this->env, $this->source, ($context["post_all_service"] ?? null), "posts", [], "any", false, false, false, 54);
-        // line 55
         echo "
 <div id=\"h_3\" class=\"pl-lg-5 pr-lg-5 pl-3 pr-3\">
     <div class=\"row pl-lg-5 pr-lg-5 pl-3 pr-3\">
@@ -129,30 +128,30 @@ class __TwigTemplate_bd8afda338d87022f0b955a297f2050d6a7fd2c746f04d3596e8763a605
             <p></p>
         </div>
         ";
-        // line 62
+        // line 61
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["posts"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["post"]) {
-            // line 63
+            // line 62
             echo "        <div class=\"col-md-4 mb-3\">
             <a href=\"";
-            // line 64
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "url", [], "any", false, false, false, 64), "html", null, true);
+            // line 63
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "url", [], "any", false, false, false, 63), "html", null, true);
             echo "\">
                 <div class=\"sv_banner\" style=\"background-image:url(";
-            // line 65
-            echo $this->extensions['System\Twig\Extension']->mediaFilter(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["post"], "img_primary", [], "any", false, false, false, 65), "path", [], "any", false, false, false, 65));
+            // line 64
+            echo $this->extensions['System\Twig\Extension']->mediaFilter(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["post"], "img_primary", [], "any", false, false, false, 64), "path", [], "any", false, false, false, 64));
             echo ");\">
                     <div class=\"border-top-bot\"></div>
                     <div class=\"sv_content\">
                         <h5>";
-            // line 68
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "title", [], "any", false, false, false, 68), "html", null, true);
+            // line 67
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "title", [], "any", false, false, false, 67), "html", null, true);
             echo "</h5>
                         <div class=\"info pt-3\">
                             <p>";
-            // line 70
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "description", [], "any", false, false, false, 70), "html", null, true);
+            // line 69
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "description", [], "any", false, false, false, 69), "html", null, true);
             echo "</p>
                         </div>
                     </div>
@@ -164,15 +163,154 @@ class __TwigTemplate_bd8afda338d87022f0b955a297f2050d6a7fd2c746f04d3596e8763a605
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['post'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 77
+        // line 76
         echo "    </div>
 
 </div>
 ";
-        // line 80
+        // line 79
         $context['__cms_component_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->componentFunction("albums"        , $context['__cms_component_params']        );
         unset($context['__cms_component_params']);
+        // line 80
+        $context["posts"] = twig_get_attribute($this->env, $this->source, ($context["post_all_members"] ?? null), "posts", [], "any", false, false, false, 80);
+        // line 81
+        echo "
+<div class=\"container-fluid\" id=\"h_6\">
+    <div class=\"container\">
+        <div class=\"row\">
+            <div class=\"col-12 title\">
+                <h2>ĐỘI NGŨ CỦA CHÚNG TÔI</h2>
+
+                <p>Amazing Team</p>
+            </div>
+            <div id=\"owl-project\" class=\"owl-carousel owl-theme\">
+                ";
+        // line 91
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(($context["posts"] ?? null));
+        foreach ($context['_seq'] as $context["_key"] => $context["post"]) {
+            // line 92
+            echo "
+                <div class=\"project-items text-center wow fadeIn\">
+                    <div class=\"employee\">
+                        <div class=\"img-emp\" style=\"background-image:url(";
+            // line 95
+            echo $this->extensions['System\Twig\Extension']->mediaFilter(twig_get_attribute($this->env, $this->source, $context["post"], "img_primary", [], "any", false, false, false, 95));
+            echo ");\">
+
+                        </div>
+                    </div>
+                    <h6>";
+            // line 99
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "title", [], "any", false, false, false, 99), "html", null, true);
+            echo "</h6>
+                    <p>";
+            // line 100
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "description", [], "any", false, false, false, 100), "html", null, true);
+            echo "</p>
+                </div>
+                ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['post'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 103
+        echo "            </div>
+        </div>
+    </div>
+</div>
+<div id=\"h_8\">
+    <div class=\"front-page-4 bg-primary with-background-image\"
+         style=\"background-image: url(";
+        // line 109
+        echo $this->extensions['System\Twig\Extension']->mediaFilter("members/hai_nguyen_seawedding.jpg");
+        echo ")\">
+        <div class=\"wrap\">
+            <div class=\"widget-area\">
+                <section id=\"text-6\" class=\"widget widget_text\">
+                    <div class=\"widget-wrap\">
+                        <div class=\"textwidget\">
+                            <div class=\"card two-fifths right\">
+                                <h6 class=\"card-title\">Photographer</h6>
+                                <p><span class=\"huge\">Xin Chào,</span></p>
+                                <h5>Tôi là Nguyễn Hải</h5>
+                                <p>Tôi là photographer chính của Sea Wedding. Tôi yêu mọi thứ đẹp đẽ và độc đáo không
+                                    chỉ trong cuộc sống hàng ngày của tôi mà còn trong những khoảnh khắc đặc biệt như
+                                    ghi lại những khoảnh khắc đẹp nhất trong cuộc đời của cô dâu chú rể.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+";
+        // line 130
+        $context["posts"] = twig_get_attribute($this->env, $this->source, ($context["post_all_customer"] ?? null), "posts", [], "any", false, false, false, 130);
+        // line 131
+        echo "
+<div id=\"h_9\">
+    <div class=\"front-page-5 flexible-widget-area\">
+        <div class=\"wrap\">
+            <div class=\"widget-area\">
+                <section id=\"text-7\" class=\"widget widget_text\">
+                    <div class=\"widget-wrap\"><h3 class=\"widgettitle widget-title\">Testimonials</h3>
+                        <div class=\"textwidget\"></div>
+                    </div>
+                </section>
+                <section id=\"gts_widget-2\" class=\"widget widget_gts_widget\">
+                    <div class=\"widget-wrap\"><h3 class=\"widgettitle widget-title\">Khách Hàng Nói Về Sea Wedding</h3>
+                        <div id=\"gts-testimonials\">
+                            <div class=\"wrap\">
+                                <ul class=\"testimonials-list\">
+                                    ";
+        // line 146
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(($context["posts"] ?? null));
+        foreach ($context['_seq'] as $context["_key"] => $context["post"]) {
+            // line 147
+            echo "                                    <li itemprop=\"review\" itemscope itemtype=\"http://schema.org/Review\">
+                                        <img width=\"700\"
+                                             height=\"700\"
+                                             src=\"";
+            // line 150
+            echo $this->extensions['System\Twig\Extension']->mediaFilter(twig_get_attribute($this->env, $this->source, $context["post"], "img_primary", [], "any", false, false, false, 150));
+            echo "\"
+                                             class=\"attachment-gts-thumbnail size-gts-thumbnail wp-post-image\"
+                                             alt=\"\"
+                                             srcset=\"\"
+                                             sizes=\"(max-width: 700px) 100vw, 700px\"/>
+                                        <blockquote itemprop=\"reviewBody\"><strong>";
+            // line 155
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "description", [], "any", false, false, false, 155), "html", null, true);
+            echo "</strong><br>
+                                            ";
+            // line 156
+            echo twig_get_attribute($this->env, $this->source, $context["post"], "content", [], "any", false, false, false, 156);
+            echo "
+                                        </blockquote>
+                                        <h5 itemprop=\"author\">";
+            // line 158
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "title", [], "any", false, false, false, 158), "html", null, true);
+            echo "</h5><span class=\"gts-company\"></span>
+                                    </li>
+                                    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['post'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 161
+        echo "                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>";
     }
 
     public function getTemplateName()
@@ -187,7 +325,7 @@ class __TwigTemplate_bd8afda338d87022f0b955a297f2050d6a7fd2c746f04d3596e8763a605
 
     public function getDebugInfo()
     {
-        return array (  173 => 80,  168 => 77,  155 => 70,  150 => 68,  144 => 65,  140 => 64,  137 => 63,  133 => 62,  124 => 55,  122 => 54,  116 => 50,  104 => 46,  98 => 43,  91 => 38,  87 => 37,  74 => 26,  72 => 25,  63 => 19,  55 => 14,  41 => 2,  37 => 1,);
+        return array (  305 => 161,  296 => 158,  291 => 156,  287 => 155,  279 => 150,  274 => 147,  270 => 146,  253 => 131,  251 => 130,  227 => 109,  219 => 103,  210 => 100,  206 => 99,  199 => 95,  194 => 92,  190 => 91,  178 => 81,  176 => 80,  172 => 79,  167 => 76,  154 => 69,  149 => 67,  143 => 64,  139 => 63,  136 => 62,  132 => 61,  123 => 54,  121 => 53,  115 => 49,  103 => 45,  97 => 42,  90 => 37,  86 => 36,  74 => 26,  72 => 25,  63 => 19,  55 => 14,  41 => 2,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -217,7 +355,6 @@ class __TwigTemplate_bd8afda338d87022f0b955a297f2050d6a7fd2c746f04d3596e8763a605
 </div>
 
 {% set posts=post_all.posts %}
-
 
 
 <div class=\"container-fluid mb-5\" id=\"h_5\">
@@ -271,6 +408,96 @@ class __TwigTemplate_bd8afda338d87022f0b955a297f2050d6a7fd2c746f04d3596e8763a605
     </div>
 
 </div>
-{% component 'albums' %}", "C:\\xampp\\htdocs\\seaweddingv2/themes/sea-wedding/pages/home.htm", "");
+{% component 'albums' %}
+{% set posts=post_all_members.posts %}
+
+<div class=\"container-fluid\" id=\"h_6\">
+    <div class=\"container\">
+        <div class=\"row\">
+            <div class=\"col-12 title\">
+                <h2>ĐỘI NGŨ CỦA CHÚNG TÔI</h2>
+
+                <p>Amazing Team</p>
+            </div>
+            <div id=\"owl-project\" class=\"owl-carousel owl-theme\">
+                {% for post in posts %}
+
+                <div class=\"project-items text-center wow fadeIn\">
+                    <div class=\"employee\">
+                        <div class=\"img-emp\" style=\"background-image:url({{post.img_primary|media}});\">
+
+                        </div>
+                    </div>
+                    <h6>{{post.title}}</h6>
+                    <p>{{post.description}}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+<div id=\"h_8\">
+    <div class=\"front-page-4 bg-primary with-background-image\"
+         style=\"background-image: url({{'members/hai_nguyen_seawedding.jpg'|media}})\">
+        <div class=\"wrap\">
+            <div class=\"widget-area\">
+                <section id=\"text-6\" class=\"widget widget_text\">
+                    <div class=\"widget-wrap\">
+                        <div class=\"textwidget\">
+                            <div class=\"card two-fifths right\">
+                                <h6 class=\"card-title\">Photographer</h6>
+                                <p><span class=\"huge\">Xin Chào,</span></p>
+                                <h5>Tôi là Nguyễn Hải</h5>
+                                <p>Tôi là photographer chính của Sea Wedding. Tôi yêu mọi thứ đẹp đẽ và độc đáo không
+                                    chỉ trong cuộc sống hàng ngày của tôi mà còn trong những khoảnh khắc đặc biệt như
+                                    ghi lại những khoảnh khắc đẹp nhất trong cuộc đời của cô dâu chú rể.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+{% set posts=post_all_customer.posts %}
+
+<div id=\"h_9\">
+    <div class=\"front-page-5 flexible-widget-area\">
+        <div class=\"wrap\">
+            <div class=\"widget-area\">
+                <section id=\"text-7\" class=\"widget widget_text\">
+                    <div class=\"widget-wrap\"><h3 class=\"widgettitle widget-title\">Testimonials</h3>
+                        <div class=\"textwidget\"></div>
+                    </div>
+                </section>
+                <section id=\"gts_widget-2\" class=\"widget widget_gts_widget\">
+                    <div class=\"widget-wrap\"><h3 class=\"widgettitle widget-title\">Khách Hàng Nói Về Sea Wedding</h3>
+                        <div id=\"gts-testimonials\">
+                            <div class=\"wrap\">
+                                <ul class=\"testimonials-list\">
+                                    {% for post in posts %}
+                                    <li itemprop=\"review\" itemscope itemtype=\"http://schema.org/Review\">
+                                        <img width=\"700\"
+                                             height=\"700\"
+                                             src=\"{{post.img_primary|media}}\"
+                                             class=\"attachment-gts-thumbnail size-gts-thumbnail wp-post-image\"
+                                             alt=\"\"
+                                             srcset=\"\"
+                                             sizes=\"(max-width: 700px) 100vw, 700px\"/>
+                                        <blockquote itemprop=\"reviewBody\"><strong>{{post.description}}</strong><br>
+                                            {{post.content|raw}}
+                                        </blockquote>
+                                        <h5 itemprop=\"author\">{{post.title}}</h5><span class=\"gts-company\"></span>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>", "C:\\xampp\\htdocs\\seaweddingv2/themes/sea-wedding/pages/home.htm", "");
     }
 }

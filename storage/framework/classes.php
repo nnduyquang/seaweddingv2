@@ -151,4 +151,9 @@
   'Quang\\Config\\Components\\Config_Phone' => 'plugins\\quang\\config\\components\\Config_Phone.php',
   'Quang\\Config\\Components\\Config_Script_Header' => 'plugins\\quang\\config\\components\\Config_Script_Header.php',
   'Quang\\Config\\Components\\Config_Script_Body' => 'plugins\\quang\\config\\components\\Config_Script_Body.php',
+  'quang\\contact\\Plugin' => 'plugins\\quang\\contact\\Plugin.php',
+  'Quang\\Contact\\Components\\Contact_Form' => 'plugins\\quang\\contact\\components\\Contact_Form.php',
+  'system\\Controllers\\mailtemplates' => 'modules\\system\\controllers\\mailtemplates.php',
+  'system\\Controllers\\maillayouts' => 'modules\\system\\controllers\\maillayouts.php',
+  'system\\Controllers\\mailbrandsettings' => 'modules\\system\\controllers\\mailbrandsettings.php',
 );

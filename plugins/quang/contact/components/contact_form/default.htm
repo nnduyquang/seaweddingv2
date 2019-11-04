@@ -1,0 +1,49 @@
+<form data-request="contact_form::onSend">
+
+    <div class="contact_top">
+        <h3 class="title">Gửi liên hệ</h3>
+        <hr>
+        <p>
+            Nếu bạn có thắc mắc, đừng ngần ngại gửi yêu cầu cho chúng tôi, và chúng tôi sẽ liên lạc lại
+            với bạn trong vòng 24 tiếng đồng hồ
+        </p>
+    </div>
+    <div class="contact_bottom">
+        <div class="form-group">
+            <input type="text" name="name"
+                   placeholder="Tên Của Bạn"
+                   class="form-control">
+            {{errors.first('name')}}
+        </div>
+        <div class="form-group">
+            <input type="text" name="email"
+                   placeholder="Email"
+                   class="form-control">
+            {{errors.first('email')}}
+        </div>
+        <div class="form-group">
+            <input type="text" name="phone"
+                   placeholder="Số điện thoại"
+                   class="form-control">
+            {{errors.first('phone')}}
+
+        </div>
+        <div class="form-group">
+            <textarea name="description"
+                      placeholder="Mô tả ngắn về yêu cầu cũng như ngày dự định cưới của bạn"
+                      class="form-control">
+             </textarea>
+            {{errors.first('description')}}
+
+        </div>
+        <div class="button-group">
+            <button type="submit" class="btn btn-contact">Gửi Liên Hệ
+
+            </button>
+        </div>
+    </div>
+</form>
+<div id="result">
+
+</div>
+

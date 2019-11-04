@@ -1,4 +1,56 @@
 title = "Liên Hệ"
 url = "/lien-he"
+layout = "master"
 is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[contact_form]
+
+[config_address_company]
+
+[config_phone]
+
+[config_email_company]
+
+[config_name_company]
 ==
+{% partial 'title-page' title_page='Liên hệ'%}
+<div id="cont1">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                {% component 'contact_form' %}
+            </div>
+            <div class="col-md-4">
+                <div class="contact_top">
+                    <h3 class="title">Địa chỉ liên hệ</h3>
+                    <hr>
+                    <h4 class="title">{% set config_name_company=config_name_company.configNameCompany %}
+                    {{config_name_company}}
+
+ </h4>
+                    <ul>
+                        <li>
+                            <i class="far fa-building"></i><span>Địa Chỉ:</span>
+                            {% set config_address_company=config_address_company.configAddressCompany %}
+                            {{config_address_company}}
+
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i><span>Điện Thoại:</span>
+                            {% set config_phone=config_phone.configPhone %}
+                            {{config_phone}}
+
+                        </li>
+                        <li>
+                            <i class="far fa-envelope"></i><span>Email: </span>
+                            {% set config_email_company=config_email_company.configEmailCompany %}
+                            {{ config_email_company }}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

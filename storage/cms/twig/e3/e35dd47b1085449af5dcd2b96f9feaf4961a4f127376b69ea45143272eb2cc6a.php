@@ -132,7 +132,17 @@ class __TwigTemplate_5eb3a6f0aabb603d401e14261dce295987c044f81beec05d7e06dbd8f2c
 <footer id=\"layout-footer\">
 
 </footer>
-
+";
+        // line 55
+        $context['__cms_partial_params'] = [];
+        echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("footer"        , $context['__cms_partial_params']        , true        );
+        unset($context['__cms_partial_params']);
+        // line 56
+        $context['__cms_partial_params'] = [];
+        echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("bottom"        , $context['__cms_partial_params']        , true        );
+        unset($context['__cms_partial_params']);
+        // line 57
+        echo "
 <!-- Scripts -->
 <script
         src=\"https://code.jquery.com/jquery-3.4.1.js\"
@@ -142,19 +152,19 @@ class __TwigTemplate_5eb3a6f0aabb603d401e14261dce295987c044f81beec05d7e06dbd8f2c
         integrity=\"sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy\"
         crossorigin=\"anonymous\"></script>
 <!--<script src=\"";
-        // line 64
+        // line 66
         echo "assets/js/app.js|theme";
         echo "\"></script>-->
 <script src=\"";
-        // line 65
+        // line 67
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/js/common.js");
         echo "\"></script>
 <script src=\"";
-        // line 66
+        // line 68
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/js/core.common.js");
         echo "\"></script>
 ";
-        // line 67
+        // line 69
         $_minify = System\Classes\CombineAssets::instance()->useMinify;
         if ($_minify) {
             echo '<script src="' . Request::getBasePath() . '/modules/system/assets/js/framework.combined-min.js"></script>'.PHP_EOL;
@@ -165,10 +175,13 @@ class __TwigTemplate_5eb3a6f0aabb603d401e14261dce295987c044f81beec05d7e06dbd8f2c
         }
         echo '<link rel="stylesheet" property="stylesheet" href="' . Request::getBasePath() .'/modules/system/assets/css/framework.extras'.($_minify ? '-min' : '').'.css">'.PHP_EOL;
         unset($_minify);
-        // line 68
+        // line 70
         echo $this->env->getExtension('Cms\Twig\Extension')->assetsFunction('js');
         echo $this->env->getExtension('Cms\Twig\Extension')->displayBlock('scripts');
-        // line 69
+        // line 71
+        $context["config_script_body"] = twig_get_attribute($this->env, $this->source, ($context["config_script_body"] ?? null), "configScriptBody", [], "any", false, false, false, 71);
+        // line 72
+        echo ($context["config_script_body"] ?? null);
         echo "
 </body>
 </html>";
@@ -186,7 +199,7 @@ class __TwigTemplate_5eb3a6f0aabb603d401e14261dce295987c044f81beec05d7e06dbd8f2c
 
     public function getDebugInfo()
     {
-        return array (  172 => 69,  169 => 68,  158 => 67,  154 => 66,  150 => 65,  146 => 64,  129 => 49,  127 => 48,  116 => 39,  112 => 38,  108 => 36,  104 => 35,  98 => 32,  86 => 22,  83 => 21,  78 => 19,  74 => 18,  70 => 17,  66 => 16,  58 => 11,  51 => 7,  47 => 6,  43 => 5,  37 => 1,);
+        return array (  184 => 72,  182 => 71,  179 => 70,  168 => 69,  164 => 68,  160 => 67,  156 => 66,  145 => 57,  141 => 56,  137 => 55,  129 => 49,  127 => 48,  116 => 39,  112 => 38,  108 => 36,  104 => 35,  98 => 32,  86 => 22,  83 => 21,  78 => 19,  74 => 18,  70 => 17,  66 => 16,  58 => 11,  51 => 7,  47 => 6,  43 => 5,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -245,6 +258,8 @@ class __TwigTemplate_5eb3a6f0aabb603d401e14261dce295987c044f81beec05d7e06dbd8f2c
 <footer id=\"layout-footer\">
 
 </footer>
+{% partial \"footer\" %}
+{% partial \"bottom\" %}
 
 <!-- Scripts -->
 <script
@@ -259,7 +274,8 @@ class __TwigTemplate_5eb3a6f0aabb603d401e14261dce295987c044f81beec05d7e06dbd8f2c
 <script src=\"{{ 'assets/js/core.common.js'|theme }}\"></script>
 {% framework extras %}
 {% scripts %}
-
+{% set config_script_body=config_script_body.configScriptBody %}
+{{config_script_body|raw}}
 </body>
 </html>", "C:\\xampp\\htdocs\\seaweddingv2/themes/sea-wedding/layouts/master.htm", "");
     }

@@ -24,11 +24,24 @@ results = 0
 categories = "dich-vu"
 categoryPage = "album"
 postPage = "album"
+
+[post_all post_all_members]
+results = 0
+categories = "thanh-vien"
+categoryPage = "album"
+postPage = "album"
+
+[post_all post_all_customer]
+results = 0
+categories = "y-kien-khach-hang"
+categoryPage = "album"
+postPage = "album"
 ==
 <?php
 function onStart()
 {
 $this->addJs('assets/js/common.js');
+$this->addJs('assets/js/home.js');
 }
 ?>
 ==
@@ -57,7 +70,6 @@ $this->addJs('assets/js/common.js');
 </div>
 
 {% set posts=post_all.posts %}
-
 
 
 <div class="container-fluid mb-5" id="h_5">
@@ -112,3 +124,93 @@ $this->addJs('assets/js/common.js');
 
 </div>
 {% component 'albums' %}
+{% set posts=post_all_members.posts %}
+
+<div class="container-fluid" id="h_6">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 title">
+                <h2>ĐỘI NGŨ CỦA CHÚNG TÔI</h2>
+
+                <p>Amazing Team</p>
+            </div>
+            <div id="owl-project" class="owl-carousel owl-theme">
+                {% for post in posts %}
+
+                <div class="project-items text-center wow fadeIn">
+                    <div class="employee">
+                        <div class="img-emp" style="background-image:url({{post.img_primary|media}});">
+
+                        </div>
+                    </div>
+                    <h6>{{post.title}}</h6>
+                    <p>{{post.description}}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+<div id="h_8">
+    <div class="front-page-4 bg-primary with-background-image"
+         style="background-image: url({{'members/hai_nguyen_seawedding.jpg'|media}})">
+        <div class="wrap">
+            <div class="widget-area">
+                <section id="text-6" class="widget widget_text">
+                    <div class="widget-wrap">
+                        <div class="textwidget">
+                            <div class="card two-fifths right">
+                                <h6 class="card-title">Photographer</h6>
+                                <p><span class="huge">Xin Chào,</span></p>
+                                <h5>Tôi là Nguyễn Hải</h5>
+                                <p>Tôi là photographer chính của Sea Wedding. Tôi yêu mọi thứ đẹp đẽ và độc đáo không
+                                    chỉ trong cuộc sống hàng ngày của tôi mà còn trong những khoảnh khắc đặc biệt như
+                                    ghi lại những khoảnh khắc đẹp nhất trong cuộc đời của cô dâu chú rể.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+{% set posts=post_all_customer.posts %}
+
+<div id="h_9">
+    <div class="front-page-5 flexible-widget-area">
+        <div class="wrap">
+            <div class="widget-area">
+                <section id="text-7" class="widget widget_text">
+                    <div class="widget-wrap"><h3 class="widgettitle widget-title">Testimonials</h3>
+                        <div class="textwidget"></div>
+                    </div>
+                </section>
+                <section id="gts_widget-2" class="widget widget_gts_widget">
+                    <div class="widget-wrap"><h3 class="widgettitle widget-title">Khách Hàng Nói Về Sea Wedding</h3>
+                        <div id="gts-testimonials">
+                            <div class="wrap">
+                                <ul class="testimonials-list">
+                                    {% for post in posts %}
+                                    <li itemprop="review" itemscope itemtype="http://schema.org/Review">
+                                        <img width="700"
+                                             height="700"
+                                             src="{{post.img_primary|media}}"
+                                             class="attachment-gts-thumbnail size-gts-thumbnail wp-post-image"
+                                             alt=""
+                                             srcset=""
+                                             sizes="(max-width: 700px) 100vw, 700px"/>
+                                        <blockquote itemprop="reviewBody"><strong>{{post.description}}</strong><br>
+                                            {{post.content|raw}}
+                                        </blockquote>
+                                        <h5 itemprop="author">{{post.title}}</h5><span class="gts-company"></span>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>

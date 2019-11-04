@@ -1,8 +1,9 @@
 <?php 
-class Cms5db7a18862a56651964958_99f9ad5b782460c49184369e41088feeClass extends Cms\Classes\PageCode
+class Cms5dbff3e82cac1670799827_937c9c33ad76f138ce1bf1eaeea3dbd8Class extends Cms\Classes\PageCode
 {
 public function onStart()
 {
 $this->addJs('assets/js/common.js');
+$this->addJs('assets/js/home.js');
 }
 }

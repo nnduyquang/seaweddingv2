@@ -1,0 +1,353 @@
+#h_8 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0 0 20px;
+    letter-spacing: 1px;
+    font-weight: 300;
+    font-family: "Roboto Condensed";
+    text-transform: uppercase;
+  }
+
+  /* Huge */
+
+  .huge,
+  .widget_gts_widget .widget-title,
+  .pricing-table .price,
+  body.woocommerce-page div.product p.price {
+    font-size: 60px;
+    font-style: italic;
+    line-height: 1.2;
+    font-family: "Didot", "Playfair Display";
+    z-index: 2;
+    position: relative;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    .huge,
+    .widget_gts_widget .widget-title,
+    .pricing-table .price,
+    body.woocommerce-page div.product p.price {
+      font-size: 100px;
+    }
+  }
+
+
+
+
+
+  /* Objects
+   * ========================================================================== */
+
+
+
+  img {
+    height: auto;
+    max-width: 100%;
+  }
+
+  img.overlap {
+    position: relative;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+
+  .wrap {
+    margin: 0 auto;
+    padding: 0 5%;
+  }
+
+
+  @media only screen and (min-width: 1100px) {
+
+
+
+    .wrap {
+      max-width: 1248px;
+    }
+
+    .site-inner {
+      padding: 80px 0;
+    }
+
+  }
+
+  @media only screen and (min-width: 1500px) {
+
+    .wrap {
+      max-width: 1300px;
+    }
+
+  }
+
+  /* Card
+   * ========================================================================== */
+
+  .card {
+    padding: 40px;
+    margin-bottom: 16px;
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1), 0 16px 40px rgba(0,0,0,0.1);
+    background: #fffbfa;
+    color: #000;
+    position: relative;
+  }
+
+  .card .card-title {
+    position: absolute;
+    top: 40px;
+    right: 32px;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    height: 0;
+    width: 0;
+    white-space: nowrap;
+  }
+  .card p{
+    line-height: 1.5;
+  }
+
+  .card .card-title:after {
+    content: "";
+    height: 1px;
+    position: absolute;
+    width: 100px;
+    background: #000;
+    display: inline-block;
+    top: 7px;
+    margin-left: 8px;
+  }
+
+  @media only screen and (min-width: 800px) {
+    .card {
+      padding: 56px;
+      margin-top: 5%;
+      box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1), 0 24px 80px rgba(0,0,0,0.1);
+    }
+  }
+
+
+  @media only screen and (min-width: 800px) {
+
+    .five-sixths,
+    .four-sixths,
+    .four-fifths,
+    .one-fifth,
+    .one-fourth,
+    .footer-widgets .widget-area,
+    .one-half,
+    .one-sixth,
+    .one-third,
+    .three-fourths,
+    .three-fifths,
+    .three-sixths,
+    .two-fourths,
+    .two-fifths,
+    .two-sixths,
+    .two-thirds {
+      float: left;
+      margin-left: 3.448275862069%;
+    }
+
+    .one-half,
+    .three-sixths,
+    .two-fourths {
+      width: 48.275862068966%;
+    }
+
+    .one-third,
+    .two-sixths {
+      width: 31.034482758621%;
+    }
+
+    .four-sixths,
+    .two-thirds {
+      width: 65.51724137931%;
+    }
+
+    .one-fourth,
+    .footer-widgets .widget-area {
+      width: 22.413793103448%;
+    }
+
+    .three-fourths {
+      width: 74.137931034483%;
+    }
+
+    .one-fifth {
+      width: 17.241379310345%;
+    }
+
+    .two-fifths {
+      width: 37.931034482759%;
+    }
+
+    .three-fifths {
+      width: 58.620689655172%;
+    }
+
+    .four-fifths {
+      width: 79.310344827586%;
+    }
+
+    .one-sixth {
+      width: 13.793103448276%;
+    }
+
+    .five-sixths {
+      width: 82.758620689655%;
+    }
+
+    .first,
+    .footer-widgets .widget-area:first-child {
+      clear: both;
+      margin-left: 0;
+    }
+
+    .only {
+      float: none;
+      margin: 0 auto;
+    }
+
+    .right {
+      float: right;
+    }
+  }
+
+  /* Front Page Widgets
+   * ========================================================================== */
+
+  .front-page-1 > .wrap,
+  .front-page-2 > .wrap,
+  .front-page-3 > .wrap,
+  .front-page-4 > .wrap,
+  .front-page-5 > .wrap,
+  .front-page-7 > .wrap,
+  .home .page-header .wrap {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    display: table;
+    width: 100%;
+    min-height: 100vh;
+  }
+
+
+  .front-page-1 > .wrap > .widget-area,
+  .front-page-2 > .wrap > .widget-area,
+  .front-page-3 > .wrap > .widget-area,
+  .front-page-4 > .wrap > .widget-area,
+  .front-page-5 > .wrap > .widget-area,
+  .front-page-7 > .wrap > .widget-area,
+  .home .page-header .wrap > .widget-area {
+    display: table-cell;
+    width: 100%;
+    vertical-align: middle;
+  }
+
+
+
+
+
+  /* Front Page 4
+   * ========================================================================== */
+
+
+  .front-page-4 a,
+  .front-page-4 {
+    color: #fff;
+  }
+
+  .front-page-4.with-background-image:after {
+    opacity: 0;
+  }
+
+  .front-page-4 blockquote {
+    font-size: 20px;
+    font-weight: 300;
+    font-style: normal;
+    margin: 20px auto;
+  }
+
+  @media only screen and (min-width: 800px) {
+    .front-page-4 blockquote {
+      font-size: 32px;
+      max-width: 75%;
+    }
+  }
+
+
+
+  /* Widgets
+   * ========================================================================== */
+
+  .widget {
+    word-wrap: break-word;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+  /* Background Images and Colors
+   * ========================================================================== */
+
+  .with-background-image {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .with-background-image:after {
+    -ms-filter: "alpha(Opacity=30)";
+    filter: alpha(opacity=30);
+    opacity: 0.30;
+  }
+
+
+
+
+  .front-page-4.with-background-image .wrap{
+    padding-top: 80px;
+    padding-bottom: 80px;
+    display: table;
+    width: 100%;
+    min-height: calc(100vh - 108px);
+  }
+
+  .front-page-4.with-background-image .wrap > .widget-area{
+    display: table-cell;
+    width: 100%;
+    vertical-align: middle;
+  }
+
+
+  @media only screen and (min-width: 800px) {
+
+    .front-page-4.with-background-image .wrap{
+      min-height: 100vh;
+    }
+
+
+    .front-page-4.with-background-image .wrap{
+      padding-top: 7%;
+      padding-bottom: 7%;
+    }
+
+  }
+
+
+
+
+
+}
