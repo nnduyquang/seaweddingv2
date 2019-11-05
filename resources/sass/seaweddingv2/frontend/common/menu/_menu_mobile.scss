@@ -106,6 +106,15 @@ $nav-level5-background-color: $primary-color-tint-2;
     &:not(:last-child) {
       border-bottom: solid 1px $nav-border-color;
     }
+    a{
+      display: block;
+      padding: $nav-padding;
+      background-color: $nav-background-color;
+      color: $main-color;
+      font-size: 1rem;
+      line-height: 1.5em;
+      font-weight: 300;
+    }
   }
 
   &-link {

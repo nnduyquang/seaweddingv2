@@ -45,3 +45,6 @@
 1.0.16:
     - 'Updated table quang_post_category'
     - builder_table_update_quang_post_category_7.php
+1.0.17:
+    - 'Updated table quang_post_category'
+    - builder_table_update_quang_post_category_8.php

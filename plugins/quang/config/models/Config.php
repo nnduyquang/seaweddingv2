@@ -26,6 +26,6 @@ class Config extends Model
      */
     public $rules = [
     ];
-    protected $jsonable=['config_slider'];
+    protected $jsonable=['config_slider','config_seo','config_logo','config_hotline'];
 
 }

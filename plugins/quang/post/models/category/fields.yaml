@@ -10,6 +10,11 @@ fields:
             field: category_title
             type: slug
         type: text
+    description:
+        label: 'Mô tả (nếu cần thiết)'
+        span: full
+        size: small
+        type: textarea
     img_primary:
         label: 'Hình đại diện (nếu cần thiết)'
         span: auto

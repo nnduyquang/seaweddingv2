@@ -42,6 +42,9 @@ class Post_Detail extends ComponentAbstract
     {
 
         $query=Posts::where('slug','=',$this->property('identifierValue'))->first();
+        $this->page->title = $query->title;
+        $this->page->meta_title = $this->page->meta_title.' - '.$query->title;
+        $this->page->og_image = $query->img_primary;
         if ($this->property('results') > 0) {
             $query = $query->take($this->property('results'));
         }

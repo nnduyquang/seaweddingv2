@@ -161,4 +161,10 @@
   'SureSoftware\\PowerSEO\\Models\\Settings' => 'plugins\\suresoftware\\powerseo\\models\\Settings.php',
   'SureSoftware\\PowerSEO\\models\\Settings' => 'plugins\\suresoftware\\powerseo\\models\\Settings.php',
   'SureSoftware\\PowerSEO\\classes\\Helper' => 'plugins\\suresoftware\\powerseo\\classes\\Helper.php',
+  'Quang\\Config\\Components\\Config_Seo' => 'plugins\\quang\\config\\components\\Config_Seo.php',
+  'Quang\\Config\\Components\\Config_Favicon' => 'plugins\\quang\\config\\components\\Config_Favicon.php',
+  'Quang\\Config\\Components\\Config_Logo' => 'plugins\\quang\\config\\components\\Config_Logo.php',
+  'Quang\\Config\\Components\\Config_Hotline' => 'plugins\\quang\\config\\components\\Config_Hotline.php',
+  'system\\Controllers\\eventlogs' => 'modules\\system\\controllers\\eventlogs.php',
+  'backend\\Controllers\\preferences' => 'modules\\backend\\controllers\\preferences.php',
 );

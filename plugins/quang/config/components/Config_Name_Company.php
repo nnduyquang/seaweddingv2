@@ -14,7 +14,6 @@ class Config_Name_Company extends ComponentBase{
         $this->configNameCompany=$this->loadNameAddressCompany();
     }
     public function loadNameAddressCompany(){
-//        dd(Config::first()->config_slider);
         return Config::first()->config_name_company;
     }
     public $configNameCompany;

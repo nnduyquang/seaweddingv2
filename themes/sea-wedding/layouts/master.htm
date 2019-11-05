@@ -5,18 +5,76 @@ menu_id = 1
 menu_id = 3
 
 [config_script_body]
+
+[SeoCmsPage]
+
+[config_seo_content config_seo_title]
+seoType = "Sea Wedding"
+
+[config_seo_content config_seo_description]
+seoType = "Đây Là Mô Tả"
+
+[config_seo_content config_seo_image]
+seoType = "/Album/Thành Và Vy/thanh_vy_16_seawedding.jpg"
+
+[config_favicon]
+
+[config_logo config_logo_desktop]
+logoType = "/seawedding/logo_white.png"
+
+[menu menu_mobile]
+menu_id = 2
+
+[config_logo config_logo_mobile]
+logoType = "/seawedding/logo_blue.png"
+
+[config_hotline config_hotline_call]
+hotlineType = 0902710212
 ==
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Sea Wedding - {{ this.page.title }}</title>
+    {% set config_seo_title=config_seo_title.configSeoContent %}
+    {% set config_seo_description=config_seo_description.configSeoContent %}
+    {% set config_seo_image=config_seo_image.configSeoContent %}
+    {% set config_favicon=config_favicon.configFavicon %}
+    {% set config_logo_desktop=config_logo_desktop.configLogo %}
+    {% set config_logo_mobile=config_logo_mobile.configLogo %}
+    {% set config_hotline_call=config_hotline_call.configHotline %}
+
+
+    <title>Sea Wedding - {{ this.page.meta_title }}</title>
+    {% if this.page.meta_description %}
     <meta name="description" content="{{ this.page.meta_description }}">
+    {% else %}
+    <meta name="description" content="{{ config_seo_description }}">
+    {% endif %}
+    {% if this.page.meta_title %}
     <meta name="title" content="{{ this.page.meta_title}}">
+    {% else %}
+    <meta name="title" content="{{ config_seo_title}}">
+    {% endif %}
     <meta name="author" content="OctoberCMS">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="OctoberCMS">
-    <link rel="icon" type="image/png" href="{{ 'assets/images/october.png'|theme }}">
+    {% if this.page.meta_title %}
+    <meta property="og:title" content="{{ this.page.meta_title}}"/>
+    {% else %}
+    <meta property="og:title" content="{{ config_seo_title}}"/>
+    {% endif %}
+    <meta property="og:url" content="{{ ''|page}}"/>
+    {% if this.page.meta_description %}
+    <meta property="og:description" content="{{ this.page.meta_description }}"/>
+    {% else %}
+    <meta property="og:description" content="{{ config_seo_description }}"/>
+    {% endif %}
+    {% if this.page.og_image %}
+    <meta property="og:image" content="{{this.page.og_image|media}}">
+    {% else %}
+    <meta property="og:image" content="{{config_seo_image|media}}">
+    {% endif %}
+    <link rel="shortcut icon" href="{{config_favicon|media}}" type="image/x-icon"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
@@ -25,8 +83,6 @@ menu_id = 3
     <link href="{{ 'assets/css/common.css'|theme }}" rel="stylesheet">
     <link href="{{ 'assets/css/frontend.css'|theme }}" rel="stylesheet">
     <link href="{{ 'assets/css/core.common.css'|theme }}" rel="stylesheet">
-
-
 
     {% styles %}
 </head>
@@ -39,7 +95,8 @@ menu_id = 3
             <div class="container">
                 <div class="header-inner">
                     <div class="logo">
-                        <a href="#"> <img class="logo-smartlinks" src="{{ 'assets/images/logo/logo_white.png'|theme }}" alt=""></a>
+                        <a href="{{url('/')}}"> <img class="logo-smartlinks" src="{{ config_logo_desktop|media}}"
+                                                     alt=""></a>
                     </div>
                     <div class="items-left">
                         {% component 'menu_left' %}
@@ -48,6 +105,63 @@ menu_id = 3
                         {% component 'menu_right' %}
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+    <div id="menu_mobile" class="d-none d-block d-sm-none">
+        <header class="nav-top">
+            <span class="title">Sea Wedding</span>
+            <span class="hamburger material-icons" id="ham"><i class="fas fa-bars"></i></span>
+        </header>
+        <nav class="nav-drill">
+            <div class="menu_logo"><a
+                    href="{{url('/')}}"><img class="logo-smartlinks" src="{{ config_logo_mobile|media}}"
+                                             alt=""></a></div>
+            {% component 'menu_mobile' %}
+
+        </nav>
+        <div style="height: 100%">aaa</div>
+    </div>
+    <script>
+        console.clear()
+
+        const navExpand = [].slice.call(document.querySelectorAll('.nav-expand'))
+        const backLink = `<li class="nav-item">
+	<a class="nav-link nav-back-link" href="javascript:;">
+		Back
+	</a>
+</li>`
+
+        navExpand.forEach(item => {
+            item.querySelector('.nav-expand-content').insertAdjacentHTML('afterbegin', backLink)
+            item.querySelector('.nav-link').addEventListener('click', () => item.classList.add('active'))
+            item.querySelector('.nav-back-link').addEventListener('click', () => item.classList.remove('active'))
+        })
+
+
+        // ---------------------------------------
+        // not-so-important stuff starts here
+
+        const ham = document.getElementById('ham')
+        ham.addEventListener('click', function () {
+            document.body.classList.toggle('nav-is-toggled')
+        })
+
+    </script>
+
+    <div id="menu_tabbar" class="d-none d-block d-sm-none">
+        <div class="row no-gutters" style="height: 100%">
+            <div class="col-6 ">
+                <div class="one-item">
+                    <a href="tel:{{config_hotline_call}}" class="blink"><i class="fas fa-phone"></i><span>Gọi Ngay</span></a>
+                </div>
+
+            </div>
+            <div class="col-6">
+                <div class="one-item">
+                    <a href="{{url('/lien-he')}}"><i class="far fa-calendar-alt"></i><span>Book Lịch</span></a>
+                </div>
+
             </div>
         </div>
     </div>
