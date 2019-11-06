@@ -23,7 +23,8 @@ class Config_Seo extends ComponentBase{
     }
     public function getSeoTypeOptions()
     {
-        $seoType = array_flip(Config::first()->config_seo[0]);
+//        $seoType = array_flip(Config::first()->config_seo[0]);
+        $seoType = array_keys(Config::first()->config_seo[0]);
         return $seoType;
     }
     public function onRun(){
@@ -31,7 +32,7 @@ class Config_Seo extends ComponentBase{
     }
     public function loadConfigSeo(){
         $key=$this->property('seoType');
-        return $key;
+        return array_values(Config::first()->config_seo[0])[$key];
     }
     public $configSeoContent;
 }

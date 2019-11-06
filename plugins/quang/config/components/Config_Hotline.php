@@ -23,7 +23,7 @@ class Config_Hotline extends ComponentBase{
     }
     public function getHotlineTypeOptions()
     {
-        $hotlineType = array_flip(Config::first()->config_hotline[0]);
+        $hotlineType = array_keys(Config::first()->config_hotline[0]);
         return $hotlineType;
     }
     public function onRun(){
@@ -31,7 +31,7 @@ class Config_Hotline extends ComponentBase{
     }
     public function loadConfigHotline(){
         $key=$this->property('hotlineType');
-        return $key;
+        return array_values(Config::first()->config_hotline[0])[$key];
     }
     public $configHotline;
 }
