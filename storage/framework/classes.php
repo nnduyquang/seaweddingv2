@@ -167,4 +167,9 @@
   'Quang\\Config\\Components\\Config_Hotline' => 'plugins\\quang\\config\\components\\Config_Hotline.php',
   'system\\Controllers\\eventlogs' => 'modules\\system\\controllers\\eventlogs.php',
   'backend\\Controllers\\preferences' => 'modules\\backend\\controllers\\preferences.php',
+  'genius\\storageclear\\Plugin' => 'plugins\\genius\\storageclear\\Plugin.php',
+  'Genius\\StorageClear\\Console\\StorageClear' => 'plugins\\genius\\storageclear\\console\\StorageClear.php',
+  'Genius\\StorageClear\\Console\\StorageDump' => 'plugins\\genius\\storageclear\\console\\StorageDump.php',
+  'Genius\\StorageClear\\Console\\StorageDumpProject' => 'plugins\\genius\\storageclear\\console\\StorageDumpProject.php',
+  'Genius\\StorageClear\\Console\\StorageDumpDatabase' => 'plugins\\genius\\storageclear\\console\\StorageDumpDatabase.php',
 );
