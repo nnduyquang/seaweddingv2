@@ -8,6 +8,7 @@ use Model;
 class Album extends Model
 {
     use \October\Rain\Database\Traits\Validation;
+    use \October\Rain\Database\Traits\NestedTree;
     
 
     /**
@@ -27,7 +28,7 @@ class Album extends Model
         'category' => [
             'Quang\Album\Models\Category',
             'table'=>'quang_album_album_category',
-            'order'=>'title'
+            'order'=>'created_at'
         ]
     ];
     public function setUrl($pageName, $controller, array $urlParams = array())

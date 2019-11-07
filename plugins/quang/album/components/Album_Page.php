@@ -67,6 +67,7 @@ class Album_Page extends ComponentAbstract
     public function loadAlbum()
     {
         $query=Category::where('slug', $this->property('categories'))->first()->album()->get();
+//        dd($query);
         if ($this->property('results') > 0) {
             $query = $query->take($this->property('results'));
         }
