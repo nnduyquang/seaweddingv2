@@ -20,12 +20,6 @@ categories = "uu-dai"
 categoryPage = "chi-tiet-uu-dai"
 postPage = "chi-tiet-uu-dai"
 
-[post_all post_all_service]
-results = 0
-categories = "dich-vu"
-categoryPage = "album"
-postPage = "album"
-
 [post_all post_all_members]
 results = 0
 categories = "thanh-vien"
@@ -98,31 +92,35 @@ $this->addJs('assets/js/home.js');
         </div>
     </div>
 </div>
-{% set posts=post_all_service.posts %}
-
-<div id="h_3" class="pl-lg-5 pr-lg-5 pl-3 pr-3">
-    <div class="row pl-lg-5 pr-lg-5 pl-3 pr-3">
-        <div class="col-12 title">
-            <h2>DỊCH VỤ CỦA CHÚNG TÔI</h2>
-            <p></p>
+<div id="h_10" class="container-fluid">
+    <h3>Promotions</h3>
+    <div class="row">
+        <div class="bg-container"
+             style="background-image: url('https://static.onethreeonefour.com/dist/img/home-promotion-bg.jpg')">
+            <img src="https://static.onethreeonefour.com/dist/img/home-promotion-text.png" class="home-promotion-text">
         </div>
-        {% for post in posts %}
-        <div class="col-md-4 mb-3">
-            <a href="{{ post.url }}">
-                <div class="sv_banner" style="background-image:url({{post.img_primary|media}});">
-                    <div class="border-top-bot"></div>
-                    <div class="sv_content">
-                        <h5>{{ post.title }}</h5>
-                        <div class="info pt-3">
-                            <p>{{ post.description }}</p>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
-        {% endfor %}
     </div>
+    <div class="container position-relative" style="height: 100%">
+        <div class="row item-row">
+            <div class="item"><a href="/korea-autumn-maple-leaves-promotion"><img
+                    src="https://static.onethreeonefour.com/dist/img/home-promotion-autumn-2018.jpg"
+                    alt="korean studio autumn prewedding promotion"></a></div>
+            <div class="item"><a href="/japan-autumn-pre-wedding-photography-package"><img
+                    src="https://static.onethreeonefour.com/dist/img/home-promotion-japan-maple.jpg"
+                    alt="japan maples leave japan autumn wedding photoshoot"></a></div>
+            <div class="item"><a href="/great-ocean-road-pre-wedding-photoshoot"><img
+                    src="https://static.onethreeonefour.com/dist/img/home-promotion-gor.jpg"
+                    alt="great ocean road promo"></a></div>
+            <div class="item"><a href="/japan-shirakawa-pre-wedding-photoshoot"><img
+                    src="https://static.onethreeonefour.com/dist/img/home-promotion-shirakawa.jpg"
+                    alt="japan shirakawa pre-wedding photoshoot promotion"></a></div>
 
+            <div class="item"><a href="/new-zealand-lupins-pre-wedding-photography"><img
+                    src="https://static.onethreeonefour.com/dist/img/home-promotion-lupins.jpg"
+                    alt="new zealand lupins wedding photoshoot"></a></div>
+
+        </div>
+    </div>
 </div>
 {% component 'albums' %}
 {% set posts=post_all_members.posts %}
