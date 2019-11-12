@@ -2919,20 +2919,18 @@
     text-align: center;
   }
 }
-#lead {
+#service-page #lead {
   padding-top: 120px;
   text-align: center;
 }
-
-#lead h2 {
+#service-page #lead h2 {
   line-height: 1.5;
   letter-spacing: 0.06em;
   color: #000;
   font-size: 40px;
   font-weight: 100;
 }
-
-#lead p {
+#service-page #lead p {
   max-width: 840px;
   margin: 80px auto 100px;
   padding: 40px 20px;
@@ -2944,35 +2942,30 @@
 }
 
 @media screen and (max-width: 1200px) {
-  #lead {
+  #service-page #lead {
     padding-top: 80px;
   }
-
-  #lead h2 {
+  #service-page #lead h2 {
     font-size: 32px;
   }
-
-  #lead p {
+  #service-page #lead p {
     margin: 60px auto 0;
     padding: 30px 15px;
     font-size: 14px;
   }
 }
 @media screen and (max-width: 640px) {
-  #lead {
+  #service-page #lead {
     padding-top: 40px;
   }
-
-  #lead h2 {
+  #service-page #lead h2 {
     text-align: left;
     font-size: 26px;
   }
-
-  #lead h2 br {
+  #service-page #lead h2 br {
     display: none;
   }
-
-  #lead p {
+  #service-page #lead p {
     margin: 25px auto 0;
     padding: 20px 0;
     line-height: 1.8;
@@ -2982,11 +2975,10 @@
 /*======================
  #features
 =======================*/
-#features {
+#service-page #features {
   padding-top: 100px;
 }
-
-.title {
+#service-page .title {
   text-align: center;
   letter-spacing: 0.1em;
   line-height: 1.5;
@@ -2994,8 +2986,7 @@
   font-size: 30px;
   font-weight: normal;
 }
-
-.title::after {
+#service-page .title::after {
   content: "";
   display: block;
   width: 1px;
@@ -3003,49 +2994,52 @@
   margin: 25px auto;
   background: #565656;
 }
-
-#features .feature-list {
+#service-page #features .feature-list {
   width: 90%;
   max-width: 1400px;
   margin: 0 auto;
 }
-
-#features .feature-list li {
+#service-page #features .feature-list li {
   margin-top: 80px;
   position: relative;
   letter-spacing: -5px;
   font-size: 0;
 }
-
-#features .feature-list li .sp {
+#service-page #features .feature-list li .sp {
   display: none;
 }
-
-#features .feature-list li:first-child {
+#service-page #features .feature-list li:first-child {
   margin-top: 0;
 }
-
-#features .feature-list li figure {
+#service-page #features .feature-list li figure {
   width: 60%;
   line-height: 0;
   display: inline-block;
   vertical-align: middle;
 }
-
-#features .feature-list li .txt-box {
+#service-page #features .feature-list li figure .sv_banner {
+  width: 100%;
+  height: 530px;
+  overflow: hidden;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 16px;
+  cursor: pointer;
+  transition: 0.6s;
+}
+#service-page #features .feature-list li .txt-box {
   width: 40%;
   padding: 0 0 0 80px;
   display: inline-block;
   vertical-align: middle;
 }
-
-#features .feature-list li.even .txt-box {
+#service-page #features .feature-list li.even .txt-box {
   padding: 0 80px 0 0;
   left: 0;
   right: auto;
 }
-
-#features .feature-list li .txt-box .tit {
+#service-page #features .feature-list li .txt-box .tit {
   padding-bottom: 10px;
   letter-spacing: 0;
   line-height: 1;
@@ -3054,8 +3048,7 @@
   font-size: 18px;
   font-weight: normal;
 }
-
-#features .feature-list li .txt-box dl dt {
+#service-page #features .feature-list li .txt-box dl dt {
   padding-bottom: 25px;
   display: block;
   letter-spacing: 0.06em;
@@ -3064,8 +3057,7 @@
   font-weight: 800;
   position: relative;
 }
-
-#features .feature-list li .txt-box dl dt i {
+#service-page #features .feature-list li .txt-box dl dt i {
   display: block;
   letter-spacing: 0.1em;
   line-height: 1.5;
@@ -3073,8 +3065,7 @@
   font-size: 12px;
   font-style: normal;
 }
-
-#features .feature-list li .txt-box dl dt::before {
+#service-page #features .feature-list li .txt-box dl dt::before {
   width: 40px;
   height: 1px;
   display: block;
@@ -3086,407 +3077,135 @@
   opacity: 0;
   transition-delay: 1s;
 }
-
-#features .feature-list li .txt-box dl dt.is-visible::before {
+#service-page #features .feature-list li .txt-box dl dt.is-visible::before {
   background: #565656;
   opacity: 1;
 }
-
-#features .feature-list li .txt-box dl dd {
+#service-page #features .feature-list li .txt-box dl dd {
   padding-top: 1.5em;
   text-align: left;
   letter-spacing: 0.06em;
   line-height: 2;
   font-size: 14px;
 }
-
-#features .feature-list li .txt-box .arrow {
+#service-page #features .feature-list li .txt-box .arrow {
   margin-top: 1.5em;
 }
-
-#features .feature-list li .txt-box .arrow a {
+#service-page #features .feature-list li .txt-box .arrow a {
   display: block;
   color: #ddd;
 }
-
-#features .feature-list li .txt-box .arrow a:hover {
+#service-page #features .feature-list li .txt-box .arrow a:hover {
   color: #FFF;
 }
-
-#features .feature-list li .txt-box .arrow a:hover span {
+#service-page #features .feature-list li .txt-box .arrow a:hover span {
   transform: translateX(10px);
 }
 
 @media screen and (max-width: 1200px) {
-  #features {
+  #service-page #features {
     padding: 80px 0 0;
   }
-
-  .title {
+  #service-page .title {
     font-size: 24px;
   }
-
-  .title::after {
+  #service-page .title::after {
     margin: 20px auto;
   }
-
-  #features .txt-wrap p {
+  #service-page #features .txt-wrap p {
     line-height: 2;
     font-size: 12px;
   }
-
-  #features .feature-list li {
+  #service-page #features .feature-list li {
     margin-top: 60px;
   }
-
-  #features .feature-list li .txt-box {
+  #service-page #features .feature-list li .txt-box {
     padding: 0 0 0 5%;
   }
-
-  #features .feature-list li.even .txt-box {
+  #service-page #features .feature-list li.even .txt-box {
     padding: 0 5% 0 0;
   }
-
-  #features .feature-list li .txt-box .tit {
+  #service-page #features .feature-list li .txt-box .tit {
     font-size: 16px;
   }
-
-  #features .feature-list li .txt-box dl dt {
+  #service-page #features .feature-list li .txt-box dl dt {
     padding-bottom: 20px;
     font-size: 22px;
   }
-
-  #features .feature-list li .txt-box dl dt i {
+  #service-page #features .feature-list li .txt-box dl dt i {
     font-size: 10px;
   }
-
-  #features .feature-list li .txt-box dl dd {
+  #service-page #features .feature-list li .txt-box dl dd {
     line-height: 2;
     font-size: 12px;
   }
 }
 @media screen and (max-width: 920px) {
-  #features .feature-list {
+  #service-page #features .feature-list {
     width: 100%;
   }
-
-  #features .feature-list li figure {
+  #service-page #features .feature-list li figure {
     width: 100%;
     float: none;
   }
-
-  #features .feature-list li .pc {
+  #service-page #features .feature-list li .pc {
     display: none;
   }
-
-  #features .feature-list li .sp {
+  #service-page #features .feature-list li .sp {
     display: block;
   }
-
-  #features .feature-list li .txt-box,
-#features .feature-list li.even .txt-box {
+  #service-page #features .feature-list li .txt-box,
+#service-page #features .feature-list li.even .txt-box {
     width: 100%;
     height: auto;
     padding: 30px 40px 0;
   }
-
-  #features .feature-list li .txt-box dl dt {
+  #service-page #features .feature-list li .txt-box dl dt {
     padding-bottom: 0;
   }
-
-  #features .feature-list li .txt-box dl dt::before {
+  #service-page #features .feature-list li .txt-box dl dt::before {
     content: none;
   }
-
-  #features .feature-list li .txt-box dl dd {
+  #service-page #features .feature-list li .txt-box dl dd {
     padding-top: 1.25em;
   }
 }
 @media screen and (max-width: 768px) {
-  #features {
+  #service-page #features {
     padding: 60px 0 0;
   }
-
-  #features .feature-list li {
+  #service-page #features .feature-list li {
     margin-top: 50px;
   }
-
-  #features .note {
+  #service-page #features .note {
     margin-top: 50px;
   }
 }
 @media screen and (max-width: 640px) {
-  .title {
+  #service-page .title {
     font-size: 22px;
   }
-
-  .title::after {
+  #service-page .title::after {
     height: 30px;
     margin: 15px auto;
   }
-
-  #features .feature-list li {
+  #service-page #features .feature-list li {
     margin-top: 40px;
   }
-
-  #features .feature-list li .txt-box,
-#features .feature-list li.even .txt-box {
+  #service-page #features .feature-list li .txt-box,
+#service-page #features .feature-list li.even .txt-box {
     padding: 20px 30px 0;
   }
-
-  #features .feature-list li .txt-box .tit {
+  #service-page #features .feature-list li .txt-box .tit {
     font-size: 14px;
   }
-
-  #features .feature-list li .txt-box dl dt {
+  #service-page #features .feature-list li .txt-box dl dt {
     font-size: 20px;
   }
-
-  #features .feature-list li .txt-box dl dt i {
+  #service-page #features .feature-list li .txt-box dl dt i {
     font-size: 9px;
   }
-
-  #features .feature-list li .txt-box dl dd {
+  #service-page #features .feature-list li .txt-box dl dd {
     line-height: 1.8;
-  }
-}
-#more {
-  margin-top: 120px;
-  padding-top: 100px;
-  padding-bottom: 40px;
-  background: #f2f2f2;
-}
-
-#more .more-list {
-  width: 90%;
-  max-width: 1340px;
-  margin: 0 auto;
-  letter-spacing: -5px;
-  font-size: 0;
-}
-
-#more .more-list li {
-  width: 23%;
-  margin-left: 2.66%;
-  display: inline-block;
-  vertical-align: top;
-}
-
-#more .more-list li:first-child {
-  margin-left: 0;
-}
-
-#more .more-list li a {
-  display: block;
-}
-
-#more .more-list li a figure {
-  overflow: hidden;
-}
-
-#more .more-list li a figure img {
-  transition: all 0.4s;
-}
-
-#more .more-list li a:hover figure img {
-  opacity: 0.8;
-  transform: scale(1.05);
-}
-
-#more .more-list li a .txt-wrap {
-  padding: 25px 25px 0;
-}
-
-#more .more-list li a .txt-wrap h3 {
-  letter-spacing: 0.1em;
-  line-height: 1.66;
-  font-family: "Abel", sans-serif;
-  font-size: 18px;
-  font-weight: normal;
-}
-
-@media screen and (max-width: 1200px) {
-  #more {
-    margin-top: 100px;
-    padding-top: 80px;
-    padding-bottom: 20px;
-  }
-
-  #more .more-list li a .txt-wrap {
-    padding: 20px 20px 0;
-  }
-}
-@media screen and (max-width: 920px) {
-  #more .more-list li {
-    width: 100%;
-    margin-top: 15px;
-    margin-left: 0;
-    padding: 10px;
-    display: block;
-    font-size: 0;
-    letter-spacing: -5px;
-    background: #FFF;
-  }
-
-  #more .more-list li:first-child {
-    margin-top: 0;
-  }
-
-  #more .more-list li a figure {
-    width: 33.333%;
-    display: inline-block;
-    vertical-align: middle;
-  }
-
-  #more .more-list li a .txt-wrap {
-    width: 66.666%;
-    padding: 0 0 0 20px;
-    display: inline-block;
-    vertical-align: middle;
-  }
-}
-@media screen and (max-width: 640px) {
-  #more {
-    margin-top: 40px;
-    padding-top: 40px;
-    padding-bottom: 0;
-  }
-
-  #more .more-list li {
-    margin-top: 8px;
-    padding: 2px;
-  }
-
-  #more .more-list li a .txt-wrap {
-    padding-left: 15px;
-  }
-
-  #more .more-list li a .txt-wrap h3 {
-    font-size: 14px;
-  }
-}
-#contact {
-  margin: 100px auto;
-  padding: 45px 0 50px;
-  border: 1px solid #dfdfdf;
-  z-index: 10 !important;
-}
-
-#contact .text {
-  margin-bottom: 30px;
-  text-align: center;
-  letter-spacing: 0.1em;
-  font-size: 14px;
-  font-weight: 300;
-}
-
-#contact .btn.left {
-  width: 40%;
-  /* max-width: 580px;*/
-  margin: 0 1.5% 0 8.5%;
-}
-
-#contact .btn.right {
-  width: 40%;
-  /* max-width: 580px;*/
-  margin: 0 8.5% 0 1.5%;
-}
-
-@media screen and (min-width: 641px) and (max-width: 1024px) {
-  #contact .btn.left {
-    display: block;
-    float: none;
-    width: 60%;
-    /* max-width: 580px;*/
-    margin: 0 auto;
-    margin-bottom: 20px;
-  }
-
-  #contact .btn.right {
-    display: block;
-    width: 60%;
-    float: none;
-    /* max-width: 580px;*/
-    margin: 0 auto;
-  }
-}
-#contact .btn a {
-  letter-spacing: 0.1em;
-  text-align: center;
-  line-height: 90px;
-  display: block;
-  color: #FFF;
-  font-size: 16px;
-  font-weight: 300;
-  position: relative;
-}
-
-#contact .btn a:hover {
-  color: #2d2d2d;
-  background: transparent;
-}
-
-#contact .btn a::before {
-  content: "";
-  width: 0;
-  height: 100%;
-  background: #fff100;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-}
-
-#contact .btn a:hover::before {
-  width: 100%;
-  transition: all 0.15s ease-out;
-}
-
-#contact .btn.left a::after {
-  content: "";
-  width: 100%;
-  height: 100%;
-  background: #2d2d2d;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -2;
-}
-
-#contact .btn.right a::after {
-  content: "";
-  width: 100%;
-  height: 100%;
-  background: #0098da;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -2;
-}
-
-#contact .btn a .icon {
-  width: 60px;
-  height: 60px;
-  position: absolute;
-  left: 15px;
-  top: 15px;
-}
-
-#contact .btn a .icon img {
-  width: 100%;
-  height: auto;
-}
-
-@media screen and (max-width: 640px) {
-  #contact {
-    margin: 80px auto;
-    padding: 45px 0 50px;
-    border: 1px solid #dfdfdf;
-    z-index: 10 !important;
-  }
-}
-@media screen and (max-width: 640px) {
-  #contact {
-    display: none;
   }
 }

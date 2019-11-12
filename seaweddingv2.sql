@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 12, 2019 lúc 10:04 AM
--- Phiên bản máy phục vụ: 10.1.31-MariaDB
--- Phiên bản PHP: 7.2.22
+-- Thời gian đã tạo: Th10 12, 2019 lúc 03:41 PM
+-- Phiên bản máy phục vụ: 10.4.8-MariaDB
+-- Phiên bản PHP: 7.2.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -55,7 +55,8 @@ INSERT INTO `backend_access_log` (`id`, `user_id`, `ip_address`, `created_at`, `
 (12, 1, '::1', '2019-11-06 19:09:36', '2019-11-06 19:09:36'),
 (13, 1, '::1', '2019-11-07 00:25:13', '2019-11-07 00:25:13'),
 (14, 1, '::1', '2019-11-11 00:51:27', '2019-11-11 00:51:27'),
-(15, 1, '::1', '2019-11-11 18:59:53', '2019-11-11 18:59:53');
+(15, 1, '::1', '2019-11-11 18:59:53', '2019-11-11 18:59:53'),
+(16, 1, '::1', '2019-11-12 04:21:25', '2019-11-12 04:21:25');
 
 -- --------------------------------------------------------
 
@@ -73,15 +74,15 @@ CREATE TABLE `backend_users` (
   `activation_code` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `persist_code` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `reset_password_code` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `permissions` text COLLATE utf8mb4_unicode_ci,
-  `is_activated` tinyint(1) NOT NULL DEFAULT '0',
+  `permissions` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `is_activated` tinyint(1) NOT NULL DEFAULT 0,
   `role_id` int(10) UNSIGNED DEFAULT NULL,
   `activated_at` timestamp NULL DEFAULT NULL,
   `last_login` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
-  `is_superuser` tinyint(1) NOT NULL DEFAULT '0'
+  `is_superuser` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -89,7 +90,7 @@ CREATE TABLE `backend_users` (
 --
 
 INSERT INTO `backend_users` (`id`, `first_name`, `last_name`, `login`, `email`, `password`, `activation_code`, `persist_code`, `reset_password_code`, `permissions`, `is_activated`, `role_id`, `activated_at`, `last_login`, `created_at`, `updated_at`, `deleted_at`, `is_superuser`) VALUES
-(1, 'admin', 'admin', 'admin', 'nnduyquang@gmail.com', '$2y$10$ONGwNadfsrrQ7ZdMBlqmMOzVSiJ/WQyepNCks6cKWq/LLc97LTfO.', NULL, '$2y$10$7VJ1zEWokqDphzMnv41GluxhA2BCJCKCQbOyBKkiovRt9q4RtJBSC', NULL, '', 1, 2, NULL, '2019-11-11 18:59:52', '2019-10-16 23:41:02', '2019-11-11 18:59:52', NULL, 1);
+(1, 'admin', 'admin', 'admin', 'nnduyquang@gmail.com', '$2y$10$ONGwNadfsrrQ7ZdMBlqmMOzVSiJ/WQyepNCks6cKWq/LLc97LTfO.', NULL, '$2y$10$7VJ1zEWokqDphzMnv41GluxhA2BCJCKCQbOyBKkiovRt9q4RtJBSC', NULL, '', 1, 2, NULL, '2019-11-12 04:21:24', '2019-10-16 23:41:02', '2019-11-12 04:21:24', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -121,8 +122,8 @@ CREATE TABLE `backend_user_groups` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `code` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `description` text COLLATE utf8mb4_unicode_ci,
-  `is_new_user_default` tinyint(1) NOT NULL DEFAULT '0'
+  `description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `is_new_user_default` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -144,7 +145,7 @@ CREATE TABLE `backend_user_preferences` (
   `namespace` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `group` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `item` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `value` text COLLATE utf8mb4_unicode_ci
+  `value` text COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -165,9 +166,9 @@ CREATE TABLE `backend_user_roles` (
   `id` int(10) UNSIGNED NOT NULL,
   `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `code` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `description` text COLLATE utf8mb4_unicode_ci,
-  `permissions` text COLLATE utf8mb4_unicode_ci,
-  `is_system` tinyint(1) NOT NULL DEFAULT '0',
+  `description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `permissions` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `is_system` tinyint(1) NOT NULL DEFAULT 0,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -190,11 +191,11 @@ CREATE TABLE `backend_user_throttle` (
   `id` int(10) UNSIGNED NOT NULL,
   `user_id` int(10) UNSIGNED DEFAULT NULL,
   `ip_address` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `attempts` int(11) NOT NULL DEFAULT '0',
+  `attempts` int(11) NOT NULL DEFAULT 0,
   `last_attempt_at` timestamp NULL DEFAULT NULL,
-  `is_suspended` tinyint(1) NOT NULL DEFAULT '0',
+  `is_suspended` tinyint(1) NOT NULL DEFAULT 0,
   `suspended_at` timestamp NULL DEFAULT NULL,
-  `is_banned` tinyint(1) NOT NULL DEFAULT '0',
+  `is_banned` tinyint(1) NOT NULL DEFAULT 0,
   `banned_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -226,7 +227,7 @@ CREATE TABLE `cache` (
 CREATE TABLE `cms_theme_data` (
   `id` int(10) UNSIGNED NOT NULL,
   `theme` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `data` mediumtext COLLATE utf8mb4_unicode_ci,
+  `data` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -243,8 +244,8 @@ CREATE TABLE `cms_theme_logs` (
   `theme` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `template` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `old_template` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `content` longtext COLLATE utf8mb4_unicode_ci,
-  `old_content` longtext COLLATE utf8mb4_unicode_ci,
+  `content` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `old_content` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `user_id` int(11) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -279,7 +280,7 @@ CREATE TABLE `deferred_bindings` (
   `slave_type` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `slave_id` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `session_key` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `is_bind` tinyint(1) NOT NULL DEFAULT '1',
+  `is_bind` tinyint(1) NOT NULL DEFAULT 1,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -295,7 +296,7 @@ CREATE TABLE `failed_jobs` (
   `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `payload` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `exception` longtext COLLATE utf8mb4_unicode_ci,
+  `exception` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `failed_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -308,7 +309,7 @@ CREATE TABLE `failed_jobs` (
 CREATE TABLE `flynsarmy_menu_menuitems` (
   `id` int(10) UNSIGNED NOT NULL,
   `menu_id` int(10) UNSIGNED DEFAULT NULL,
-  `enabled` tinyint(1) NOT NULL DEFAULT '0',
+  `enabled` tinyint(1) NOT NULL DEFAULT 0,
   `label` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `title_attrib` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `id_attrib` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
@@ -317,14 +318,14 @@ CREATE TABLE `flynsarmy_menu_menuitems` (
   `url` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `master_object_class` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `master_object_id` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `parent_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
-  `nest_left` int(11) NOT NULL DEFAULT '0',
-  `nest_right` int(11) NOT NULL DEFAULT '0',
-  `nest_depth` int(11) NOT NULL DEFAULT '0',
+  `parent_id` int(10) UNSIGNED NOT NULL DEFAULT 0,
+  `nest_left` int(11) NOT NULL DEFAULT 0,
+  `nest_right` int(11) NOT NULL DEFAULT 0,
+  `nest_depth` int(11) NOT NULL DEFAULT 0,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `target_attrib` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `data` text COLLATE utf8mb4_unicode_ci
+  `data` text COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -454,18 +455,18 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 CREATE TABLE `quang_album_` (
   `id` int(10) UNSIGNED NOT NULL,
   `title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `descritption` text COLLATE utf8mb4_unicode_ci,
-  `is_active` tinyint(1) NOT NULL DEFAULT '1',
-  `content` text COLLATE utf8mb4_unicode_ci,
+  `descritption` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `is_active` tinyint(1) NOT NULL DEFAULT 1,
+  `content` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `slug` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `photos` text COLLATE utf8mb4_unicode_ci,
+  `photos` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `img_primary` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `parent_id` int(11) DEFAULT NULL,
-  `nest_left` int(11) NOT NULL DEFAULT '0',
-  `nest_right` int(11) NOT NULL DEFAULT '0',
-  `nest_depth` int(11) NOT NULL DEFAULT '0'
+  `nest_left` int(11) NOT NULL DEFAULT 0,
+  `nest_right` int(11) NOT NULL DEFAULT 0,
+  `nest_depth` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -557,20 +558,20 @@ INSERT INTO `quang_album_category` (`id`, `title`, `slug`, `created_at`, `update
 
 CREATE TABLE `quang_config_` (
   `id` int(11) NOT NULL,
-  `config_logo` text COLLATE utf8mb4_unicode_ci,
+  `config_logo` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `config_name_company` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT 'null',
-  `config_address_company` text COLLATE utf8mb4_unicode_ci,
-  `config_script_header` text COLLATE utf8mb4_unicode_ci,
-  `config_contact_detail` text COLLATE utf8mb4_unicode_ci,
+  `config_address_company` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `config_script_header` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `config_contact_detail` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `config_email_company` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT 'null',
-  `config_slider` text COLLATE utf8mb4_unicode_ci,
-  `config_script_fanpage` text COLLATE utf8mb4_unicode_ci,
-  `config_description_company` text COLLATE utf8mb4_unicode_ci,
-  `config_script_body` text COLLATE utf8mb4_unicode_ci,
+  `config_slider` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `config_script_fanpage` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `config_description_company` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `config_script_body` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `config_phone` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT 'null',
-  `config_seo` text COLLATE utf8mb4_unicode_ci,
+  `config_seo` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `config_favicon` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `config_hotline` text COLLATE utf8mb4_unicode_ci
+  `config_hotline` text COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -589,9 +590,9 @@ INSERT INTO `quang_config_` (`id`, `config_logo`, `config_name_company`, `config
 CREATE TABLE `quang_post_` (
   `id` int(10) UNSIGNED NOT NULL,
   `title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` text COLLATE utf8mb4_unicode_ci,
+  `description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `content` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `is_active` tinyint(1) NOT NULL DEFAULT '0',
+  `is_active` tinyint(1) NOT NULL DEFAULT 0,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `slug` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -603,9 +604,9 @@ CREATE TABLE `quang_post_` (
 --
 
 INSERT INTO `quang_post_` (`id`, `title`, `description`, `content`, `is_active`, `created_at`, `updated_at`, `slug`, `img_primary`) VALUES
-(1, 'Chụp Ảnh Gia Đình', 'Lưu Giữ Khoảnh Khắc Gia Đình', '<p>Lưu Giữ Khoảnh Khắc Gia Đình</p>', 1, '2019-10-20 21:24:27', '2019-10-27 08:30:39', 'chup-anh-gia-dinh', '/Services/17.jpg'),
-(2, 'Chụp Phóng Sự Cưới', 'Lưu Giữ Khoảnh Khắc Ngày Cưới', '<p>Lưu Giữ Khoảnh Khắc Ngày Cưới</p>', 1, '2019-10-20 21:26:00', '2019-10-27 08:30:56', 'chup-phong-su-cuoi', '/Services/y7a2718-x2.jpg'),
-(3, 'Chụp Ảnh Cưới', 'Nhiếp Ảnh Gia Thợ Trang Điểm Hàng Đầu', '', 1, '2019-10-20 21:26:40', '2019-10-27 08:31:11', 'chup-anh-cuoi', '/Services/hai_0153.jpg'),
+(1, 'Chụp Ảnh Gia Đình', 'Lưu Giữ Khoảnh Khắc Gia Đình', '<p>Gia đ&igrave;nh 2 chữ thi&ecirc;ng li&ecirc;ng nhất ,l&agrave; nơi duy nhất lu&ocirc;n ch&agrave;o đ&oacute;n ta mọi l&uacute;c mọi nơi ,h&atilde;y lưu giữ những h&igrave;nh ảnh &yacute; nghĩa với những người th&acirc;n y&ecirc;u ,để đi bất cứ nơi đ&acirc;u cũng c&oacute; gia đ&igrave;nh ở b&ecirc;n cạnh . Đặc biệt ngay tại Đ&agrave; Nẵng, hay lưu giữ lại kỷ niệm của gia đ&igrave;nh qua những chuyến thưởng ngoạn danh lam thắng cảnh, những khu resort đẹp nhất.</p>', 1, '2019-10-20 21:24:27', '2019-11-12 04:44:09', 'chup-anh-gia-dinh', '/Services/17.jpg'),
+(2, 'Chụp Phóng Sự Cưới', 'Lưu Giữ Khoảnh Khắc Ngày Cưới', '<p>&ldquo;Khoảnh khắc v&agrave; cảm x&uacute;c&rdquo; c&oacute; lẽ l&agrave; cụm từ diễn tả đầy đủ nhất về&nbsp;<strong>chụp ảnh ph&oacute;ng sự cưới</strong>. Chụp ảnh ph&oacute;ng sự cưới l&agrave; ghi lại những&nbsp;<em><strong>khoảnh khắc</strong></em>, cung bậc&nbsp;<em><strong>cảm x&uacute;c</strong></em>&nbsp;của tất cả mọi người trong ng&agrave;y cưới m&agrave; trọng t&acirc;m l&agrave; c&ocirc; d&acirc;u v&agrave; ch&uacute; rể, ghi lại những cảm x&uacute;c tự nhi&ecirc;n nhất:&nbsp;<em>vui c&oacute;</em>,&nbsp;<em>buồn c&oacute;</em>, những&nbsp;<em>giọt nước mắt</em>, những lời&nbsp;<em>tạm biệt&nbsp;thầm lặng</em>&hellip; trong suốt ng&agrave;y trọng đại. Sea Wedding gi&uacute;p bạn<strong>&nbsp;</strong>lưu lại ng&agrave;y đẹp trong đời của bạn, ghi lại một c&aacute;ch&nbsp;<strong><em>tươi đẹp</em></strong>&nbsp;nhất,&nbsp;<strong><em>sống động</em></strong>&nbsp;nhất r&otilde; n&eacute;t nhất, khơi gợi nhất, khiến bạn kh&oacute; c&oacute; thể qu&ecirc;n mỗi khi lật lại những trang ảnh ngay cả đến khi bạn kh&ocirc;ng c&ograve;n trẻ nữa.</p>', 1, '2019-10-20 21:26:00', '2019-11-12 04:47:47', 'chup-phong-su-cuoi', '/Services/y7a2718-x2.jpg'),
+(3, 'Chụp Ảnh Cưới', 'Nhiếp Ảnh Gia Thợ Trang Điểm Hàng Đầu', '<p>Lưu lại từng khoảnh khắc đẹp tại những địa điểm sang chảnh nhất Đ&agrave; Nẵng. C&ograve;n g&igrave; bằng khi vừa chụp ảnh cưới vừa kết hợp du lịch, thưởng ngoạn thi&ecirc;n đường nơi hạ giới tại B&agrave; N&agrave;, n&eacute;t cổ k&iacute;nh tại Hội An, một th&agrave;nh phố du lịch tại Đ&agrave; Nẵng. Ekip Sea Wedding sẽ đồng h&agrave;nh v&agrave; thực hiện bộ album cưới khiến gia đ&igrave;nh khen ngợi v&agrave; bạn b&egrave; đồng nghiệp ganh tỵ. H&atilde;y tham gia c&ugrave;ng Sea nh&eacute;.</p>', 1, '2019-10-20 21:26:40', '2019-11-12 04:41:51', 'chup-anh-cuoi', '/Services/hai_0153.jpg'),
 (4, 'Tin Tức 1', 'Tin Tức 1 Mô Tả', '', 1, '2019-10-27 06:17:37', '2019-10-27 08:27:26', 'tin-tuc-1', '/temp/1.png'),
 (5, 'Tin Tức 2', 'Tin Tức 2', '<p>Tin Tức 2 Mô tả</p>', 1, '2019-10-27 06:18:05', '2019-10-27 08:27:41', 'tin-tuc-2', '/temp/1.png'),
 (6, 'Tin tức 3', 'Tin tức 3 Mô tả', '<p>Tin tức 3 Mô tả</p>', 1, '2019-10-27 06:18:47', '2019-10-27 08:27:51', 'tin-tuc-3', '/temp/1.png'),
@@ -654,8 +655,8 @@ CREATE TABLE `quang_post_category` (
   `nest_right` int(11) DEFAULT NULL,
   `nest_depth` int(11) DEFAULT NULL,
   `img_primary` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `photos` text COLLATE utf8mb4_unicode_ci,
-  `description` text COLLATE utf8mb4_unicode_ci
+  `photos` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -736,7 +737,7 @@ CREATE TABLE `rainlab_blog_categories` (
   `name` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `slug` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `code` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `description` text COLLATE utf8mb4_unicode_ci,
+  `description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `parent_id` int(10) UNSIGNED DEFAULT NULL,
   `nest_left` int(11) DEFAULT NULL,
   `nest_right` int(11) DEFAULT NULL,
@@ -765,14 +766,14 @@ CREATE TABLE `rainlab_blog_posts` (
   `user_id` int(10) UNSIGNED DEFAULT NULL,
   `title` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `slug` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `excerpt` text COLLATE utf8mb4_unicode_ci,
-  `content` longtext COLLATE utf8mb4_unicode_ci,
-  `content_html` longtext COLLATE utf8mb4_unicode_ci,
+  `excerpt` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `content` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `content_html` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `published_at` timestamp NULL DEFAULT NULL,
-  `published` tinyint(1) NOT NULL DEFAULT '0',
+  `published` tinyint(1) NOT NULL DEFAULT 0,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `metadata` mediumtext COLLATE utf8mb4_unicode_ci,
+  `metadata` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `powerseo_title` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `powerseo_description` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `powerseo_keywords` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -829,11 +830,11 @@ INSERT INTO `rainlab_blog_posts_categories` (`post_id`, `category_id`) VALUES
 
 CREATE TABLE `sessions` (
   `id` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `payload` text COLLATE utf8mb4_unicode_ci,
+  `payload` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `last_activity` int(11) DEFAULT NULL,
   `user_id` int(10) UNSIGNED DEFAULT NULL,
   `ip_address` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `user_agent` text COLLATE utf8mb4_unicode_ci
+  `user_agent` text COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -845,8 +846,8 @@ CREATE TABLE `sessions` (
 CREATE TABLE `system_event_logs` (
   `id` int(10) UNSIGNED NOT NULL,
   `level` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `message` text COLLATE utf8mb4_unicode_ci,
-  `details` mediumtext COLLATE utf8mb4_unicode_ci,
+  `message` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `details` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -941,11 +942,11 @@ CREATE TABLE `system_files` (
   `file_size` int(11) NOT NULL,
   `content_type` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `title` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `description` text COLLATE utf8mb4_unicode_ci,
+  `description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `field` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `attachment_id` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `attachment_type` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `is_public` tinyint(1) NOT NULL DEFAULT '1',
+  `is_public` tinyint(1) NOT NULL DEFAULT 1,
   `sort_order` int(11) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -991,11 +992,11 @@ CREATE TABLE `system_mail_layouts` (
   `id` int(10) UNSIGNED NOT NULL,
   `name` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `code` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `content_html` text COLLATE utf8mb4_unicode_ci,
-  `content_text` text COLLATE utf8mb4_unicode_ci,
-  `content_css` text COLLATE utf8mb4_unicode_ci,
-  `is_locked` tinyint(1) NOT NULL DEFAULT '0',
-  `options` text COLLATE utf8mb4_unicode_ci,
+  `content_html` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `content_text` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `content_css` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `is_locked` tinyint(1) NOT NULL DEFAULT 0,
+  `options` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -1018,9 +1019,9 @@ CREATE TABLE `system_mail_partials` (
   `id` int(10) UNSIGNED NOT NULL,
   `name` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `code` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `content_html` text COLLATE utf8mb4_unicode_ci,
-  `content_text` text COLLATE utf8mb4_unicode_ci,
-  `is_custom` tinyint(1) NOT NULL DEFAULT '0',
+  `content_html` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `content_text` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `is_custom` tinyint(1) NOT NULL DEFAULT 0,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -1048,11 +1049,11 @@ CREATE TABLE `system_mail_templates` (
   `id` int(10) UNSIGNED NOT NULL,
   `code` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `subject` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `description` text COLLATE utf8mb4_unicode_ci,
-  `content_html` text COLLATE utf8mb4_unicode_ci,
-  `content_text` text COLLATE utf8mb4_unicode_ci,
+  `description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `content_html` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `content_text` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `layout_id` int(11) DEFAULT NULL,
-  `is_custom` tinyint(1) NOT NULL DEFAULT '0',
+  `is_custom` tinyint(1) NOT NULL DEFAULT 0,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -1078,7 +1079,7 @@ CREATE TABLE `system_parameters` (
   `namespace` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `group` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `item` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `value` text COLLATE utf8mb4_unicode_ci
+  `value` text COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -1086,8 +1087,8 @@ CREATE TABLE `system_parameters` (
 --
 
 INSERT INTO `system_parameters` (`id`, `namespace`, `group`, `item`, `value`) VALUES
-(1, 'system', 'update', 'count', '0'),
-(2, 'system', 'update', 'retry', '1573545092'),
+(1, 'system', 'update', 'count', '2'),
+(2, 'system', 'update', 'retry', '1573644087'),
 (3, 'cms', 'theme', 'active', '\"sea-wedding\"');
 
 -- --------------------------------------------------------
@@ -1101,7 +1102,7 @@ CREATE TABLE `system_plugin_history` (
   `code` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `type` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   `version` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `detail` text COLLATE utf8mb4_unicode_ci,
+  `detail` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -1367,8 +1368,8 @@ CREATE TABLE `system_plugin_versions` (
   `code` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `version` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `is_disabled` tinyint(1) NOT NULL DEFAULT '0',
-  `is_frozen` tinyint(1) NOT NULL DEFAULT '0'
+  `is_disabled` tinyint(1) NOT NULL DEFAULT 0,
+  `is_frozen` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -1398,8 +1399,8 @@ CREATE TABLE `system_request_logs` (
   `id` int(10) UNSIGNED NOT NULL,
   `status_code` int(11) DEFAULT NULL,
   `url` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `referer` text COLLATE utf8mb4_unicode_ci,
-  `count` int(11) NOT NULL DEFAULT '0',
+  `referer` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `count` int(11) NOT NULL DEFAULT 0,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -1415,8 +1416,8 @@ CREATE TABLE `system_revisions` (
   `user_id` int(10) UNSIGNED DEFAULT NULL,
   `field` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `cast` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `old_value` text COLLATE utf8mb4_unicode_ci,
-  `new_value` text COLLATE utf8mb4_unicode_ci,
+  `old_value` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `new_value` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `revisionable_type` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `revisionable_id` int(11) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -1432,7 +1433,7 @@ CREATE TABLE `system_revisions` (
 CREATE TABLE `system_settings` (
   `id` int(10) UNSIGNED NOT NULL,
   `item` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `value` mediumtext COLLATE utf8mb4_unicode_ci
+  `value` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -1735,7 +1736,7 @@ ALTER TABLE `system_settings`
 -- AUTO_INCREMENT cho bảng `backend_access_log`
 --
 ALTER TABLE `backend_access_log`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT cho bảng `backend_users`
