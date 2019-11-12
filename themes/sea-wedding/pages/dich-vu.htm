@@ -5,36 +5,66 @@ meta_title = "Dịch Vụ Chụp Ảnh Cưới Đà Nẵng"
 is_hidden = 0
 robot_index = "index"
 robot_follow = "follow"
-
-[post_all]
-results = 0
-categories = "dich-vu"
-categoryPage = "chi-tiet-dich-vu"
-postPage = "chi-tiet-dich-vu"
 ==
-{% partial 'title-page' title_page='Dịch vụ'%}
-{% set posts=post_all.posts %}
+<section id="lead" class="inner-s">
+  <h2 class="fade-up up">Happiness can be achieved <br>in less than a second</h2>
+  <p class="fade-up up">La-vie Photography has been specializing in wedding photography since 1995. Over the years, we have opened 15 shops in Japan and 7 shops around the world. La-vie Photography values first class service and capturing true happiness in the photographs. This cannot be done without communication, and we will do everything possible to make your visit in Japan a comfortable and memorable experience. Find locations, outfits, and photos that could only be captured through La-vie Photography to make your wedding experience an unique and lifelong treasure.</p>
+ </section>
+ <section id="features">
+  <h2 class="title fade-up up">FEATURE</h2>
 
-<div id="ser1">
-    <div class="container">
-        <div class="content">
-            <div class="row">
-                {% for post in posts %}
-                <div class="col-md-6">
-                    <div class="one-item lazy-background-img" style="background-image:url({{post.img_primary|media}});">
-                        <div class="info">
-                            <h3><a href="">{{post.title}}</a></h3>
-                            <hr>
-                            <div class="description">
-                                {{ post.description }}
-                            </div>
-                            <div class="button"><a href="{{post.url}}">Xem thêm</a></div>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-
+  <ul class="feature-list">
+   <li class="cf">
+    <figure class="mask iv is-visible"><span><img src="img/index/01.jpg" alt=""></span></figure>
+    <div class="txt-box">
+     <p class="tit mask iv is-visible"><span>01</span></p>
+     <dl>
+      <dt class="mask iv is-visible"><span>Proffesional Photographer</span></dt>
+      <dd class="mask iv is-visible"><span>There are no manuals that exist in La-vie Photography, making each photographer unique and characteristic. From over 400 photographers who work in our team, you should be able to find the perfect photographer that would match your expectations.</span></dd>
+     </dl>
     </div>
-</div>
+   </li>
+   <li class="even cf">
+    <figure class="mask iv sp"><span><img src="img/index/02.jpg" alt=""></span></figure>
+    <div class="txt-box">
+     <p class="tit mask iv is-visible"><span>02</span></p>
+     <dl>
+      <dt class="mask iv is-visible"><span>Variety of Outfits</span></dt>
+      <dd class="mask iv is-visible"><span>All of our kimonos, wedding dresses, and tuxedos are selected by the members of our outfit team. The outfits includes from “Made in Japan” quality dresses to authentic European Brands. The varieties of wedding dresses are promised to enhance the beauty and elegance of the bride’s figure.</span></dd>
+     </dl>
+    </div>
+    <figure class="mask iv pc is-visible"><span><img src="img/index/02.jpg" alt=""></span></figure>
+   </li>
+   <li class="cf">
+    <figure class="mask iv is-visible"><span><img src="img/index/03.jpg" alt=""></span></figure>
+    <div class="txt-box">
+     <p class="tit mask iv is-visible"><span>03</span></p>
+     <dl>
+      <dt class="mask iv is-visible"><span>Professional Makeup Artist</span></dt>
+      <dd class="mask iv is-visible"><span>A make-up artist specialized in weddings will be in charge of your make-up and hairdo for your important day. Feel free to order for a specific style, or ask for preferences. The artist will take responsibility and come along with you throughout the photo shoot for any needed adjustments or re-touch.</span></dd>
+     </dl>
+    </div>
+   </li>
+   <li class="even cf">
+    <figure class="mask iv sp"><span><img src="img/index/04.jpg" alt=""></span></figure>
+    <div class="txt-box">
+     <p class="tit mask iv is-visible"><span>04</span></p>
+     <dl>
+      <dt class="mask iv is-visible"><span>English / Chinese Fluent Interpreter</span></dt>
+      <dd class="mask iv is-visible"><span>In order to guide you through all of this work smoothly and without stress, an English or Chinese interpreter will be assigned for you.</span></dd>
+     </dl>
+    </div>
+    <figure class="mask iv pc is-visible"><span><img src="img/index/04.jpg" alt=""></span></figure>
+   </li>
+   <li class="cf">
+    <figure class="mask iv is-visible"><span><img src="img/index/05.jpg" alt=""></span></figure>
+    <div class="txt-box">
+     <p class="tit mask iv is-visible"><span>05</span></p>
+     <dl>
+      <dt class="mask iv is-visible"><span>Choose your destination</span></dt>
+      <dd class="mask iv is-visible"><span>We have shops in all major cities of Japan, leaving you 15 areas to choose from to take your wedding photos. We also have offices in Shanghai and Hong Kong. Please feel free to visit us if you are nearby! Contact us via E-mail for further informations.</span></dd>
+     </dl>
+    </div>
+   </li>
+  </ul>
+ </section>

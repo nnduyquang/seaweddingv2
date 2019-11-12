@@ -31,6 +31,13 @@ results = 0
 categories = "y-kien-khach-hang"
 categoryPage = "album"
 postPage = "album"
+
+[categories_child]
+results = 0
+categories = "bang-gia"
+identifierValue = "{{ :slug }}"
+categoryPage = "chi-tiet-bang-gia"
+postPage = "chi-tiet-bang-gia"
 ==
 <?php
 function onStart()
@@ -92,32 +99,24 @@ $this->addJs('assets/js/home.js');
         </div>
     </div>
 </div>
+{% set categories_child=categories_child.categoriesChild %}
+
 <div id="h_10" class="container-fluid">
     <h3>Promotions</h3>
     <div class="row">
         <div class="bg-container"
-             style="background-image: url('https://static.onethreeonefour.com/dist/img/home-promotion-bg.jpg')">
-            <img src="https://static.onethreeonefour.com/dist/img/home-promotion-text.png" class="home-promotion-text">
+             style="background-image: url({{'Album/Giang Và Hiền/giang_hien_5_seawedding.jpg'|media}})">
+            
         </div>
     </div>
     <div class="container position-relative" style="height: 100%">
         <div class="row item-row">
-            <div class="item"><a href="/korea-autumn-maple-leaves-promotion"><img
-                    src="https://static.onethreeonefour.com/dist/img/home-promotion-autumn-2018.jpg"
-                    alt="korean studio autumn prewedding promotion"></a></div>
-            <div class="item"><a href="/japan-autumn-pre-wedding-photography-package"><img
-                    src="https://static.onethreeonefour.com/dist/img/home-promotion-japan-maple.jpg"
-                    alt="japan maples leave japan autumn wedding photoshoot"></a></div>
-            <div class="item"><a href="/great-ocean-road-pre-wedding-photoshoot"><img
-                    src="https://static.onethreeonefour.com/dist/img/home-promotion-gor.jpg"
-                    alt="great ocean road promo"></a></div>
-            <div class="item"><a href="/japan-shirakawa-pre-wedding-photoshoot"><img
-                    src="https://static.onethreeonefour.com/dist/img/home-promotion-shirakawa.jpg"
-                    alt="japan shirakawa pre-wedding photoshoot promotion"></a></div>
-
-            <div class="item"><a href="/new-zealand-lupins-pre-wedding-photography"><img
-                    src="https://static.onethreeonefour.com/dist/img/home-promotion-lupins.jpg"
-                    alt="new zealand lupins wedding photoshoot"></a></div>
+        {% for category_price in categories_child %}
+            <div class="item"><a href="{{category_price.url}}"><img
+                    src="{{category_price.img_primary|media}}"
+                    alt="{{category_price.category_title}}"></a></div>
+                    {% endfor %}
+          
 
         </div>
     </div>
