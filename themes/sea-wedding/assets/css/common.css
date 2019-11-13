@@ -522,3 +522,45 @@
   background-color: #FF6600;
   color: white;
 }
+
+.ads-fixed {
+  top: 50%;
+  left: 15px;
+  position: fixed !important;
+  z-index: 99800;
+  transform: translateY(-50%);
+}
+
+.ads-fixed #ads-widget-facebook .button-float {
+  background-color: #0084ff !important;
+}
+
+.ads-fixed #ads-widget-zalo .button-float {
+  background-color: #0068ff !important;
+}
+
+.ads-fixed #ads-widget-skype .button-float {
+  background-color: #ffffff !important;
+  background-size: 40px;
+}
+
+.ads-fixed .button-float {
+  width: 44px;
+  height: 44px;
+  line-height: 44px;
+  display: inline-block !important;
+  border: none !important;
+  font-size: 18px !important;
+  color: #fff !important;
+  text-align: center !important;
+  position: relative;
+  border-radius: 50% !important;
+  cursor: pointer !important;
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.ads-widget-tooltip {
+  margin-bottom: 10px;
+}
