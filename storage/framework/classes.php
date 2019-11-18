@@ -172,4 +172,9 @@
   'Genius\\StorageClear\\Console\\StorageDump' => 'plugins\\genius\\storageclear\\console\\StorageDump.php',
   'Genius\\StorageClear\\Console\\StorageDumpProject' => 'plugins\\genius\\storageclear\\console\\StorageDumpProject.php',
   'Genius\\StorageClear\\Console\\StorageDumpDatabase' => 'plugins\\genius\\storageclear\\console\\StorageDumpDatabase.php',
+  'quang\\page\\Plugin' => 'plugins\\quang\\page\\Plugin.php',
+  'quang\\page\\Controllers\\page' => 'plugins\\quang\\page\\controllers\\page.php',
+  'Quang\\Page\\Models\\Page' => 'plugins\\quang\\page\\models\\Page.php',
+  'Quang\\Page\\Classes\\ComponentAbstract' => 'plugins\\quang\\page\\classes\\ComponentAbstract.php',
+  'Quang\\Page\\Components\\Page_Detail' => 'plugins\\quang\\page\\components\\Page_Detail.php',
 );

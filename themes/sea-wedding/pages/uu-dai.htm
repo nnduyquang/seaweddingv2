@@ -5,51 +5,41 @@ is_hidden = 0
 robot_index = "index"
 robot_follow = "follow"
 
-[post_all]
+[page_detail]
+pages = "uu-dai"
+
+[post_all post_all_service]
 results = 0
-categories = "uu-dai"
-categoryPage = "chi-tiet-uu-dai"
-postPage = "chi-tiet-uu-dai"
+categories = "dich-vu"
+categoryPage = "album"
+postPage = "album"
 ==
 {% partial 'title-page' title_page='Ưu đãi'%}
-{% set posts=post_all.posts %}
-<div id="promo1">
+
+{% set page_detail=page_detail.pageDetail %}
+<div id="promo_d_1">
     <div class="container">
-
-        {% for post in posts %}
-        {% if loop.index0 %2 ==0 %}
-        <div class="row align-items-center mb-4 one-item">
-            <div class="col-md-6 order-md-2 order-0" style="vertical-align: middle">
-                <a href="{{post.url}}">
-                    <img src="{{post.img_primary|media}}" alt=""
-                         style="width: 100%;height: auto">
-                </a>
+        <div class="row">
+            <div class="col-md-9 p-0">
+                <div class="description">
+                    <div class="block-01">
+                       {{page_detail.content|raw}}
+                    </div>
+                </div>
             </div>
-            <div class="col-md-6 info order-md-1 order-0">
-                <h6><a href="{{post.url}}">{{post.title}}</a></h6>
-                <span><i class="far fa-calendar-alt"></i> {{post.created_at}}    </span>
-
-                <div class="content">{{ post.description }}</div>
-                <a href="{{post.url}}">ĐỌC THÊM</a>
-            </div>
-        </div>
-        {% else %}
-        <div class="row align-items-center mb-4 one-item">
-            <div class="col-md-6 order-md-1 order-0" style="vertical-align: middle">
-                <a href="{{post.url}}">
-                    <img src="{{post.img_primary|media}}" alt=""
-                         style="width: 100%;height: auto">
-                </a>
-            </div>
-            <div class="col-md-6 info order-md-2 order-0">
-                <h6><a href="{{post.url}}">{{post.title}}</a></h6>
-                <span><i class="far fa-calendar-alt"></i> {{post.created_at}}     </span>
-
-                <div class="content">{{ post.description }}</div>
-                <a href="{{post.url}}">ĐỌC THÊM</a>
+            <div class="col-md-3">
+                <div class="contain">
+                    {% set posts=post_all_service.posts %}
+                    <div class="sidebar-sea" id="sidebar_service">
+                        <h3>Dịch vụ của chúng tôi</h3>
+                        <ul>
+                            {% for post_category in posts %}
+                            <li><a href="{{post_category.url}}">{{post_category.title}}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
-        {% endif %}
-        {% endfor %}
     </div>
 </div>

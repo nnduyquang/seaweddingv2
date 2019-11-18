@@ -30,6 +30,8 @@ logoType = "/seawedding/logo_blue.png"
 
 [config_hotline config_hotline_call]
 hotlineType = 1
+
+[config_script_header]
 ==
 <!DOCTYPE html>
 <html>
@@ -83,8 +85,10 @@ hotlineType = 1
     <link href="{{ 'assets/css/common.css'|theme }}" rel="stylesheet">
     <link href="{{ 'assets/css/frontend.css'|theme }}" rel="stylesheet">
     <link href="{{ 'assets/css/core.common.css'|theme }}" rel="stylesheet">
-
     {% styles %}
+    {% set config_script_header=config_script_header.configScriptHeader %}
+    {{config_script_header|raw}}
+
 </head>
 <body>
 
@@ -126,16 +130,12 @@ hotlineType = 1
         console.clear()
 
         const navExpand = [].slice.call(document.querySelectorAll('.nav-expand'))
-        const backLink = `<li class="nav-item">
-	<a class="nav-link nav-back-link" href="javascript:;">
-		Back
-	</a>
-</li>`
+        const backLink = '<li class="nav-item"><a class="nav-link nav-back-link" href="">Back</a></li>'
 
         navExpand.forEach(item => {
             item.querySelector('.nav-expand-content').insertAdjacentHTML('afterbegin', backLink)
-            item.querySelector('.nav-link').addEventListener('click', () => item.classList.add('active'))
-            item.querySelector('.nav-back-link').addEventListener('click', () => item.classList.remove('active'))
+        item.querySelector('.nav-link').addEventListener('click', () => item.classList.add('active'))
+        item.querySelector('.nav-back-link').addEventListener('click', () => item.classList.remove('active'))
         })
 
 
