@@ -2150,7 +2150,7 @@
 #p-d .price-detail .info .one-item .img-main .title span:before {
   content: "";
   display: block;
-  width: 65px;
+  width: 25px;
   height: 2px;
   background-color: white;
   position: absolute;
@@ -2160,7 +2160,7 @@
 #p-d .price-detail .info .one-item .img-main .title span:after {
   content: "";
   display: block;
-  width: 65px;
+  width: 25px;
   height: 2px;
   background-color: white;
   position: absolute;

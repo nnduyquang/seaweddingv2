@@ -47,7 +47,7 @@ class Category_Post extends ComponentAbstract
 
     public function loadCategoryPost()
     {
-        $query = Category::where('slug', $this->property('identifierValue'))->first()->post()->get();
+        $query = Category::where('slug', $this->property('identifierValue'))->first()->post()->where('is_active',1)->get();
 
         if ($this->property('results') > 0) {
             $query = $query->take($this->property('results'));
