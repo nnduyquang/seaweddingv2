@@ -1,0 +1,66 @@
+<div name="modalBooking{{ __SELF__.property('modalNumber')}}" class="modal fade modalBooking{{ __SELF__.property('modalNumber')}}" id="modalContactForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <form data-request="contact_booking::onSend" class="modal-content">
+            <div class="modal-header text-center">
+                <h4 class="modal-title w-100 font-weight-bold">Thông tin đăng ký</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body mx-3">
+                <div class="md-form mb-5">
+
+                    <i class="fas fa-user prefix grey-text"></i>
+                    <input value="{{ __SELF__.property('namePacket') }}" name="title" type="text" id="form33" class="form-control" readonly>
+                    <label for="form33">Tên gói chụp</label>
+                </div>
+                <div class="md-form mb-5">
+                    <i class="fas fa-user prefix grey-text"></i>
+                    <input name="name" type="text" id="form34" class="form-control validate">
+                    <label for="form34">Tên của bạn</label>
+                    {{errors.first('name')}}
+                </div>
+
+                <div class="md-form mb-5">
+                    <i class="fas fa-envelope prefix grey-text"></i>
+                    <input name="email" type="email" id="form29" class="form-control">
+                    <label for="form29">Email của bạn</label>
+                    {{errors.first('email')}}
+                </div>
+                <div class="md-form mb-5">
+                    <i class="fas fa-phone-alt prefix grey-text"></i>
+                    <input name="phone" type="text" id="form30" class="form-control">
+                    <label for="form30">Số điện thoại</label>
+                    {{errors.first('phone')}}
+                </div>
+                <div class="md-form mb-5">
+                    <i class="far fa-calendar-alt prefix grey-text"></i>
+                    <input name="datepick" placeholder="Chọn ngày dự kiến chụp" type="text" id="date-picker-example"
+                           class="form-control datepicker{{ __SELF__.property('modalNumber')}}">
+
+                </div>
+                <div class="md-form">
+                    <i class="fas fa-pencil-alt prefix grey-text"></i>
+                    <textarea name="description" type="text" id="form8" class="md-textarea form-control"
+                              rows="4"></textarea>
+                    <label for="form8">Ghi chú thêm</label>
+                </div>
+
+            </div>
+            <div class="modal-footer d-flex justify-content-center flex-column">
+                <button name="booking" type="submit" class="btn btn-unique">Gửi <i class="fas fa-paper-plane-o ml-1"></i></button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<div class="text-center" style="display: table-footer-group;">
+    <a style="font-weight: bold" href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target=".modalBooking{{ __SELF__.property('modalNumber')}}">Tôi book gói
+        này</a>
+</div>
+<div id="result">
+
+</div>
+

@@ -177,4 +177,5 @@
   'Quang\\Page\\Models\\Page' => 'plugins\\quang\\page\\models\\Page.php',
   'Quang\\Page\\Classes\\ComponentAbstract' => 'plugins\\quang\\page\\classes\\ComponentAbstract.php',
   'Quang\\Page\\Components\\Page_Detail' => 'plugins\\quang\\page\\components\\Page_Detail.php',
+  'Quang\\Contact\\Components\\Contact_Booking' => 'plugins\\quang\\contact\\components\\Contact_Booking.php',
 );

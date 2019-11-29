@@ -20,6 +20,8 @@ identifierValue = "{{ :slug }}"
 
 [category_detail]
 identifierValue = "{{ :slug }}"
+
+[contact_booking]
 ==
 <?php
 function onStart()
@@ -44,7 +46,7 @@ $this->addJs('assets/js/album-detail.js');
                             {% set categories_post=categories_post.categoriesPost %}
                             {% for post in categories_post%}
                             <div class="col-md-6 mb-3">
-                                <div class="one-item">
+                                <div class="one-item" style="display: table">
                                     <div class="img-main">
                                         <img src="{{post.img_primary|media}}" alt="">
                                         <div class="title">{{post.title}} <span>{{post.description}}</span></div>
@@ -52,8 +54,8 @@ $this->addJs('assets/js/album-detail.js');
                                     <div class="description">
                                         {{post.content|raw}}
                                     </div>
+                                    {% component 'contact_booking' namePacket=[post.title, post.description]|join(' - ') modalNumber=loop.index0 %}
                                 </div>
-
                             </div>
                             {% endfor %}
                         </div>

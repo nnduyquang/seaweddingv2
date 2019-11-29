@@ -39,7 +39,7 @@ class Contact_Form extends ComponentBase
                 'fieldMsgs'=>$validator->messages(),
             ])];
         } else {
-            $vars = ['name' => Input::get('name'), 'email' => Input::get('email'), 'phone' => Input::get('phone'), 'description' => Input::get('description'), 'subject' => 'haha'];
+            $vars = ['name' => Input::get('name'), 'email' => Input::get('email'), 'phone' => Input::get('phone'), 'description' => Input::get('description'), 'subject' => 'Thông tin liên hệ từ khách hàng'];
 
             Mail::send('quang.contact::mail_to_customer.message', $vars, function ($message) {
                 $message->to(Input::get('email'), 'Ok Con Dê');
