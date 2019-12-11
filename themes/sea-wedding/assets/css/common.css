@@ -268,35 +268,15 @@
   background-color: #59e1cb;
 }
 
-#menu_tabbar {
+.phone-call {
   position: fixed;
-  bottom: 0;
-  height: 48px;
-  z-index: 1000;
-  box-shadow: 0 -1px 1px 0 rgba(0, 0, 0, 0.15);
-  background-color: #fff;
-  width: 100%;
-}
-#menu_tabbar .one-item {
-  display: flex;
-  height: 100%;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid grey;
-  font-size: 17px;
-  font-weight: bold;
-}
-#menu_tabbar .one-item a {
-  display: flex;
-  width: 100%;
-  text-align: center;
-  height: 100%;
-  justify-content: inherit;
-  align-items: center;
-  color: #08327E;
-}
-#menu_tabbar .one-item a i {
-  padding-right: 5px;
+  right: 20px;
+  bottom: 23px;
+  width: 80px;
+  height: 80px;
+  background-size: cover;
+  cursor: pointer;
+  z-index: 100;
 }
 
 .slider:before {
