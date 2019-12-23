@@ -2110,6 +2110,9 @@
 #p-d .price-detail hr {
   border-top: 1px solid #8c8b8b;
 }
+#p-d .price-detail .description {
+  line-height: 1.5;
+}
 #p-d .price-detail .info .one-item {
   background-color: #EBE9EA;
   padding-bottom: 20px;

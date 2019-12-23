@@ -15,6 +15,11 @@ fields:
         span: full
         size: small
         type: textarea
+    content:
+        label: 'Nội dung'
+        span: full
+        size: large
+        type: richeditor
     img_primary:
         label: 'Hình đại diện (nếu cần thiết)'
         span: auto

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 11, 2019 lúc 09:58 AM
+-- Thời gian đã tạo: Th12 23, 2019 lúc 08:37 AM
 -- Phiên bản máy phục vụ: 10.1.31-MariaDB
 -- Phiên bản PHP: 7.2.22
 
@@ -68,7 +68,11 @@ INSERT INTO `backend_access_log` (`id`, `user_id`, `ip_address`, `created_at`, `
 (25, 1, '::1', '2019-11-26 21:36:43', '2019-11-26 21:36:43'),
 (26, 1, '::1', '2019-11-27 00:28:36', '2019-11-27 00:28:36'),
 (27, 1, '::1', '2019-11-28 19:46:53', '2019-11-28 19:46:53'),
-(28, 1, '::1', '2019-12-11 02:57:32', '2019-12-11 02:57:32');
+(28, 1, '::1', '2019-12-11 02:57:32', '2019-12-11 02:57:32'),
+(29, 1, '::1', '2019-12-12 18:45:03', '2019-12-12 18:45:03'),
+(30, 1, '::1', '2019-12-16 20:14:01', '2019-12-16 20:14:01'),
+(31, 1, '::1', '2019-12-19 20:05:47', '2019-12-19 20:05:47'),
+(32, 1, '::1', '2019-12-23 01:36:35', '2019-12-23 01:36:35');
 
 -- --------------------------------------------------------
 
@@ -102,7 +106,7 @@ CREATE TABLE `backend_users` (
 --
 
 INSERT INTO `backend_users` (`id`, `first_name`, `last_name`, `login`, `email`, `password`, `activation_code`, `persist_code`, `reset_password_code`, `permissions`, `is_activated`, `role_id`, `activated_at`, `last_login`, `created_at`, `updated_at`, `deleted_at`, `is_superuser`) VALUES
-(1, 'admin', 'admin', 'admin', 'nnduyquang@gmail.com', '$2y$10$ONGwNadfsrrQ7ZdMBlqmMOzVSiJ/WQyepNCks6cKWq/LLc97LTfO.', NULL, '$2y$10$7VJ1zEWokqDphzMnv41GluxhA2BCJCKCQbOyBKkiovRt9q4RtJBSC', NULL, '', 1, 2, NULL, '2019-12-11 02:57:30', '2019-10-16 23:41:02', '2019-12-11 02:57:30', NULL, 1);
+(1, 'admin', 'admin', 'admin', 'nnduyquang@gmail.com', '$2y$10$ONGwNadfsrrQ7ZdMBlqmMOzVSiJ/WQyepNCks6cKWq/LLc97LTfO.', NULL, '$2y$10$7VJ1zEWokqDphzMnv41GluxhA2BCJCKCQbOyBKkiovRt9q4RtJBSC', NULL, '', 1, 2, NULL, '2019-12-23 01:36:33', '2019-10-16 23:41:02', '2019-12-23 01:36:33', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -693,25 +697,26 @@ CREATE TABLE `quang_post_category` (
   `nest_depth` int(11) DEFAULT NULL,
   `img_primary` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `photos` text COLLATE utf8mb4_unicode_ci,
-  `description` text COLLATE utf8mb4_unicode_ci
+  `description` text COLLATE utf8mb4_unicode_ci,
+  `content` text COLLATE utf8mb4_unicode_ci
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `quang_post_category`
 --
 
-INSERT INTO `quang_post_category` (`id`, `category_title`, `slug`, `created_at`, `updated_at`, `parent_id`, `nest_left`, `nest_right`, `nest_depth`, `img_primary`, `photos`, `description`) VALUES
-(1, 'Dịch Vụ', 'dich-vu', '2019-10-20 21:06:49', '2019-10-20 21:06:49', NULL, 0, 0, 0, NULL, NULL, NULL),
-(2, 'Tin Tức', 'tin-tuc', '2019-10-20 21:07:04', '2019-10-20 21:07:04', NULL, 0, 0, 0, NULL, NULL, NULL),
-(3, 'Ưu Đãi', 'uu-dai', '2019-10-27 07:45:25', '2019-10-27 07:45:25', NULL, 0, 0, 0, NULL, NULL, NULL),
-(4, 'Bảng Giá', 'bang-gia', '2019-10-27 19:55:28', '2019-10-27 19:59:14', NULL, 1, 12, 0, NULL, NULL, NULL),
-(5, 'Gói Đà Nẵng', 'goi-da-nang', '2019-10-27 19:55:48', '2019-11-11 20:26:07', 4, 2, 3, 1, '/Price/da_nang.jpg', '[{\"photo_path\":\"\\/Album\\/thanh_va_tam\\/thanh_tam_1_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/thanh_va_tam\\/thanh_tam_2_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/thanh_va_tam\\/thanh_tam_3_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/thanh_va_tam\\/thanh_tam_4_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/thanh_va_tam\\/thanh_tam_5_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/thanh_va_tam\\/thanh_tam_6_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/thanh_va_tam\\/thanh_tam_8_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/thanh_va_tam\\/thanh_tam_14_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/thanh_va_tam\\/thanh_tam_16_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/duc_va_ngan\\/nhat4628-copy.jpg\"},{\"photo_path\":\"\\/Album\\/duc_va_ngan\\/nhat4576-copy.jpg\"},{\"photo_path\":\"\\/Album\\/duc_va_ngan\\/nhat4498-copy.jpg\"}]', 'Chụp ảnh cưới gói đà nẵng tuyệt đẹp'),
-(6, 'Gói Đà Nẵng - Hội An', 'goi-da-nang-hoi', '2019-10-27 19:56:40', '2019-11-11 20:29:15', 4, 4, 5, 1, '/Price/da_nang_hoi_an.jpg', '[{\"photo_path\":\"\\/Album\\/yen_va_tien\\/yen_tien_26_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/yen_va_tien\\/yen_tien_27_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/yen_va_tien\\/yen_tien_29_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/yen_va_tien\\/yen_tien_30_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/yen_va_tien\\/yen_tien_31_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/yen_va_tien\\/yen_tien_32_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/yen_va_tien\\/yen_tien_33_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/yen_va_tien\\/yen_tien_34_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/yen_va_tien\\/yen_tien_35_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/yen_va_tien\\/yen_tien_36_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/yen_va_tien\\/yen_tien_37_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/yen_va_tien\\/yen_tien_38_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/yen_va_tien\\/yen_tien_39_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/yen_va_tien\\/yen_tien_40_seawedding.jpg\"}]', ''),
-(7, 'Gói Đà Nẵng - Bà Nà', 'goi-da-nang-ba-na', '2019-10-27 19:57:24', '2019-11-11 20:31:20', 4, 6, 7, 1, '/Price/da_nang_ba_na.jpg', '[{\"photo_path\":\"\\/Album\\/trinh_va_duc\\/trinh_10_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/trinh_va_duc\\/trinh_11_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/trinh_va_duc\\/trinh_12_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/trinh_va_duc\\/trinh_1_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/trinh_va_duc\\/trinh_3_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/trinh_va_duc\\/trinh_4_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/trinh_va_duc\\/trinh_5_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/trinh_va_duc\\/trinh_6_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/trinh_va_duc\\/trinh_7_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/trinh_va_duc\\/trinh_8_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/trinh_va_duc\\/trinh_9_seawedding.jpg\"}]', ''),
-(8, 'Gói Đà Nẵng - Bà Nà - Hội An', 'goi-da-nang-ba-na-hoi', '2019-10-27 19:58:17', '2019-11-11 20:36:42', 4, 8, 9, 1, '/Price/da_nang_ba_na_hoi_an.jpg', '[{\"photo_path\":\"\\/Album\\/ha_va_hoai\\/ha_hoai_15_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/ha_va_hoai\\/ha_hoai_18_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/ha_va_hoai\\/ha_hoai_20_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/ha_va_hoai\\/ha_hoai_21_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/ha_va_hoai\\/ha_hoai_22_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/ha_va_hoai\\/ha_hoai_27_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/dung_va_nhung\\/dung_nhung_03_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/dung_va_nhung\\/dung_nhung_05_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/dung_va_nhung\\/dung_nhung_07_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/dung_va_nhung\\/dungnhung12seawedding-1.jpg\"},{\"photo_path\":\"\\/Album\\/philip_va_phuong\\/philip_phuong_14_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/philip_va_phuong\\/philip_phuong_18_seawedding.jpg\"}]', ''),
-(9, 'Gói Đà Nẵng - Ngoại Thành', 'goi-da-nang-ngoai-thanh', '2019-10-27 19:59:07', '2019-11-11 20:40:00', 4, 10, 11, 1, '/Price/da_nang_ngoai_thanh.jpg', '[{\"photo_path\":\"\\/Album\\/yen_va_tien\\/yen_tien_10_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/yen_va_tien\\/yen_tien_11_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/yen_va_tien\\/yen_tien_12_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/yen_va_tien\\/yen_tien_13_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/yen_va_tien\\/yen_tien_14_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/yen_va_tien\\/yen_tien_15_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/yen_va_tien\\/yen_tien_16_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/yen_va_tien\\/yen_tien_17_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/vien_va_nhi\\/hai_1704.jpg\"},{\"photo_path\":\"\\/Album\\/vien_va_nhi\\/hai_1721.jpg\"},{\"photo_path\":\"\\/Album\\/vien_va_nhi\\/hai_1895.jpg\"},{\"photo_path\":\"\\/Album\\/vien_va_nhi\\/hai_1921.jpg\"},{\"photo_path\":\"\\/Album\\/vien_va_nhi\\/hai_1758.jpg\"}]', ''),
-(10, 'Thành Viên', 'thanh-vien', '2019-11-03 19:31:55', '2019-11-03 19:31:55', NULL, 13, 14, 0, '', '[]', NULL),
-(11, 'Ý Kiến Khách Hàng', 'y-kien-khach-hang', '2019-11-03 20:14:54', '2019-11-03 20:14:54', NULL, 15, 16, 0, '', '[]', NULL);
+INSERT INTO `quang_post_category` (`id`, `category_title`, `slug`, `created_at`, `updated_at`, `parent_id`, `nest_left`, `nest_right`, `nest_depth`, `img_primary`, `photos`, `description`, `content`) VALUES
+(1, 'Dịch Vụ', 'dich-vu', '2019-10-20 21:06:49', '2019-10-20 21:06:49', NULL, 0, 0, 0, NULL, NULL, NULL, NULL),
+(2, 'Tin Tức', 'tin-tuc', '2019-10-20 21:07:04', '2019-10-20 21:07:04', NULL, 0, 0, 0, NULL, NULL, NULL, NULL),
+(3, 'Ưu Đãi', 'uu-dai', '2019-10-27 07:45:25', '2019-10-27 07:45:25', NULL, 0, 0, 0, NULL, NULL, NULL, NULL),
+(4, 'Bảng Giá', 'bang-gia', '2019-10-27 19:55:28', '2019-10-27 19:59:14', NULL, 1, 12, 0, NULL, NULL, NULL, NULL),
+(5, 'Gói Đà Nẵng', 'goi-da-nang', '2019-10-27 19:55:48', '2019-12-12 18:57:08', 4, 2, 3, 1, '/Price/da_nang.jpg', '[{\"photo_path\":\"\\/Album\\/thanh_va_tam\\/thanh_tam_1_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/thanh_va_tam\\/thanh_tam_2_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/thanh_va_tam\\/thanh_tam_3_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/thanh_va_tam\\/thanh_tam_4_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/thanh_va_tam\\/thanh_tam_5_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/thanh_va_tam\\/thanh_tam_6_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/thanh_va_tam\\/thanh_tam_8_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/thanh_va_tam\\/thanh_tam_14_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/thanh_va_tam\\/thanh_tam_16_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/duc_va_ngan\\/nhat4628-copy.jpg\"},{\"photo_path\":\"\\/Album\\/duc_va_ngan\\/nhat4576-copy.jpg\"},{\"photo_path\":\"\\/Album\\/duc_va_ngan\\/nhat4498-copy.jpg\"}]', 'Chụp ảnh cưới gói đà nẵng tuyệt đẹp', '<p>tesdt</p>'),
+(6, 'Gói Đà Nẵng - Hội An', 'goi-da-nang-hoi', '2019-10-27 19:56:40', '2019-11-11 20:29:15', 4, 4, 5, 1, '/Price/da_nang_hoi_an.jpg', '[{\"photo_path\":\"\\/Album\\/yen_va_tien\\/yen_tien_26_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/yen_va_tien\\/yen_tien_27_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/yen_va_tien\\/yen_tien_29_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/yen_va_tien\\/yen_tien_30_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/yen_va_tien\\/yen_tien_31_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/yen_va_tien\\/yen_tien_32_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/yen_va_tien\\/yen_tien_33_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/yen_va_tien\\/yen_tien_34_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/yen_va_tien\\/yen_tien_35_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/yen_va_tien\\/yen_tien_36_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/yen_va_tien\\/yen_tien_37_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/yen_va_tien\\/yen_tien_38_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/yen_va_tien\\/yen_tien_39_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/yen_va_tien\\/yen_tien_40_seawedding.jpg\"}]', '', NULL),
+(7, 'Gói Đà Nẵng - Bà Nà', 'goi-da-nang-ba-na', '2019-10-27 19:57:24', '2019-11-11 20:31:20', 4, 6, 7, 1, '/Price/da_nang_ba_na.jpg', '[{\"photo_path\":\"\\/Album\\/trinh_va_duc\\/trinh_10_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/trinh_va_duc\\/trinh_11_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/trinh_va_duc\\/trinh_12_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/trinh_va_duc\\/trinh_1_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/trinh_va_duc\\/trinh_3_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/trinh_va_duc\\/trinh_4_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/trinh_va_duc\\/trinh_5_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/trinh_va_duc\\/trinh_6_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/trinh_va_duc\\/trinh_7_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/trinh_va_duc\\/trinh_8_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/trinh_va_duc\\/trinh_9_seawedding.jpg\"}]', '', NULL),
+(8, 'Gói Đà Nẵng - Bà Nà - Hội An', 'goi-da-nang-ba-na-hoi', '2019-10-27 19:58:17', '2019-11-11 20:36:42', 4, 8, 9, 1, '/Price/da_nang_ba_na_hoi_an.jpg', '[{\"photo_path\":\"\\/Album\\/ha_va_hoai\\/ha_hoai_15_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/ha_va_hoai\\/ha_hoai_18_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/ha_va_hoai\\/ha_hoai_20_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/ha_va_hoai\\/ha_hoai_21_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/ha_va_hoai\\/ha_hoai_22_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/ha_va_hoai\\/ha_hoai_27_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/dung_va_nhung\\/dung_nhung_03_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/dung_va_nhung\\/dung_nhung_05_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/dung_va_nhung\\/dung_nhung_07_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/dung_va_nhung\\/dungnhung12seawedding-1.jpg\"},{\"photo_path\":\"\\/Album\\/philip_va_phuong\\/philip_phuong_14_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/philip_va_phuong\\/philip_phuong_18_seawedding.jpg\"}]', '', NULL),
+(9, 'Gói Đà Nẵng - Ngoại Thành', 'goi-da-nang-ngoai-thanh', '2019-10-27 19:59:07', '2019-11-11 20:40:00', 4, 10, 11, 1, '/Price/da_nang_ngoai_thanh.jpg', '[{\"photo_path\":\"\\/Album\\/yen_va_tien\\/yen_tien_10_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/yen_va_tien\\/yen_tien_11_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/yen_va_tien\\/yen_tien_12_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/yen_va_tien\\/yen_tien_13_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/yen_va_tien\\/yen_tien_14_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/yen_va_tien\\/yen_tien_15_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/yen_va_tien\\/yen_tien_16_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/yen_va_tien\\/yen_tien_17_seawedding.jpg\"},{\"photo_path\":\"\\/Album\\/vien_va_nhi\\/hai_1704.jpg\"},{\"photo_path\":\"\\/Album\\/vien_va_nhi\\/hai_1721.jpg\"},{\"photo_path\":\"\\/Album\\/vien_va_nhi\\/hai_1895.jpg\"},{\"photo_path\":\"\\/Album\\/vien_va_nhi\\/hai_1921.jpg\"},{\"photo_path\":\"\\/Album\\/vien_va_nhi\\/hai_1758.jpg\"}]', '', NULL),
+(10, 'Thành Viên', 'thanh-vien', '2019-11-03 19:31:55', '2019-11-03 19:31:55', NULL, 13, 14, 0, '', '[]', NULL, NULL),
+(11, 'Ý Kiến Khách Hàng', 'y-kien-khach-hang', '2019-11-03 20:14:54', '2019-11-03 20:14:54', NULL, 15, 16, 0, '', '[]', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1000,7 +1005,8 @@ INSERT INTO `system_event_logs` (`id`, `level`, `message`, `details`, `created_a
 (78, 'error', 'Symfony\\Component\\Debug\\Exception\\FatalErrorException: Maximum execution time of 30 seconds exceeded in C:\\xampp\\htdocs\\seaweddingv2\\vendor\\twig\\twig\\src\\Parser.php:35\nStack trace:\n#0 {main}', NULL, '2019-12-10 01:28:49', '2019-12-10 01:28:49'),
 (79, 'error', 'Symfony\\Component\\Debug\\Exception\\FatalErrorException: Maximum execution time of 30 seconds exceeded in C:\\xampp\\htdocs\\seaweddingv2\\vendor\\october\\rain\\src\\Parse\\Assetic\\LessCompiler.php:19\nStack trace:\n#0 {main}', NULL, '2019-12-10 01:46:38', '2019-12-10 01:46:38'),
 (80, 'error', 'Symfony\\Component\\Debug\\Exception\\FatalErrorException: Maximum execution time of 30 seconds exceeded in C:\\xampp\\htdocs\\seaweddingv2\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Relations\\BelongsToMany.php:11\nStack trace:\n#0 {main}', NULL, '2019-12-10 19:33:12', '2019-12-10 19:33:12'),
-(81, 'error', 'Symfony\\Component\\Debug\\Exception\\FatalErrorException: Maximum execution time of 30 seconds exceeded in C:\\xampp\\htdocs\\seaweddingv2\\vendor\\twig\\twig\\src\\Extension\\AbstractExtension.php:14\nStack trace:\n#0 {main}', NULL, '2019-12-10 23:43:03', '2019-12-10 23:43:03');
+(81, 'error', 'Symfony\\Component\\Debug\\Exception\\FatalErrorException: Maximum execution time of 30 seconds exceeded in C:\\xampp\\htdocs\\seaweddingv2\\vendor\\twig\\twig\\src\\Extension\\AbstractExtension.php:14\nStack trace:\n#0 {main}', NULL, '2019-12-10 23:43:03', '2019-12-10 23:43:03'),
+(82, 'error', 'Symfony\\Component\\Debug\\Exception\\FatalErrorException: Maximum execution time of 30 seconds exceeded in C:\\xampp\\htdocs\\seaweddingv2\\vendor\\doctrine\\dbal\\lib\\Doctrine\\DBAL\\Driver\\PDOStatement.php:105\nStack trace:\n#0 {main}', NULL, '2019-12-23 00:16:58', '2019-12-23 00:16:58');
 
 -- --------------------------------------------------------
 
@@ -1160,8 +1166,8 @@ CREATE TABLE `system_parameters` (
 --
 
 INSERT INTO `system_parameters` (`id`, `namespace`, `group`, `item`, `value`) VALUES
-(1, 'system', 'update', 'count', '2'),
-(2, 'system', 'update', 'retry', '1576144657'),
+(1, 'system', 'update', 'count', '3'),
+(2, 'system', 'update', 'retry', '1577176601'),
 (3, 'cms', 'theme', 'active', '\"sea-wedding\"');
 
 -- --------------------------------------------------------
@@ -1433,7 +1439,9 @@ INSERT INTO `system_plugin_history` (`id`, `code`, `type`, `version`, `detail`, 
 (247, 'Quang.Page', 'script', '1.0.2', 'builder_table_create_quang_page_.php', '2019-11-15 08:12:19'),
 (248, 'Quang.Page', 'comment', '1.0.2', 'Created table quang_page_', '2019-11-15 08:12:19'),
 (249, 'Quang.Page', 'script', '1.0.3', 'builder_table_update_quang_page_.php', '2019-11-15 08:38:04'),
-(250, 'Quang.Page', 'comment', '1.0.3', 'Updated table quang_page_', '2019-11-15 08:38:04');
+(250, 'Quang.Page', 'comment', '1.0.3', 'Updated table quang_page_', '2019-11-15 08:38:04'),
+(251, 'Quang.Post', 'script', '1.0.18', 'builder_table_update_quang_post_category_9.php', '2019-12-12 18:47:41'),
+(252, 'Quang.Post', 'comment', '1.0.18', 'Updated table quang_post_category', '2019-12-12 18:47:41');
 
 -- --------------------------------------------------------
 
@@ -1461,7 +1469,7 @@ INSERT INTO `system_plugin_versions` (`id`, `code`, `version`, `created_at`, `is
 (4, 'Flynsarmy.Menu', '1.0.21', '2019-10-17 18:44:08', 0, 0),
 (5, 'Quang.Config', '1.0.13', '2019-11-05 01:05:39', 0, 0),
 (6, 'SureSoftware.PowerSEO', '2.0.4', '2019-10-20 19:41:03', 0, 0),
-(7, 'Quang.Post', '1.0.17', '2019-11-04 20:13:43', 0, 0),
+(7, 'Quang.Post', '1.0.18', '2019-12-12 18:47:41', 0, 0),
 (8, 'AnandPatel.WysiwygEditors', '1.2.9', '2019-10-20 20:34:46', 0, 0),
 (9, 'Quang.Album', '1.0.11', '2019-11-07 01:17:34', 0, 0),
 (10, 'Quang.Contact', '1.0.1', '2019-11-03 23:55:18', 0, 0),
@@ -1521,7 +1529,7 @@ CREATE TABLE `system_settings` (
 
 INSERT INTO `system_settings` (`id`, `item`, `value`) VALUES
 (1, 'rainlab_builder_settings', '{\"author_name\":\"Quang\",\"author_namespace\":\"Quang\"}'),
-(2, 'anandpatel_wysiwygeditors_settings', '{\"editor\":\"ckeditor\",\"editor_width\":\"\",\"editor_height\":\"\",\"toolbar_tinymce\":\"undo redo | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media ocmediamanager\",\"toolbar_ckeditor\":\"[\'Undo\', \'Redo\'], [\'Cut\', \'Copy\', \'Paste\', \'PasteText\', \'PasteFromWord\'], [\'Format\', \'FontSize\'], [\'ShowBlocks\', \'SelectAll\', \'RemoveFormat\'], [\'Source\'], [\'Maximize\'], \'\\/\', [\'Bold\', \'Italic\', \'Underline\', \'Strike\'], [\'JustifyLeft\', \'JustifyCenter\', \'JustifyRight\', \'JustifyBlock\'], [\'BulletedList\', \'NumberedList\', \'Outdent\', \'Indent\'], [\'TextColor\', \'BGColor\'], [\'Link\', \'Unlink\', \'Anchor\'], [\'Image\', \'Table\',\'HorizontalRule\',\'lineheight\',\'preview\', \'oembed\', \'SpecialChar\', \'OcMediaManager\']\",\"cms_page_as_wysiwyg\":\"0\",\"cms_content_as_wysiwyg\":\"1\",\"cms_partial_as_wysiwyg\":\"0\",\"cms_layout_as_wysiwyg\":\"0\",\"others_as_wysiwyg\":\"1\",\"blog_as_wysiwyg\":\"1\"}'),
+(2, 'anandpatel_wysiwygeditors_settings', '{\"editor\":\"ckeditor\",\"editor_width\":\"\",\"editor_height\":\"\",\"toolbar_tinymce\":\"undo redo | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media ocmediamanager\",\"toolbar_ckeditor\":\"[\'Undo\', \'Redo\'], [\'Cut\', \'Copy\', \'Paste\', \'PasteText\', \'PasteFromWord\'], [\'Format\', \'FontSize\'], [\'ShowBlocks\', \'SelectAll\', \'RemoveFormat\'], [\'Source\'], [\'Maximize\'], \'\\/\', [\'Bold\', \'Italic\', \'Underline\', \'Strike\'], [\'JustifyLeft\', \'JustifyCenter\', \'JustifyRight\', \'JustifyBlock\'], [\'BulletedList\', \'NumberedList\', \'Outdent\', \'Indent\'], [\'TextColor\', \'BGColor\'], [\'Link\', \'Unlink\', \'Anchor\'], [\'Image\', \'Table\',\'HorizontalRule\',\'lineheight\',\'preview\', \'oembed\', \'SpecialChar\', \'OcMediaManager\']\",\"cms_page_as_wysiwyg\":\"0\",\"cms_content_as_wysiwyg\":\"0\",\"cms_partial_as_wysiwyg\":\"0\",\"cms_layout_as_wysiwyg\":\"0\",\"others_as_wysiwyg\":\"0\",\"blog_as_wysiwyg\":\"1\"}'),
 (3, 'backend_brand_settings', '{\"app_name\":\"Sea Wedding\",\"app_tagline\":\"\\u0110\\u0103ng Nh\\u1eadp\",\"primary_color\":\"#34495e\",\"secondary_color\":\"#e67e22\",\"accent_color\":\"#3498db\",\"menu_mode\":\"inline\",\"custom_css\":\"\"}'),
 (4, 'suresoftware_powerseo_settings', '{\"enable_title\":\"0\",\"enable_canonical_url\":\"0\",\"title\":\"\",\"other_tags\":\"\",\"enable_og_tags\":\"1\",\"og_sitename\":\"\",\"og_fb_appid\":\"\"}');
 
@@ -1821,7 +1829,7 @@ ALTER TABLE `system_settings`
 -- AUTO_INCREMENT cho bảng `backend_access_log`
 --
 ALTER TABLE `backend_access_log`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT cho bảng `backend_users`
@@ -1953,7 +1961,7 @@ ALTER TABLE `rainlab_blog_posts`
 -- AUTO_INCREMENT cho bảng `system_event_logs`
 --
 ALTER TABLE `system_event_logs`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
 
 --
 -- AUTO_INCREMENT cho bảng `system_files`
@@ -1989,7 +1997,7 @@ ALTER TABLE `system_parameters`
 -- AUTO_INCREMENT cho bảng `system_plugin_history`
 --
 ALTER TABLE `system_plugin_history`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=251;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=253;
 
 --
 -- AUTO_INCREMENT cho bảng `system_plugin_versions`

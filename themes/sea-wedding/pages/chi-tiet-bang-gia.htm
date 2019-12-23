@@ -31,7 +31,7 @@ $this->addJs('assets/js/album-detail.js');
 ?>
 ==
 {% set categories_child=categories_child.categoriesChild %}
-
+{% set category_detail=category_detail.category_detail %}
 
 <div id="p-d">
     <div class="container">
@@ -41,6 +41,9 @@ $this->addJs('assets/js/album-detail.js');
                 <div class="price-detail">
                     <h2>Sea Wedding Studio Bảng Giá Và Gói Chụp</h2>
                     <hr>
+                    <div class="description d-none d-md-block d-lg-block">
+                        {{category_detail.content|raw}}
+                    </div>
                     <div class="info">
                         <div class="row">
                             {% set categories_post=categories_post.categoriesPost %}
@@ -61,7 +64,7 @@ $this->addJs('assets/js/album-detail.js');
                         </div>
                     </div>
                 </div>
-                {% set category_detail=category_detail.category_detail %}
+
                 <div class="price-photos">
                     <h3>Hình ảnh tham khảo</h3>
                     <hr>
