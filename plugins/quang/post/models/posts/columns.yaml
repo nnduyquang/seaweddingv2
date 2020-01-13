@@ -8,3 +8,4 @@ columns:
         searchable: true
         select: category_title
         relation: category
+

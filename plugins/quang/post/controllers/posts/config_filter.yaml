@@ -1,0 +1,6 @@
+scopes:
+  category:
+    label: Category
+    modelClass: Quang\Post\Models\Category
+    conditions: id in (:filtered)
+    nameFrom: category_title
